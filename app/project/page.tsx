@@ -13,19 +13,7 @@ import {
   Code2,
   Smartphone,
   Maximize2,
-  Video,
   X,
-  Wand2,
-  Palette,
-  Scissors,
-  Mic,
-  Image as ImageIcon,
-  Cpu,
-  Layers,
-  PenTool,
-  Volume2,
-  MessageSquare,
-  Wrench,
 } from "lucide-react";
 import CTABanner from "@/components/CTABanner";
 import PrimaryButton from "@/components/PrimaryButton";
@@ -34,7 +22,6 @@ import PrimaryButton from "@/components/PrimaryButton";
 
 const CATEGORIES = [
   { id: "all", label: "All Projects" },
-  { id: "trailer", label: "Tools" },
   { id: "reels", label: "Short Form" },
   { id: "longvideo", label: "Podcast Work" },
   { id: "aivideo", label: "AI Projects" },
@@ -266,178 +253,10 @@ const YANISA_REELS = [
   },
 ];
 
-// ─── Agency Tools Stack Data ──────────────────────────────────────────────────
-
-const AGENCY_TOOLS = [
-  {
-    id: "tool-premiere",
-    name: "Adobe Premiere Pro",
-    category: "Video Editing",
-    description: "Industry-standard timeline video editing, multi-cam assembly, and precise pacing.",
-    icon: Video,
-    color: "from-blue-500/20 to-purple-500/20",
-    borderColor: "border-purple-500/30",
-    textColor: "text-purple-400",
-  },
-  {
-    id: "tool-aftereffects",
-    name: "Adobe After Effects",
-    category: "Motion & VFX",
-    description: "Advanced motion graphics, 2D/3D visual effects, custom lower-thirds, and kinetic typography.",
-    icon: Wand2,
-    color: "from-indigo-500/20 to-blue-500/20",
-    borderColor: "border-indigo-500/30",
-    textColor: "text-indigo-400",
-  },
-  {
-    id: "tool-resolve",
-    name: "DaVinci Resolve",
-    category: "Color & Mastering",
-    description: "Hollywood-grade cinematic color correction, skin-tone matching, and Fairlight audio mastering.",
-    icon: Palette,
-    color: "from-rose-500/20 to-orange-500/20",
-    borderColor: "border-rose-500/30",
-    textColor: "text-rose-400",
-  },
-  {
-    id: "tool-capcut",
-    name: "CapCut Pro",
-    category: "Short-Form Reels",
-    description: "High-speed vertical reel edits, animated auto-captions, and trending social transitions.",
-    icon: Scissors,
-    color: "from-sky-500/20 to-teal-500/20",
-    borderColor: "border-sky-500/30",
-    textColor: "text-sky-400",
-  },
-  {
-    id: "tool-elevenlabs",
-    name: "ElevenLabs AI",
-    category: "AI Voiceover",
-    description: "Hyper-realistic synthetic AI voice cloning, multilingual dubbing, and expressive voiceovers.",
-    icon: Mic,
-    color: "from-amber-500/20 to-yellow-500/20",
-    borderColor: "border-amber-500/30",
-    textColor: "text-amber-400",
-  },
-  {
-    id: "tool-runway",
-    name: "Runway Gen-3",
-    category: "AI Video",
-    description: "Text-to-video and image-to-video generative AI synthesis for high-concept B-roll footage.",
-    icon: Sparkles,
-    color: "from-cyan-500/20 to-blue-500/20",
-    borderColor: "border-cyan-500/30",
-    textColor: "text-cyan-400",
-  },
-  {
-    id: "tool-midjourney",
-    name: "Midjourney v6",
-    category: "AI Generative Art",
-    description: "Photorealistic AI concept art, custom backdrops, and visual storyboarding assets.",
-    icon: ImageIcon,
-    color: "from-emerald-500/20 to-green-500/20",
-    borderColor: "border-emerald-500/30",
-    textColor: "text-emerald-400",
-  },
-  {
-    id: "tool-topaz",
-    name: "Topaz Video AI",
-    category: "AI Enhancement",
-    description: "4K resolution upscaling, 60fps frame rate interpolation, and artifact denoising.",
-    icon: Cpu,
-    color: "from-fuchsia-500/20 to-pink-500/20",
-    borderColor: "border-fuchsia-500/30",
-    textColor: "text-fuchsia-400",
-  },
-  {
-    id: "tool-photoshop",
-    name: "Adobe Photoshop",
-    category: "Graphics & Thumbnails",
-    description: "High-CTR YouTube thumbnail design, precision subject cutouts, and poster artwork.",
-    icon: Layers,
-    color: "from-sky-600/20 to-blue-600/20",
-    borderColor: "border-sky-600/30",
-    textColor: "text-sky-300",
-  },
-  {
-    id: "tool-figma",
-    name: "Figma",
-    category: "UI / UX Design",
-    description: "High-fidelity website wireframes, interactive app prototypes, and design systems.",
-    icon: PenTool,
-    color: "from-violet-500/20 to-purple-500/20",
-    borderColor: "border-violet-500/30",
-    textColor: "text-violet-400",
-  },
-  {
-    id: "tool-audition",
-    name: "Adobe Audition",
-    category: "Audio Engineering",
-    description: "Multi-track podcast cleanup, spectral noise reduction, EQ balancing, and loudness mastering.",
-    icon: Volume2,
-    color: "from-teal-500/20 to-emerald-500/20",
-    borderColor: "border-teal-500/30",
-    textColor: "text-teal-400",
-  },
-  {
-    id: "tool-chatgpt",
-    name: "ChatGPT & Claude",
-    category: "Scripting & Hooks",
-    description: "Viral short-form hook generation, video scriptwriting, and content research optimization.",
-    icon: MessageSquare,
-    color: "from-green-500/20 to-emerald-500/20",
-    borderColor: "border-green-500/30",
-    textColor: "text-green-400",
-  },
-];
-
-function ToolCard({ tool, idx }: { tool: typeof AGENCY_TOOLS[0]; idx: number }) {
-  const IconComponent = tool.icon;
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, scale: 0.95 }}
-      transition={{ duration: 0.4, delay: idx * 0.05 }}
-      className="glass-card rounded-3xl p-6 border border-zinc-800 hover:border-zinc-600 transition-all duration-500 group flex flex-col justify-between"
-    >
-      <div>
-        <div className="flex items-center justify-between mb-5">
-          <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${tool.color} border ${tool.borderColor} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-            <IconComponent className={`w-6 h-6 ${tool.textColor}`} />
-          </div>
-          <span className={`text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-zinc-900/90 border border-zinc-700/80 ${tool.textColor}`}>
-            {tool.category}
-          </span>
-        </div>
-
-        <h3 className="text-xl font-bold text-white group-hover:text-sky-300 transition-colors mb-2">
-          {tool.name}
-        </h3>
-
-        <p className="text-zinc-400 text-xs leading-relaxed">
-          {tool.description}
-        </p>
-      </div>
-
-      <div className="mt-6 pt-4 border-t border-zinc-800/80 flex items-center justify-between">
-        <span className="text-[10px] font-semibold text-zinc-500 uppercase tracking-widest">
-          Production Tool
-        </span>
-        <div className="flex items-center gap-1.5">
-          <div className="w-2 h-2 rounded-full bg-emerald-400/90 animate-pulse" />
-          <span className="text-[10px] text-zinc-400 font-mono">Active</span>
-        </div>
-      </div>
-    </motion.div>
-  );
-}
-
 // ─── Category Icon ────────────────────────────────────────────────────────────
 
 function getCategoryIcon(cat: string) {
   switch (cat) {
-    case "trailer": return Wrench;
     case "reels": case "longvideo": return Film;
     case "aivideo": return Sparkles;
     case "website": return Globe;
@@ -1249,13 +1068,7 @@ export default function ProjectsPage() {
                     </div>
 
                     {/* Section Grid */}
-                    {cat.id === "trailer" ? (
-                      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                        {AGENCY_TOOLS.map((tool, idx) => (
-                          <ToolCard key={tool.id} tool={tool} idx={idx} />
-                        ))}
-                      </div>
-                    ) : cat.id === "reels" ? (
+                    {cat.id === "reels" ? (
                       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6">
                         {PROJECTS.filter((p) => p.category === "reels").map((project, idx) => (
                           <ReelCard
@@ -1313,7 +1126,7 @@ export default function ProjectsPage() {
             <motion.div
               key={activeCategory}
               className={`grid gap-6 ${
-                activeCategory === "trailer" || activeCategory === "reels"
+                activeCategory === "reels"
                   ? "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
                   : activeCategory === "mobile"
                   ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
@@ -1322,11 +1135,7 @@ export default function ProjectsPage() {
                   : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
               }`}
             >
-              {activeCategory === "trailer"
-                ? AGENCY_TOOLS.map((tool, idx) => (
-                    <ToolCard key={tool.id} tool={tool} idx={idx} />
-                  ))
-                : filtered.map((project, idx) =>
+              {filtered.map((project, idx) =>
                     project.category === "reels" ? (
                       <ReelCard
                         key={project.id}

@@ -17,16 +17,10 @@ import FAQSection from "@/components/FAQSection";
 
 const SERVICE_OPTIONS = [
   {
-    value: "Story-Driven Reels & Short-Form Video",
-    title: "Story-Driven Reels & Short-Form",
-    subtitle: "High-retention vertical edits & social hooks",
-    tag: "Social",
-  },
-  {
-    value: "Cinematic Long-Form Video Editing",
-    title: "Cinematic Long-Form Video Editing",
-    subtitle: "Brand documentaries, keynotes & YouTube films",
-    tag: "Long-Form",
+    value: "Story-Driven Short-Form and Long-Form Content",
+    title: "Reels & Long-Form Content",
+    subtitle: "High-retention vertical edits, brand documentaries & YouTube films",
+    tag: "Content",
   },
   {
     value: "Podcast Production & Audio Mastering",
@@ -35,16 +29,16 @@ const SERVICE_OPTIONS = [
     tag: "Audio",
   },
   {
-    value: "Content Strategy & Multi-Platform Distribution",
-    title: "Content Strategy & Distribution",
-    subtitle: "Cross-platform repurposing & narrative architecture",
+    value: "Content Strategy & Story Development",
+    title: "Content Strategy & Story Development",
+    subtitle: "Audience insights, narrative design & content roadmaps",
     tag: "Strategy",
   },
   {
-    value: "AI Video & Generative Production",
-    title: "AI Video & Generative Content",
-    subtitle: "AI avatars, voice cloning & synthetic B-roll",
-    tag: "AI Tech",
+    value: "Creative Direction & Content Production",
+    title: "Creative Direction & Production",
+    subtitle: "End-to-end creative concepts, visual direction & sprint execution",
+    tag: "Production",
   },
   {
     value: "Custom Bespoke Production Package",
@@ -213,7 +207,7 @@ export default function ContactPage() {
     name: "",
     email: "",
     company: "",
-    service: "Story-Driven Reels & Short-Form Video",
+    service: "Story-Driven Short-Form and Long-Form Content",
     message: "",
   });
 

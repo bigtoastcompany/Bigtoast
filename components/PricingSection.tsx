@@ -31,8 +31,8 @@ const PRICING_TIERS: PricingTier[] = [
     id: "content-engine",
     name: "Content Engine",
     tagline: "For founders and creators who need consistent, high-quality content.",
-    usdPrice: "$800",
-    inrPrice: "₹45,000",
+    usdPrice: "$600",
+    inrPrice: "₹56,999.31",
     isPopular: false,
     ctaText: "Choose Content Engine",
     included: [
@@ -50,8 +50,8 @@ const PRICING_TIERS: PricingTier[] = [
     id: "storytelling-partner",
     name: "Storytelling Partner",
     tagline: "For founders and personal brands who need strategy and execution.",
-    usdPrice: "$1,200",
-    inrPrice: "₹70,000",
+    usdPrice: "$1,000",
+    inrPrice: "₹94,998.85",
     badge: "Recommended",
     isPopular: true,
     ctaText: "Get Started as Partner",
@@ -72,8 +72,8 @@ const PRICING_TIERS: PricingTier[] = [
     id: "content-partner",
     name: "Content Partner",
     tagline: "For businesses that want a deeper, ongoing creative partnership.",
-    usdPrice: "$1,800",
-    inrPrice: "₹1,10,000",
+    usdPrice: "$1,500",
+    inrPrice: "₹1,42,498.58",
     isPopular: false,
     ctaText: "Scale with Content Partner",
     included: [
@@ -91,36 +91,27 @@ const PRICING_TIERS: PricingTier[] = [
   },
 ];
 
-const SCOPE_TERMS = [
+const PARTNERSHIP_STEPS = [
   {
-    title: "Monthly Retainer Cadence",
+    step: "01",
+    phase: "Foundation",
+    title: "Month 01 · Foundation",
     description:
-      "All packages are structured as dedicated monthly retainers with reserved creative bandwidth and agreed delivery milestones.",
+      "Understand your brand, establish your content direction, and build the creative foundation.",
   },
   {
-    title: "Footage & Filming Scope",
+    step: "02",
+    phase: "Consistency",
+    title: "Month 02 · Consistency",
     description:
-      "Clients provide raw footage or arrange filming. On-site filming, travel, daily social media community management, and paid advertising are not included.",
+      "Bring the strategy to life through regular content production and refine the storytelling.",
   },
   {
-    title: "Revisions & Approvals",
+    step: "03",
+    phase: "Refinement",
+    title: "Month 03 · Refinement",
     description:
-      "Each video includes one consolidated revision round to maintain momentum, rapid iteration, and consistent publishing cadence.",
-  },
-  {
-    title: "Custom & Long-Form Work",
-    description:
-      "Additional video volume, long-form podcast editing, YouTube documentaries, and complex custom animations are quoted separately.",
-  },
-  {
-    title: "Strategic Growth Focus",
-    description:
-      "Packages are designed to maximize brand authority, audience retention, and inbound lead generation. Final views, leads, and revenue depend on broader distribution and are not guaranteed.",
-  },
-  {
-    title: "Collaborative Production",
-    description:
-      "We work via streamlined communication channels with clear shoot checklists and visual references to make content creation seamless for you.",
+      "Review what is working, strengthen the creative approach, and plan the next phase.",
   },
 ];
 
@@ -249,15 +240,6 @@ export default function PricingSection() {
                         / month
                       </span>
                     </div>
-
-                    {/* Secondary Currency Indicator */}
-                    <div className="mt-2.5 flex items-center gap-2">
-                      <span className="text-[11px] font-medium px-2.5 py-1 rounded-md bg-zinc-800/80 text-zinc-300 border border-zinc-700/60">
-                        {currency === "USD"
-                          ? `India Rate: ${tier.inrPrice}/month`
-                          : `International Rate: ${tier.usdPrice}/month`}
-                      </span>
-                    </div>
                   </div>
 
                   {/* What's Included List */}
@@ -311,65 +293,97 @@ export default function PricingSection() {
           })}
         </div>
 
-        {/* Scope and Terms Container */}
+        {/* Partnership Model: Built for Consistency, Not One-Offs */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="rounded-3xl p-8 sm:p-10 bg-zinc-900/60 border border-zinc-800 backdrop-blur-xl shadow-2xl relative overflow-hidden"
+          className="rounded-3xl p-8 sm:p-12 bg-zinc-900/60 border border-zinc-800 backdrop-blur-xl shadow-2xl relative overflow-hidden"
         >
           {/* Subtle Ambient Accent */}
-          <div className="absolute top-0 right-0 w-80 h-80 bg-sky-500/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-sky-500/5 rounded-full blur-3xl pointer-events-none" />
 
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 mb-8 border-b border-zinc-800/80">
-            <div>
-              <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-sky-400 mb-1">
-                <ShieldCheck className="w-4 h-4 text-sky-400" />
-                Retainer Clarity
-              </div>
-              <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-                Scope &amp; Retainer Terms
-              </h3>
+          {/* Section Header */}
+          <div className="pb-8 mb-8 border-b border-zinc-800/80">
+            <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-sky-400 mb-3">
+              <ShieldCheck className="w-4 h-4 text-sky-400" />
+              Partnership Model
             </div>
-            <p className="text-xs sm:text-sm text-zinc-400 max-w-md">
-              Clear expectations ensure focused creative direction, rapid
-              post-production, and dependable monthly cadence.
+            <h3 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-2">
+              Built for Consistency, Not One-Offs
+            </h3>
+            <p className="text-base sm:text-lg font-serif italic text-sky-300 mb-4">
+              A minimum three-month partnership.
+            </p>
+            <p className="text-sm sm:text-base text-zinc-300 leading-relaxed max-w-3xl mb-5">
+              Meaningful content takes time. The first month is about understanding your brand, defining your direction, and building the foundation. The following months allow us to refine the storytelling, create consistency, and learn what resonates with your audience.
+            </p>
+            <div className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-sky-950/40 border border-sky-800/50 text-xs sm:text-sm text-sky-200">
+              <span className="w-2 h-2 rounded-full bg-sky-400 animate-pulse" />
+              <span>
+                All packages operate on a monthly retainer, with a{" "}
+                <strong className="text-white font-semibold">minimum commitment of three months</strong>.
+              </span>
+            </div>
+          </div>
+
+          {/* How It Works Section */}
+          <div className="mb-8">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-6 flex items-center gap-2">
+              <Layers className="w-4 h-4 text-sky-400" />
+              How It Works
+            </h4>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {PARTNERSHIP_STEPS.map((step, idx) => (
+                <div
+                  key={step.step}
+                  className={`p-6 sm:p-7 rounded-2xl flex flex-col justify-between transition-all duration-300 group ${
+                    idx === 1
+                      ? "bg-gradient-to-b from-sky-950/30 to-zinc-950/80 border border-sky-500/40 shadow-lg shadow-sky-950/20"
+                      : "bg-zinc-950/60 border border-zinc-800/80 hover:border-zinc-700"
+                  }`}
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="text-xs font-extrabold font-mono px-3 py-1 rounded-full bg-zinc-900 border border-zinc-700 text-sky-400">
+                        Month {step.step}
+                      </span>
+                      <span className="text-xs font-semibold text-zinc-400 uppercase tracking-wider">
+                        {step.phase}
+                      </span>
+                    </div>
+                    <h5 className="text-lg font-bold text-white mb-2.5 group-hover:text-sky-300 transition-colors">
+                      {step.title}
+                    </h5>
+                    <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Momentum Banner */}
+          <div className="p-4 rounded-2xl bg-gradient-to-r from-zinc-900 via-sky-950/40 to-zinc-900 border border-sky-900/40 text-center mb-8">
+            <p className="text-sm sm:text-base font-semibold text-white">
+              <span className="font-serif italic text-sky-300">One partnership.</span> Three months to build momentum.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {SCOPE_TERMS.map((term, tIdx) => (
-              <div
-                key={tIdx}
-                className="p-5 rounded-2xl bg-zinc-950/60 border border-zinc-800/80 flex flex-col gap-2 hover:border-zinc-700 transition-colors"
-              >
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-sky-400" />
-                  <h4 className="text-sm font-bold text-white tracking-wide">
-                    {term.title}
-                  </h4>
-                </div>
-                <p className="text-xs text-zinc-400 leading-relaxed">
-                  {term.description}
-                </p>
-              </div>
-            ))}
-          </div>
-
           {/* Need custom work banner */}
-          <div className="mt-8 pt-6 border-t border-zinc-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+          <div className="pt-6 border-t border-zinc-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-full bg-sky-500/10 border border-sky-400/30 flex items-center justify-center shrink-0">
                 <Info className="w-4 h-4 text-sky-400" />
               </div>
               <div>
                 <span className="text-sm font-semibold text-white block">
-                  Need custom volume, long-form podcast editing, or tailored
-                  production?
+                  Need custom volume, long-form podcast editing, or tailored production?
                 </span>
                 <span className="text-xs text-zinc-400">
-                  We customize deliverables for ambitious agencies, enterprises,
-                  and global founder roadmaps.
+                  We customize deliverables for ambitious agencies, enterprises, and global founder roadmaps.
                 </span>
               </div>
             </div>
