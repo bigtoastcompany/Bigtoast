@@ -71,7 +71,12 @@ export default function Hero() {
                 transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
                 className="text-lg md:text-xl text-zinc-300 font-normal leading-relaxed max-w-2xl"
               >
-                We craft cinematic reels, podcast clips, long-form videos, and story-driven content — helping founders, creators, and brands build distribution and visibility through content people watch, remember, and share.
+                <span className="text-white font-medium block mb-2">
+                  Helping Founders and Brands Tell Better Stories Through Content.
+                </span>
+                <span className="text-zinc-400 text-base md:text-lg block">
+                  From content strategy and scripting to creative direction and video production, we turn your ideas and expertise into content that builds recognition, earns trust, and supports business growth.
+                </span>
               </motion.p>
 
               {/* Action Buttons */}

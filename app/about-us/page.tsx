@@ -77,7 +77,7 @@ const FOUNDER_PRINCIPLES = [
 const FOUNDER_METRICS = [
   { value: "Founder", label: "Big Toast Company", sublabel: "Story-first creative studio" },
   { value: "Video", label: "Editing & Pacing", sublabel: "Cinematic post-production" },
-  { value: "Content", label: "Content Partner", sublabel: "For brand, creators & founders" },
+  { value: "Content", label: "Partner", sublabel: "For brand, creators & founders" },
   { value: "Creative", label: "Strategy & AI", sublabel: "Modern narrative workflows" },
 ];
 
@@ -96,7 +96,7 @@ export default function AboutPage() {
             transition={{ duration: 0.5 }}
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-900 border border-zinc-700 text-xs font-semibold uppercase tracking-wider text-zinc-300 mb-5"
           >
-            ABOUT BIGTOAST
+            ABOUT BIG TOAST COMPANY
           </motion.div>
 
           <motion.h1
@@ -105,20 +105,25 @@ export default function AboutPage() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-[68px] font-sans font-normal leading-[1.12] text-white mb-6 max-w-4xl"
           >
-            We Are a Creative Studio for Video, Digital Experiences{" "}
+            We Turn Ideas Into Stories Worth{" "}
             <span className="font-serif italic bg-gradient-to-r from-zinc-300 via-sky-300 to-cyan-400 bg-clip-text text-transparent">
-              &amp; Technology
+              Paying Attention To.
             </span>
           </motion.h1>
 
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-zinc-300 text-base sm:text-lg md:text-xl max-w-3xl leading-relaxed"
+            className="text-zinc-300 text-base sm:text-lg md:text-xl max-w-3xl leading-relaxed flex flex-col gap-3"
           >
-            BigToast combines cinematic video editing, AI-assisted content production, and digital development to help brands and creators tell better stories and build stronger online experiences.
-          </motion.p>
+            <p>
+              Big Toast Company is a storytelling-focused content studio helping founders, creators, and brands turn their ideas, expertise, and experiences into compelling content through strategy, creative direction, video production, and AI-powered workflows.
+            </p>
+            <p className="text-zinc-400 text-sm sm:text-base">
+              We bring together human insight and creative technology to build brands people recognize, trust, and remember.
+            </p>
+          </motion.div>
         </div>
 
         {/* Subtle Scroll Hint */}

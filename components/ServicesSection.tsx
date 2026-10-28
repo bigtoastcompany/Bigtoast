@@ -7,45 +7,28 @@ import PrimaryButton from "./PrimaryButton";
 
 export const SERVICES = [
   {
-    id: "reels",
-    tabId: "reels",
+    id: "video",
+    tabId: "video",
     number: "01",
-    category: "Short-Form Video",
-    title: "Story-Driven Reels & Short-Form Content",
+    category: "Short & Long-Form Content",
+    title: "Story-Driven Short-Form and Long-Form Content",
     icon: Film,
     description:
-      "We turn raw footage and ideas into engaging Reels, TikToks, and YouTube Shorts with strong hooks, thoughtful pacing, and story-led editing.",
-    deliverableHighlight: "Story-Driven Reels & Short-Form Content Packages",
-    timeline: "2 - 4 Days",
+      "From high-retention Reels, TikToks, and YouTube Shorts to cinematic founder stories, brand documentaries, and YouTube films — we craft compelling narratives with dynamic pacing, rhythm-synced cuts, and broadcast-grade editing across every format.",
+    deliverableHighlight: "Story-Driven Short-Form and Long-Form Content Packages",
+    timeline: "2 Days - 2 Weeks",
     features: [
-      "Hook-Driven Editing & Audience Retention",
-      "Rhythm-Based Cuts & Audio Sync",
-      "Motion Graphics & Visual Storytelling",
+      "Hook-Driven Reels, TikToks & YouTube Shorts",
+      "Cinematic Long-Form Video & Documentary Editing",
+      "Rhythm-Based Cuts, Multi-Cam & Audio Cleanup",
+      "Motion Graphics, Visual Storytelling & Color Grading",
     ],
-    techStack: ["Premiere Pro", "After Effects", "CapCut Pro", "DaVinci Resolve"],
-  },
-  {
-    id: "longform",
-    tabId: "longform",
-    number: "02",
-    category: "Long-Form Video",
-    title: "Cinematic Long-Form Video Editing",
-    icon: Film,
-    description:
-      "From founder stories and brand films to YouTube videos, we shape footage into compelling narratives through thoughtful structure, pacing, and cinematic editing.",
-    deliverableHighlight: "Cinematic Narrative & Broadcast-Grade Edits",
-    timeline: "1 - 2 Weeks",
-    features: [
-      "Narrative Structure & Pacing",
-      "Multi-Camera Editing & Audio Cleanup",
-      "Color Grading & Visual Enhancement",
-    ],
-    techStack: ["Premiere Pro", "DaVinci Resolve", "After Effects", "Audition"],
+    techStack: ["Premiere Pro", "DaVinci Resolve", "After Effects", "CapCut Pro", "Audition"],
   },
   {
     id: "podcast",
     tabId: "podcast",
-    number: "03",
+    number: "02",
     category: "Podcast Production",
     title: "Podcast Editing & Storytelling",
     icon: Mic,
@@ -61,27 +44,9 @@ export const SERVICES = [
     techStack: ["Audition", "Descript", "Riverside.fm", "Premiere Pro"],
   },
   {
-    id: "ai",
-    tabId: "production",
-    number: "04",
-    category: "AI-Assisted Content",
-    title: "AI-Assisted Creative Production",
-    icon: Sparkles,
-    description:
-      "We use AI-assisted workflows to support creative production, including voice, avatar, and generative content workflows where they fit the story.",
-    deliverableHighlight: "AI-Assisted Video & Creative Production Workflows",
-    timeline: "2 - 4 Days",
-    features: [
-      "AI Voice & Avatar Workflows",
-      "Generative Content Production",
-      "AI-Assisted Creative Workflows",
-    ],
-    techStack: ["Runway ML", "HeyGen", "ElevenLabs", "Midjourney"],
-  },
-  {
     id: "strategy",
     tabId: "strategy",
-    number: "05",
+    number: "03",
     category: "Content Strategy",
     title: "Content Strategy & Story Development",
     icon: Globe,
@@ -99,7 +64,7 @@ export const SERVICES = [
   {
     id: "production",
     tabId: "production",
-    number: "06",
+    number: "04",
     category: "Creative Production",
     title: "Creative Direction & Content Production",
     icon: Code2,
@@ -114,30 +79,11 @@ export const SERVICES = [
     ],
     techStack: ["Premiere Pro", "After Effects", "Figma", "Frame.io"],
   },
-  {
-    id: "repurposing",
-    tabId: "strategy",
-    number: "07",
-    category: "Content Repurposing",
-    title: "One Story. Multiple Content Formats.",
-    icon: Smartphone,
-    description:
-      "We adapt strong ideas and existing footage into different content formats, helping founders and brands make more of the stories they already have.",
-    deliverableHighlight: "Multi-Platform Repurposed Content Packages",
-    timeline: "3 - 5 Days",
-    features: [
-      "Long-Form to Short-Form Content",
-      "Platform-Native Content Adaptation",
-      "Multi-Format Content Assets",
-    ],
-    techStack: ["Premiere Pro", "CapCut Pro", "After Effects", "Canva Pro"],
-  },
 ];
 
 const TABS = [
   { id: "all", label: "All Services" },
-  { id: "reels", label: "Reels & Short-Form" },
-  { id: "longform", label: "Long-Form Video" },
+  { id: "video", label: "Reels & Long-Form Content" },
   { id: "podcast", label: "Podcast" },
   { id: "strategy", label: "Content Strategy" },
   { id: "production", label: "Creative Production" },
@@ -332,11 +278,7 @@ export default function ServicesSection({ singleColumn = false, hideHeader = fal
     );
   }
 
-  // HOMEPAGE VIEW: SCREEN-FITTED SECTIONS WITH 1-LINE TABS & 1-LINE SQUARE CARDS PER SCROLL SECTION
-  const row1Services = activeTab === "all" ? SERVICES.slice(0, 2) : filteredServices.slice(0, 2);
-  const row2Services = activeTab === "all" ? SERVICES.slice(2, 4) : [];
-  const row3Services = activeTab === "all" ? SERVICES.slice(4, 6) : [];
-  const row4Services = activeTab === "all" ? SERVICES.slice(6, 7) : [];
+  // HOMEPAGE VIEW: SCREEN-FITTED SECTIONS WITH 1-LINE TABS & GRID OF CARDS
 
   return (
     <section className="pt-24 pb-20 relative bg-transparent border-t border-zinc-800/80">
@@ -402,18 +344,18 @@ export default function ServicesSection({ singleColumn = false, hideHeader = fal
                 <ServiceCard key={service.id} service={service} idx={idx} />
               ))}
 
-              {/* If "all", complete the grid with the Custom Solutions card */}
+              {/* If "all", complete the grid with the Custom Solutions card spanning both columns */}
               {activeTab === "all" && (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.1 }}
-                  className="glass-card rounded-2xl lg:rounded-3xl p-5 lg:p-6 flex flex-col justify-between group border border-zinc-800 hover:border-zinc-700 transition-all duration-300 h-full bg-gradient-to-br from-zinc-900/90 via-zinc-900/50 to-zinc-800/40"
+                  className="md:col-span-2 glass-card rounded-2xl lg:rounded-3xl p-6 lg:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 group border border-zinc-800 hover:border-zinc-700 transition-all duration-300 bg-gradient-to-br from-zinc-900/90 via-zinc-900/50 to-zinc-800/40 shadow-[0_12px_40px_rgba(0,0,0,0.4)]"
                 >
-                  <div>
-                    <div className="flex items-center justify-between mb-3.5">
-                      <div className="w-11 h-11 rounded-xl bg-zinc-800/90 border border-zinc-700/80 flex items-center justify-center text-sky-400">
+                  <div className="max-w-xl">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-10 h-10 rounded-xl bg-zinc-800/90 border border-zinc-700/80 flex items-center justify-center text-sky-400">
                         <Sparkles className="w-5 h-5" />
                       </div>
                       <span className="text-xs font-semibold text-sky-400 bg-sky-950/50 border border-sky-800/60 px-3 py-1 rounded-full">
@@ -425,11 +367,13 @@ export default function ServicesSection({ singleColumn = false, hideHeader = fal
                       Need a Tailored Content Package?
                     </h3>
 
-                    <p className="text-zinc-400 text-xs md:text-sm leading-relaxed mb-3.5">
+                    <p className="text-zinc-400 text-xs md:text-sm leading-relaxed">
                       We combine storytelling, video editing, podcast content, and creative strategy around your goals, content needs, and production workflow.
                     </p>
+                  </div>
 
-                    <div className="space-y-2 mb-4">
+                  <div className="flex flex-col sm:flex-row md:flex-col lg:flex-row items-start sm:items-center md:items-start lg:items-center gap-4 lg:gap-8">
+                    <div className="space-y-2">
                       <div className="flex items-center gap-2 text-xs text-zinc-300">
                         <CheckCircle2 className="w-3.5 h-3.5 text-sky-400 shrink-0" />
                         <span>Flexible Content Packages</span>
@@ -443,11 +387,11 @@ export default function ServicesSection({ singleColumn = false, hideHeader = fal
                         <span>Direct Creative Collaboration</span>
                       </div>
                     </div>
-                  </div>
 
-                  <div className="pt-3 border-t border-zinc-800/80 flex items-center justify-between">
-                    <span className="text-[11px] text-zinc-400 font-medium">Bespoke Strategy & Scope</span>
-                    <PrimaryButton text="Book a Call" href="/contact-us" showArrow={true} />
+                    <div className="pt-2 sm:pt-0 flex flex-col items-start sm:items-end gap-2 shrink-0">
+                      <span className="text-[11px] text-zinc-400 font-medium">Bespoke Strategy & Scope</span>
+                      <PrimaryButton text="Book a Call" href="/contact-us" showArrow={true} />
+                    </div>
                   </div>
                 </motion.div>
               )}
