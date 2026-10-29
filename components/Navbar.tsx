@@ -60,7 +60,7 @@ export default function Navbar() {
                 />
               </div>
               <span className="text-xl sm:text-2xl font-serif italic font-normal tracking-normal bg-gradient-to-r from-zinc-300 via-sky-300 to-cyan-400 bg-clip-text text-transparent drop-shadow-sm">
-                BigToast.
+                BigToastCompany
               </span>
             </Link>
 

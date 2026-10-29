@@ -2,42 +2,66 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowUpRight, ChevronLeft, ChevronRight, Play } from "lucide-react";
 import PrimaryButton from "./PrimaryButton";
 
-const PROJECTS = [
+interface ProjectItem {
+  id: string;
+  title: string;
+  category: string;
+  year: string;
+  image: string;
+  link: string;
+}
+
+const PROJECTS: ProjectItem[] = [
   {
-    id: "founder-brand-content",
-    title: "Founder Stories & Brand Content",
-    category: "FOUNDER & BRAND CONTENT",
-    year: "2026",
-    image: "/images/project_founder_stories.jpg",
-    link: "/project",
-  },
-  {
-    id: "podcast-stories-clips",
-    title: "Podcast Stories & Short-Form Clips",
+    id: "good-gobar-podcast-anjum",
+    title: "The Good Gobar Show — Anjum Chopra",
     category: "PODCAST EDITING & STORYTELLING",
     year: "2026",
-    image: "/images/project_podcast_studio.jpg",
+    image: "https://img.youtube.com/vi/djm31XZCVn8/maxresdefault.jpg",
     link: "/project",
   },
   {
-    id: "novabrand-film",
-    title: "NovaBrand Corporate Film",
-    category: "Long-Form Brand Film",
-    year: "2025",
-    image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1200&auto=format&fit=crop",
+    id: "trailer-one-podcast",
+    title: "A New Idea of India — Trailer ONE",
+    category: "PODCAST & BRAND DOCUMENTARY",
+    year: "2026",
+    image: "/images/thumb_trailer_one.jpg",
     link: "/project",
   },
   {
-    id: "ai-video-campaign",
-    title: "AI Avatar Ad Campaign",
-    category: "AI Video Generation",
+    id: "yanisa-ai-ad-campaign",
+    title: "Yanisa — AI Avatar Ad Campaign",
+    category: "AI FILMS & VIDEO CAMPAIGNS",
+    year: "2026",
+    image: "/images/thumb_yanisa_ad.jpg",
+    link: "/project",
+  },
+  {
+    id: "yanisa-podcast-brand-film",
+    title: "Yanisa — 5000 kg/Day Brand Film",
+    category: "FULL EPISODE PODCAST & BRAND FILM",
+    year: "2026",
+    image: "/images/thumb_tiptop.jpg",
+    link: "/project",
+  },
+  {
+    id: "good-gobar-podcast-kishore",
+    title: "How Kishore Kumar Proved Every Director Wrong",
+    category: "PODCAST PRODUCTION & STORYTELLING",
+    year: "2026",
+    image: "https://img.youtube.com/vi/a6x-h0YBbRg/maxresdefault.jpg",
+    link: "/project",
+  },
+  {
+    id: "yanisa-event-keynote",
+    title: "Yanisa — Event & Keynote Showcase",
+    category: "BRAND DOCUMENTARY & EVENT FILM",
     year: "2025",
-    image: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/thumb_event_promo.jpg",
     link: "/project",
   },
 ];
@@ -137,14 +161,20 @@ export default function ProjectsSection() {
                 >
                   <Link href={project.link} className="group block touch-manipulation">
                     <div className="glass-card rounded-2xl lg:rounded-3xl overflow-hidden p-3.5 lg:p-4 border border-zinc-800 group-hover:border-zinc-600 transition-all duration-300 shadow-[0_12px_40px_rgba(0,0,0,0.4)]">
-                      <div className="relative aspect-[16/9.5] max-h-[300px] rounded-xl lg:rounded-2xl overflow-hidden mb-3.5">
-                        <Image
+                      <div className="relative aspect-[16/9.5] max-h-[300px] rounded-xl lg:rounded-2xl overflow-hidden mb-3.5 bg-zinc-950">
+                        <img
                           src={project.image}
                           alt={project.title}
-                          fill
-                          className="object-cover group-hover:scale-105 transition-transform duration-700"
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/30 opacity-70 group-hover:opacity-50 transition-opacity" />
+
+                        {/* Centered Play Button Overlay */}
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <div className="w-14 h-14 rounded-full bg-white/15 backdrop-blur-md border border-white/30 flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:bg-sky-500/80 group-hover:border-sky-400 transition-all duration-300">
+                            <Play className="w-6 h-6 text-white fill-white ml-0.5" />
+                          </div>
+                        </div>
 
                         {/* Floating Corner Arrow Badge */}
                         <div className="absolute top-3 right-3 lg:top-4 lg:right-4 w-10 h-10 lg:w-11 lg:h-11 rounded-full bg-zinc-900/90 backdrop-blur-md border border-zinc-700 flex items-center justify-center text-white group-hover:bg-zinc-800 group-hover:border-zinc-500 group-hover:scale-110 transition-all duration-300">

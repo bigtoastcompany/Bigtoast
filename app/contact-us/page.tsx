@@ -18,7 +18,7 @@ import FAQSection from "@/components/FAQSection";
 const SERVICE_OPTIONS = [
   {
     value: "Story-Driven Short-Form and Long-Form Content",
-    title: "Reels & Long-Form Content",
+    title: "Short & Long-Form Content",
     subtitle: "High-retention vertical edits, brand documentaries & YouTube films",
     tag: "Content",
   },

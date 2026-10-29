@@ -83,7 +83,7 @@ export const SERVICES = [
 
 const TABS = [
   { id: "all", label: "All Services" },
-  { id: "video", label: "Reels & Long-Form Content" },
+  { id: "video", label: "Short & Long-Form Content" },
   { id: "podcast", label: "Podcast" },
   { id: "strategy", label: "Content Strategy" },
   { id: "production", label: "Creative Production" },

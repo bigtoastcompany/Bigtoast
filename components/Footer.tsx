@@ -36,7 +36,7 @@ export default function Footer() {
                 />
               </div>
               <span className="text-xl md:text-2xl font-serif italic font-normal tracking-normal bg-gradient-to-r from-zinc-300 via-sky-300 to-cyan-400 bg-clip-text text-transparent">
-                BigToast.
+                BigToastCompany
               </span>
             </Link>
             <p className="text-zinc-400 text-xs md:text-sm max-w-sm leading-relaxed">

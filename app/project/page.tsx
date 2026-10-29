@@ -14,6 +14,8 @@ import {
   Smartphone,
   Maximize2,
   X,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import CTABanner from "@/components/CTABanner";
 import PrimaryButton from "@/components/PrimaryButton";
@@ -22,7 +24,7 @@ import PrimaryButton from "@/components/PrimaryButton";
 
 const CATEGORIES = [
   { id: "all", label: "All Projects" },
-  { id: "reels", label: "Short Form" },
+  { id: "reels", label: "Founder Stories" },
   { id: "longvideo", label: "Podcast Work" },
   { id: "aivideo", label: "AI Projects" },
   { id: "website", label: "Websites" },
@@ -31,26 +33,191 @@ const CATEGORIES = [
 ];
 
 const PROJECTS = [
+  { id: "re-snitch", category: "reels", title: "Snitch — Fast-Paced D2C Drop", client: "Snitch", year: "2026", file: "/snitch.mp4", tag: "Fashion Reel", description: "High-retention menswear campaign reel for Snitch featuring rapid-fire cuts, streetwear energy, and punchy transitions." },
+  { id: "re-divya-01", category: "reels", title: "Divya — Perspectives on Growth", client: "Divya", year: "2026", file: "/divya 1.mp4", tag: "Creator Story", description: "Engaging personal brand short video highlighting mindset, focus, and modern creator lessons." },
+  { id: "re-mokobara", category: "reels", title: "Mokobara — Going Places", client: "Mokobara", year: "2026", file: "/mokobara.mp4", tag: "D2C Brand Film", description: "Premium cinematic commercial reel for Mokobara travel gear with seamless whip-pans and aspirational energy." },
+  { id: "re-karishma-01", category: "reels", title: "Karishma — Defining Moments", client: "Karishma", year: "2026", file: "/karishma 1.mp4", tag: "Lifestyle Reel", description: "Vibrant lifestyle reel with punchy transitions, trending sound design, and clean typography." },
+  { id: "re-arezou", category: "reels", title: "Arezou — Pure Botanical Luxury", client: "Arezou", year: "2026", file: "/Arezou.mp4", tag: "Beauty Campaign", description: "Sensory beauty & skincare film with delicate lighting, macro textures, and calming sound atmosphere." },
+  { id: "re-shrishti-01", category: "reels", title: "Shrishti — Crafting Your Edge", client: "Shrishti", year: "2026", file: "/Shrishti 1.mp4", tag: "Founder Story", description: "Thought-provoking short format discussion on founder resilience, market differentiation, and authentic value." },
+  { id: "re-faceoil", category: "reels", title: "Best Face Oil — Product Showcase", client: "D2C Brand", year: "2026", file: "/Best face oil.mp4", tag: "Product Reel", description: "High-impact beauty & skincare product reel with macro detail shots and aesthetic color grade." },
   { id: "re-01", category: "reels", title: "Why People Feel They Are Not Successful", client: "Short Form", year: "2026", file: "/why people feel they are not successful.mp4", tag: "Motivation Reel", description: "Deep dive short-form reel on mindset, growth, and overcoming career plateau." },
+  { id: "re-superyou", category: "reels", title: "Superyou — Elevate Everyday", client: "Superyou", year: "2026", file: "/superyou.mp4", tag: "Brand Campaign", description: "Cinematic commercial reel celebrating health, wellbeing, and vibrant lifestyle choices." },
+  { id: "re-divya-02", category: "reels", title: "Divya — Embracing the Journey", client: "Divya", year: "2026", file: "/divya 2.mp4", tag: "Creator Story", description: "Dynamic short reel featuring candid life reflections, sharp pacing, and relatable messaging." },
+  { id: "re-metrogini", category: "reels", title: "Metrogini — Urban Pulse", client: "Metrogini", year: "2026", file: "/Metrogini.mp4", tag: "Commercial Reel", description: "High-octane urban commercial cut with kinetic typography, beat synchronization, and slick sound design." },
+  { id: "re-karishma-02", category: "reels", title: "Karishma — Daily Creative Flow", client: "Karishma", year: "2026", file: "/karishma 2.mp4", tag: "Lifestyle Reel", description: "Snappy daily routine and lifestyle video formatted for maximum watch time and social shares." },
+  { id: "re-18", category: "reels", isReel: true, title: "Yanisa — Dubai Tower Showcase", client: "Yanisa Media", year: "2026", file: "/DUBAI TOWER.I.mp4", tag: "Brand Reel", description: "Architectural vertical showcase featuring Dubai Tower visuals synced to soundtrack." },
+  { id: "re-shrishti-02", category: "reels", title: "Shrishti — Creative Consistency", client: "Shrishti", year: "2026", file: "/shrishti 2.mp4", tag: "Founder Story", description: "Fast-moving insights reel breaking down daily creative habits and sustainable output." },
+  { id: "re-chapter-02", category: "reels", title: "Chapter 2 — The Next Horizon", client: "Creator Brand", year: "2026", file: "/chapter 2.mp4", tag: "Narrative Reel", description: "Compelling narrative short form video exploring life chapters, perspective shifts, and personal reinvention." },
   { id: "re-02", category: "reels", title: "Talking to Strangers", client: "Short Form", year: "2026", file: "/Talking to strangers (1).mp4", tag: "Social Reel", description: "Engaging streetwear / interview style short form video cut." },
-  { id: "re-03", category: "reels", title: "Rat Race", client: "Short Form", year: "2026", file: "/rat race.mp4", tag: "Mindset Reel", description: "Fast-paced commentary reel exploring modern lifestyle & career hustle." },
-  { id: "re-04", category: "reels", title: "Intelligent Decision", client: "Short Form", year: "2026", file: "/Intelligent Decision.mp4", tag: "Business Reel", description: "High-impact business insights reel with crisp typography and motion graphics." },
-  { id: "re-05", category: "reels", title: "End of Life", client: "Short Form", year: "2026", file: "/end of life.mp4", tag: "Storytelling Reel", description: "Cinematic short story reel with atmospheric sound design and color grade." },
-  { id: "re-06", category: "reels", title: "Brihas Quotient", client: "Short Form", year: "2026", file: "/brihas-qoutient-wc.mp4", tag: "Promo Reel", description: "Dynamic brand feature reel with beat sync cuts and custom graphics." },
-  { id: "re-07", category: "reels", title: "Rapid Fire", client: "Short Form", year: "2026", file: "/rapid-fire-.mp4", tag: "Q&A Reel", description: "High-energy Q&A rapid fire format reel built for social media engagement." },
-  { id: "re-08", category: "reels", title: "Brihas Promo 1", client: "Short Form", year: "2026", file: "/brihas-promo 1.mp4", tag: "Brand Reel", description: "Polished promotional reel highlighting product features and brand aesthetic." },
-  { id: "re-09", category: "reels", title: "Brihas Promo 2", client: "Short Form", year: "2026", file: "/brihas-promo-2.mp4", tag: "Brand Reel", description: "Follow-up brand reel cut with rhythm sync and punchy sound design." },
+  { id: "re-divya-03", category: "reels", title: "Divya — Finding Your Focus", client: "Divya", year: "2026", file: "/divya 3.mp4", tag: "Creator Story", description: "High-retention reel exploring priority management, career clarity, and authentic voice." },
+  { id: "re-stories", category: "reels", title: "Stories That Resonate", client: "Big Toast Studio", year: "2026", file: "/Stories.mov", tag: "Brand Narrative", description: "Visual manifesto reel exploring the emotional power of human storytelling in modern digital media." },
   { id: "re-10", category: "reels", title: "Best Date", client: "Short Form", year: "2026", file: "/best date.mp4", tag: "Lifestyle Reel", description: "Vibrant lifestyle reel with smooth camera pans and trending audio." },
-  { id: "re-11", category: "reels", title: "Dads", client: "Short Form", year: "2026", file: "/dads.mp4", tag: "Family Reel", description: "Relatable humor and family storytelling short form video format." },
+  { id: "re-logo", category: "reels", title: "Big Toast — Logo Identity & Motion", client: "Brand Identity", year: "2026", file: "/logo.mov", tag: "Motion Design", description: "Animated visual brand ident showcasing fluid motion, glass textures, and sound design." },
+  { id: "re-06", category: "reels", title: "Brihas Quotient", client: "Short Form", year: "2026", file: "/brihas-qoutient-wc.mp4", tag: "Promo Reel", description: "Dynamic brand feature reel with beat sync cuts and custom graphics." },
   { id: "re-12", category: "reels", title: "Fox 1 Fin", client: "Short Form", year: "2026", file: "/fox 1 fin.mp4", tag: "Cinematic Reel", description: "Cinematic vertical edit with dynamic lighting and atmospheric grade." },
-  { id: "re-13", category: "reels", title: "Reel 4 BR", client: "Short Form", year: "2026", file: "/Reel 4 BR.mp4", tag: "Creative Reel", description: "Creative visual sequence with seamless whip-pan transitions." },
-  { id: "re-14", category: "reels", title: "Reel 8 BR", client: "Short Form", year: "2026", file: "/Reel 8 BR.mp4", tag: "Creative Reel", description: "High-octane montage reel with frame-by-frame sound effects." },
-  { id: "re-15", category: "reels", title: "Connect With Yourself", client: "Short Form", year: "2026", file: "/connect-with-yourself.mp4", tag: "Mindset Reel", description: "Reflective short-form reel on self-connection and personal clarity." },
+  { id: "re-20", category: "reels", isReel: true, title: "Yanisa — GAAS Social Reel", client: "Yanisa Media", year: "2026", file: "/gaas.mp4", tag: "Social Reel", description: "High-energy social reel with bold typography, color pop effects, and snappy edits." },
+  { id: "re-03", category: "reels", title: "Rat Race", client: "Short Form", year: "2026", file: "/rat race.mp4", tag: "Mindset Reel", description: "Fast-paced commentary reel exploring modern lifestyle & career hustle." },
+  { id: "re-17", category: "reels", isReel: true, title: "Yanisa — Beatsync Reel", client: "Yanisa Media", year: "2026", file: "/beatsync.mp4", tag: "Beat Sync Reel", description: "Precision beat-synced reel with frame-perfect cuts timed to music drops." },
+  { id: "re-11", category: "reels", title: "Dads", client: "Short Form", year: "2026", file: "/dads.mp4", tag: "Family Reel", description: "Relatable humor and family storytelling short form video format." },
   { id: "re-16", category: "reels", title: "Stuck", client: "Short Form", year: "2026", file: "/Stuck.mp4", tag: "Motivation Reel", description: "Dynamic short video on overcoming creative and mental blocks." },
+  { id: "re-13", category: "reels", title: "Reel 4 BR", client: "Short Form", year: "2026", file: "/Reel 4 BR.mp4", tag: "Creative Reel", description: "Creative visual sequence with seamless whip-pan transitions." },
+  { id: "re-04", category: "reels", title: "Intelligent Decision", client: "Short Form", year: "2026", file: "/Intelligent Decision.mp4", tag: "Business Reel", description: "High-impact business insights reel with crisp typography and motion graphics." },
+  { id: "re-21", category: "reels", isReel: true, title: "Yanisa — Lata Mangeshkar Tribute", client: "Yanisa Media", year: "2026", file: "/lata mangeshkar new.mp4", tag: "Tribute Reel", description: "Emotional tribute reel with soft color grading, archival-style edits, and subtle overlays." },
+  { id: "re-15", category: "reels", title: "Connect With Yourself", client: "Short Form", year: "2026", file: "/connect-with-yourself.mp4", tag: "Mindset Reel", description: "Reflective short-form reel on self-connection and personal clarity." },
+  { id: "re-08", category: "reels", title: "Brihas Promo 1", client: "Short Form", year: "2026", file: "/brihas-promo 1.mp4", tag: "Brand Reel", description: "Polished promotional reel highlighting product features and brand aesthetic." },
+  { id: "re-19", category: "reels", isReel: true, title: "Yanisa — Event Promo Reel", client: "Yanisa Media", year: "2026", file: "/EVENT PROMO.mp4", tag: "Event Reel", description: "Vertical event highlight reel with high-energy cuts and launch announcements." },
+  { id: "re-07", category: "reels", title: "Rapid Fire", client: "Short Form", year: "2026", file: "/rapid-fire-.mp4", tag: "Q&A Reel", description: "High-energy Q&A rapid fire format reel built for social media engagement." },
+  { id: "re-09", category: "reels", title: "Brihas Promo 2", client: "Short Form", year: "2026", file: "/brihas-promo-2.mp4", tag: "Brand Reel", description: "Follow-up brand reel cut with rhythm sync and punchy sound design." },
+  { id: "re-22", category: "reels", isReel: true, title: "Yanisa — Overtime Reel", client: "Yanisa Media", year: "2026", file: "/OVERTIME_.mp4", tag: "Motivation Reel", description: "Late-night hustle themed reel with moody grading and motivational text overlays." },
+  { id: "re-14", category: "reels", title: "Reel 8 BR", client: "Short Form", year: "2026", file: "/Reel 8 BR.mp4", tag: "Creative Reel", description: "High-octane montage reel with frame-by-frame sound effects." },
+  { id: "re-05", category: "reels", title: "End of Life", client: "Short Form", year: "2026", file: "/end of life.mp4", tag: "Storytelling Reel", description: "Cinematic short story reel with atmospheric sound design and color grade." },
   { id: "lv-01", category: "longvideo", title: "Yanisa — Podcast & Brand Film", client: "Yanisa Media", year: "2026", duration: "48:00", tag: "Podcast Video", file: "/Copy of TRAILER 1 tiptop.mp4", description: "Full episode podcast edit & brand film with multi-cam switching and custom sound design." },
   { id: "lv-02", category: "longvideo", title: "Yanisa — Event & Keynote Reel", client: "Yanisa Media", year: "2025", duration: "12:40", tag: "Brand Documentary", file: "/Copy of event promo final.mp4", description: "High-energy event documentary and keynote recording with lower-thirds and color grade." },
+  {
+    id: "lv-03",
+    category: "longvideo",
+    title: "Yanisa — Podcast Trailer ONE",
+    client: "Yanisa Media",
+    year: "2026",
+    duration: "1:59",
+    tag: "Podcast Trailer",
+    file: "/trailer ONE.mov",
+    description: "Cinematic podcast teaser trailer featuring in-depth dialogue and multi-cam studio production.",
+  },
+  {
+    id: "lv-yt-01",
+    category: "longvideo",
+    title: "The WILDEST Secrets That Made Couples 10X BETTER In Bed!",
+    client: "The Good Gobar Show",
+    year: "2026",
+    tag: "Podcast Episode",
+    externalUrl: "https://youtu.be/5PHp4CA5GTY?si=doQ4xX_1RD4Ru-D-",
+    youtubeId: "5PHp4CA5GTY",
+    description: "Deep dive relationship and intimacy conversation featuring candid relationship insights and expert guidance.",
+  },
+  {
+    id: "lv-yt-02",
+    category: "longvideo",
+    title: "How Kishore Kumar Proved Every Music Director Wrong",
+    client: "The Good Gobar Show",
+    year: "2026",
+    tag: "Podcast Episode",
+    externalUrl: "https://youtu.be/a6x-h0YBbRg?si=xupP9aEDbxq7APE9",
+    youtubeId: "a6x-h0YBbRg",
+    description: "Untold struggles, triumphs, and the legendary journey of Kishore Kumar with storyteller Gaurav Sharma.",
+  },
+  {
+    id: "lv-yt-03",
+    category: "longvideo",
+    title: "Hidden Struggles of Boys During Puberty",
+    client: "The Good Gobar Show",
+    year: "2026",
+    tag: "Podcast Episode",
+    externalUrl: "https://youtu.be/Al-eus6jPGc?si=OgeRRjSZdCJgZiXL",
+    youtubeId: "Al-eus6jPGc",
+    description: "An insightful discussion with Anju Kish breaking down puberty, emotional changes, and teenage growth.",
+  },
+  {
+    id: "lv-yt-04",
+    category: "longvideo",
+    title: "Why India Kept Losing World Cups? Anjum Chopra Unfiltered",
+    client: "The Good Gobar Show",
+    year: "2026",
+    tag: "Podcast Episode",
+    externalUrl: "https://youtu.be/djm31XZCVn8?si=U9x1M-jYq_9DCiv9",
+    youtubeId: "djm31XZCVn8",
+    description: "Former Indian women's cricket captain Anjum Chopra shares raw, unfiltered insights into cricket and elite performance.",
+  },
+  {
+    id: "lv-yt-05",
+    category: "longvideo",
+    title: "Will AI Replace Sales Jobs? Truth No One Tells",
+    client: "The Good Gobar Show",
+    year: "2026",
+    tag: "Podcast Episode",
+    externalUrl: "https://youtu.be/OF8jW_B2XD8?si=tXyn-wZ4gusc7sEM",
+    youtubeId: "OF8jW_B2XD8",
+    description: "The reality of Artificial Intelligence disrupting sales careers, modern revenue generation, and future-proof skills.",
+  },
+  {
+    id: "lv-yt-06",
+    category: "longvideo",
+    title: "How Coworking Spaces ACTUALLY Make Money",
+    client: "The Good Gobar Show",
+    year: "2026",
+    tag: "Podcast Episode",
+    externalUrl: "https://youtu.be/ToXu4kS6Wnk?si=ArjKvSTcTe1lbqCc",
+    youtubeId: "ToXu4kS6Wnk",
+    description: "Uncovering the business models, unit economics, and hidden revenue streams powering modern coworking spaces.",
+  },
+  {
+    id: "lv-yt-07",
+    category: "longvideo",
+    title: "A Psychologist's Take on Modern Dating & Relationship Expectations",
+    client: "Desirable Podcast",
+    year: "2026",
+    tag: "Podcast Episode",
+    externalUrl: "https://youtu.be/KCwuChZvsFM?si=d6W7S6q1c01SjdYj",
+    youtubeId: "KCwuChZvsFM",
+    description: "Clinical psychologist Dr. Orion Taraban delves into modern dating dynamics, relationship psychology, and emotional expectations.",
+  },
+  {
+    id: "lv-yt-08",
+    category: "longvideo",
+    title: "Delhi Air Pollution: The Scientific Reality & Solutions",
+    client: "Science & Policy Podcast",
+    year: "2026",
+    tag: "Podcast Episode",
+    externalUrl: "https://youtu.be/NfIQCJQdvuI?si=G23G2pFAzdOf_aVs",
+    youtubeId: "NfIQCJQdvuI",
+    description: "Aerosol and climate researcher Dr. Sachin D. Ghude breaks down the science behind winter smog, stubble burning, and long-term air solutions.",
+  },
+  {
+    id: "lv-yt-09",
+    category: "longvideo",
+    title: "Before You Get Married, Watch This — Modern Indian Marriage",
+    client: "The Journey Within",
+    year: "2026",
+    tag: "Podcast Episode",
+    externalUrl: "https://youtu.be/2xpSTxk1Yqg?si=DVnv7lVPhZiWJdKu",
+    youtubeId: "2xpSTxk1Yqg",
+    description: "Host Shobha Rana and psychologist Dr. Madhumati Singh discuss modern relationships, emotional maturity, and navigating marital expectations.",
+  },
+  {
+    id: "lv-yt-10",
+    category: "longvideo",
+    title: "The Biggest Regret of Every Dying Person",
+    client: "Life Unwired • Brihas AI",
+    year: "2026",
+    tag: "Podcast Episode",
+    externalUrl: "https://youtu.be/scboQImHFfs?si=fRYVMLBfvdDlBC17",
+    youtubeId: "scboQImHFfs",
+    description: "Dr. Sunny Garg & Rahul Vij explore life's deepest lessons, mortality, clarity of purpose, and avoiding lifelong regret.",
+  },
+  {
+    id: "lv-yt-11",
+    category: "longvideo",
+    title: "Ancient Water Manifestation Practice & Subconscious Power",
+    client: "Dr. Karishma Ahuja",
+    year: "2026",
+    tag: "Mindset & Wellness",
+    externalUrl: "https://youtu.be/z0TzZ0209Zo?si=vgdLpCP2Ohej4GIt",
+    youtubeId: "z0TzZ0209Zo",
+    description: "Dr. Karishma Ahuja shares emotional transformation techniques, mindfulness principles, and subconscious affirmation practices.",
+  },
   { id: "ai-01", category: "aivideo", title: "Yanisa — AI Avatar Ad Campaign", client: "Yanisa Media", year: "2026", duration: "0:30", tag: "AI Avatar", file: "/yanisa AI ad final.mp4", description: "Synthetic AI voiceover integration, AI avatar presentation, and dynamic product callouts." },
   { id: "ai-02", category: "aivideo", title: "Yanisa — AI Generative Content Film", client: "Yanisa Media", year: "2026", duration: "0:45", tag: "Generative AI Film", file: "/AI content film.mp4", description: "AI text-to-video scene generation, visual background extensions, and futuristic overlays." },
+  { id: "ai-snneh-01", category: "aivideo", isReel: true, title: "Snneh — AI Workflow & Synthesis (Pt. 1)", client: "Snneh AI", year: "2026", duration: "1:23", file: "/snneh 1.mp4", tag: "AI Creator Reel", description: "Next-gen AI content creation, digital voiceover integration, and dynamic visual narrative." },
+  { id: "ai-reel-05", category: "aivideo", isReel: true, title: "Yanisa — AI Agents Reel", client: "Yanisa Media", year: "2026", file: "/AI AGENTS.mp4", tag: "AI Content Reel", description: "AI-themed short-form content reel with futuristic motion graphics and voiceover." },
+  { id: "ai-snneh-02", category: "aivideo", isReel: true, title: "Snneh — Digital Persona & Strategy (Pt. 2)", client: "Snneh AI", year: "2026", duration: "0:52", file: "/snneh 2.mp4", tag: "AI Avatar Reel", description: "AI-assisted storytelling with generative background extensions, kinetic subtitles, and fluid pacing." },
+  { id: "ai-reel-06", category: "aivideo", isReel: true, title: "Yanisa — Beatsync Reel", client: "Yanisa Media", year: "2026", file: "/beatsync.mp4", tag: "AI Beat Sync", description: "Precision beat-synced reel with frame-perfect cuts timed to music drops." },
+  { id: "ai-snneh-03", category: "aivideo", isReel: true, title: "Snneh — Narrative Intelligence (Pt. 3)", client: "Snneh AI", year: "2026", duration: "0:50", file: "/snneh 3.mp4", tag: "Generative AI Reel", description: "High-retention AI content reel exploring synthetic creative direction and modern social hooks." },
+  { id: "ai-reel-07", category: "aivideo", isReel: true, title: "Yanisa — Dubai Tower Showcase", client: "Yanisa Media", year: "2026", file: "/DUBAI TOWER.I.mp4", tag: "AI Architectural Reel", description: "Architectural vertical showcase featuring Dubai Tower visuals synced to soundtrack." },
+  { id: "ai-snneh-04", category: "aivideo", isReel: true, title: "Snneh — Creative Evolution (Pt. 4)", client: "Snneh AI", year: "2026", duration: "1:39", file: "/snneh 4.mp4", tag: "AI Production Reel", description: "Cinematic vertical AI film blending generative visual concepts, motion design, and audio mastering." },
+  { id: "ai-reel-01", category: "aivideo", isReel: true, title: "Yanisa — Set of 7 (Vol. 1)", client: "Yanisa Media", year: "2026", file: "/1set of 7 (1).mp4", tag: "AI Product Reel", description: "First reel in the Yanisa 7-series — fast-paced AI product cuts with trending audio." },
+  { id: "ai-reel-02", category: "aivideo", isReel: true, title: "Yanisa — Topper Reel", client: "Yanisa Media", year: "2026", file: "/2.5 topper.mp4", tag: "AI Beat Sync", description: "Quick-hit topper reel with beat-synced transitions and bold text overlays." },
+  { id: "ai-reel-03", category: "aivideo", isReel: true, title: "Yanisa — Invisible Clip", client: "Yanisa Media", year: "2026", file: "/2.invisible clip.mp4", tag: "AI Transition Reel", description: "Seamless invisible-cut reel showcasing smooth outfit and product transitions." },
+  { id: "ai-reel-04", category: "aivideo", isReel: true, title: "Yanisa — Wig Showcase", client: "Yanisa Media", year: "2026", file: "/4.wig.mp4", tag: "AI Product Showcase", description: "Dynamic product reel featuring wig collection with glam color grading." },
   {
     id: "web-01",
     category: "website",
@@ -140,118 +307,15 @@ const PROJECTS = [
   },
 ];
 
-// ─── Yanisa Video Data ────────────────────────────────────────────────────────
+// ─── Helper: Check if Project is with Yanisa ──────────────────────────────────
 
-const YANISA_HORIZONTAL = [
-  {
-    id: "yh-01",
-    file: "/yanisa AI ad final.mp4",
-    title: "Yanisa — AI Ad Final",
-    description: "Final AI-powered brand ad with synthetic voiceover, avatar integration, and product showcasing — built for paid social and performance campaigns.",
-    tag: "AI Ad",
-  },
-  {
-    id: "yh-02",
-    file: "/Copy of TRAILER 1 tiptop.mp4",
-    title: "Yanisa — Brand Trailer",
-    description: "Cinematic brand reveal trailer with high-energy cuts, 4K footage, and original sound design. Showcases Yanisa's product range and brand identity.",
-    tag: "Cinematic Trailer",
-  },
-  {
-    id: "yh-03",
-    file: "/Copy of event promo final.mp4",
-    title: "Yanisa — Event Promo",
-    description: "High-energy event promotion video with dynamic motion graphics, countdown sequences, and branded lower-thirds for Yanisa's product launch event.",
-    tag: "Event Promo",
-  },
-];
-
-const YANISA_REELS = [
-  {
-    id: "yr-01",
-    file: "/1set of 7 (1).mp4",
-    title: "Set of 7 — Vol.1",
-    description: "First reel in the Yanisa 7-series — fast-paced product cuts with trending audio.",
-    tag: "Product Reel",
-  },
-  {
-    id: "yr-02",
-    file: "/2.5 topper.mp4",
-    title: "Topper Reel",
-    description: "Quick-hit topper reel with beat-synced transitions and bold text overlays.",
-    tag: "Beat Sync",
-  },
-  {
-    id: "yr-03",
-    file: "/2.invisible clip.mp4",
-    title: "Invisible Clip",
-    description: "Seamless invisible-cut reel showcasing smooth outfit/product transitions.",
-    tag: "Transition Reel",
-  },
-  {
-    id: "yr-04",
-    file: "/4.wig.mp4",
-    title: "Wig Showcase",
-    description: "Dynamic product reel featuring wig collection with glam color grading.",
-    tag: "Product Showcase",
-  },
-  {
-    id: "yr-05",
-    file: "/AI AGENTS.mp4",
-    title: "AI Agents Reel",
-    description: "AI-themed short-form content reel with futuristic motion graphics and voiceover.",
-    tag: "AI Content",
-  },
-  {
-    id: "yr-06",
-    file: "/AI content film.mp4",
-    title: "AI Content Film",
-    description: "Short-form AI content reel blending real footage with AI-generated visuals.",
-    tag: "AI Hybrid",
-  },
-  {
-    id: "yr-07",
-    file: "/beatsync.mp4",
-    title: "Beatsync Reel",
-    description: "Precision beat-synced reel with frame-perfect cuts timed to music drops.",
-    tag: "Beat Sync",
-  },
-  {
-    id: "yr-08",
-    file: "/DUBAI TOWER.I.mp4",
-    title: "Dubai Tower Reel",
-    description: "Architectural vertical showcase featuring Dubai Tower visuals synced to soundtrack.",
-    tag: "Brand Reel",
-  },
-  {
-    id: "yr-09",
-    file: "/EVENT PROMO.mp4",
-    title: "Event Promo Reel",
-    description: "Vertical event highlight reel with high-energy cuts and launch announcements.",
-    tag: "Event Reel",
-  },
-  {
-    id: "yr-10",
-    file: "/gaas.mp4",
-    title: "GAAS Reel",
-    description: "High-energy social reel with bold typography, color pop effects, and snappy edits.",
-    tag: "Social Reel",
-  },
-  {
-    id: "yr-11",
-    file: "/lata mangeshkar new.mp4",
-    title: "Lata Mangeshkar Tribute",
-    description: "Emotional tribute reel with soft color grading, archival-style edits, and subtle overlays.",
-    tag: "Tribute Reel",
-  },
-  {
-    id: "yr-12",
-    file: "/OVERTIME_.mp4",
-    title: "Overtime Reel",
-    description: "Late-night hustle themed reel with moody grading and motivational text overlays.",
-    tag: "Motivation Reel",
-  },
-];
+function isYanisaProject(item?: { client?: string; title?: string; tag?: string } | null) {
+  if (!item) return false;
+  const c = item.client?.toLowerCase() ?? "";
+  const t = item.title?.toLowerCase() ?? "";
+  const tag = item.tag?.toLowerCase() ?? "";
+  return c.includes("yanisa") || t.includes("yanisa") || tag.includes("yanisa");
+}
 
 // ─── Category Icon ────────────────────────────────────────────────────────────
 
@@ -288,7 +352,8 @@ function ProjectCard({
     });
   };
 
-  const isReel = project.category === "reels";
+  const isReel = project.category === "reels" || (project as any).isReel;
+  const isYanisa = isYanisaProject(project);
 
   if (isReel) {
     return (
@@ -304,6 +369,16 @@ function ProjectCard({
         <div className="relative bg-zinc-950 overflow-hidden" style={{ aspectRatio: "9/16" }}>
           <Image src={imgSrc} alt={project.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
           <div className="absolute inset-0 bg-black/40" />
+
+          {/* Yanisa Badge Overlay */}
+          {isYanisa && (
+            <div className="absolute top-3 left-3 z-10 pointer-events-none">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold bg-zinc-950/85 backdrop-blur-md border border-sky-400/50 text-sky-300 shadow-lg">
+                <span className="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse" />
+                Yanisa
+              </span>
+            </div>
+          )}
 
           {/* Play icon overlay */}
           <div className="absolute inset-0 flex items-center justify-center">
@@ -324,9 +399,16 @@ function ProjectCard({
 
         {/* Info */}
         <div className="p-4 flex-1">
-          <span className="text-[10px] font-semibold text-zinc-400 uppercase tracking-wider block mb-0.5">
-            {project.client} · {project.year}
-          </span>
+          <div className="flex items-center justify-between gap-1.5 mb-1">
+            <span className="text-[10px] font-semibold text-zinc-400 uppercase tracking-wider block">
+              {project.client} · {project.year}
+            </span>
+            {isYanisa && (
+              <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-sky-400 bg-sky-950/60 border border-sky-500/30 px-2 py-0.5 rounded-full">
+                Yanisa
+              </span>
+            )}
+          </div>
           <h3 className="text-sm font-bold text-white group-hover:text-zinc-200 transition-colors leading-snug">
             {project.title}
           </h3>
@@ -348,6 +430,16 @@ function ProjectCard({
         <Image src={imgSrc} alt={project.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
 
+        {/* Yanisa Badge Overlay */}
+        {isYanisa && (
+          <div className="absolute top-3.5 left-3.5 z-10 pointer-events-none">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-zinc-950/85 backdrop-blur-md border border-sky-400/40 text-sky-300 shadow-md">
+              <span className="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse" />
+              Yanisa Media
+            </span>
+          </div>
+        )}
+
         {/* Fullscreen Icon - ALWAYS visible top-right */}
         <button
           onClick={handleFullscreen}
@@ -358,9 +450,16 @@ function ProjectCard({
         </button>
       </div>
       <div className="p-5">
-        <span className="text-[11px] font-semibold text-zinc-400 uppercase tracking-wider block mb-1">
-          {project.client} · {project.year}
-        </span>
+        <div className="flex items-center justify-between gap-2 mb-1">
+          <span className="text-[11px] font-semibold text-zinc-400 uppercase tracking-wider block">
+            {project.client} · {project.year}
+          </span>
+          {isYanisa && (
+            <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-sky-400 bg-sky-950/60 border border-sky-500/30 px-2 py-0.5 rounded-full">
+              Yanisa
+            </span>
+          )}
+        </div>
         <h3 className="text-lg font-bold text-white group-hover:text-zinc-200 transition-colors leading-snug">
           {project.title}
         </h3>
@@ -640,11 +739,7 @@ function WebsiteCard({
   );
 }
 
-// ─── Yanisa Horizontal Video Card ────────────────────────────────────────────
-
-// ─── Yanisa Horizontal Video Card ────────────────────────────────────────────
-
-// ─── Yanisa Horizontal Video Card ────────────────────────────────────────────
+// ─── Horizontal Video Card ───────────────────────────────────────────────────
 
 function HorizontalVideoCard({
   video,
@@ -652,8 +747,23 @@ function HorizontalVideoCard({
   activeVideoId,
   setActiveVideoId,
   onOpenModal,
+  className = "",
 }: {
-  video: typeof YANISA_HORIZONTAL[0];
+  className?: string;
+  video: {
+    id: string;
+    file?: string;
+    title: string;
+    description?: string;
+    tag?: string;
+    client?: string;
+    year?: string;
+    duration?: string;
+    isReel?: boolean;
+    externalUrl?: string;
+    youtubeId?: string;
+    thumbnail?: string;
+  };
   idx: number;
   activeVideoId: string | null;
   setActiveVideoId: (id: string | null) => void;
@@ -663,8 +773,11 @@ function HorizontalVideoCard({
   const videoRef = useRef<HTMLVideoElement>(null);
   const isPlaying = activeVideoId === video.id;
   const [isInView, setIsInView] = useState(false);
+  const isYanisa = isYanisaProject(video);
+  const isExternal = Boolean(video.externalUrl);
 
   useEffect(() => {
+    if (isExternal) return;
     const el = containerRef.current;
     if (!el) return;
 
@@ -684,7 +797,7 @@ function HorizontalVideoCard({
 
     observer.observe(el);
     return () => observer.disconnect();
-  }, [isPlaying, setActiveVideoId]);
+  }, [isPlaying, setActiveVideoId, isExternal]);
 
   useEffect(() => {
     if (!isPlaying && videoRef.current) {
@@ -693,6 +806,10 @@ function HorizontalVideoCard({
   }, [isPlaying]);
 
   const togglePlay = () => {
+    if (isExternal && video.externalUrl) {
+      window.open(video.externalUrl, "_blank", "noopener,noreferrer");
+      return;
+    }
     if (!videoRef.current) return;
     if (isPlaying) {
       videoRef.current.pause();
@@ -705,17 +822,25 @@ function HorizontalVideoCard({
 
   const handleFullscreen = (e: React.MouseEvent) => {
     e.stopPropagation();
+    if (isExternal && video.externalUrl) {
+      window.open(video.externalUrl, "_blank", "noopener,noreferrer");
+      return;
+    }
     if (videoRef.current) {
       videoRef.current.pause();
     }
     setActiveVideoId(null);
-    onOpenModal({
-      file: video.file,
-      title: video.title,
-      tag: video.tag,
-      isReel: false,
-    });
+    if (video.file) {
+      onOpenModal({
+        file: video.file,
+        title: video.title,
+        tag: video.tag || (isYanisa ? "Yanisa Media" : "Video"),
+        isReel: false,
+      });
+    }
   };
+
+  const encodedFile = video.file ? encodeURI(video.file) : undefined;
 
   return (
     <motion.div
@@ -724,52 +849,149 @@ function HorizontalVideoCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: idx * 0.12 }}
-      className="glass-card rounded-3xl overflow-hidden border border-zinc-800 hover:border-zinc-600 transition-all duration-500 group"
+      className={`glass-card rounded-3xl overflow-hidden border border-zinc-800 hover:border-zinc-600 transition-all duration-500 group ${className}`}
     >
-      {/* 16:9 video player */}
-      <div className="relative aspect-video bg-zinc-950 overflow-hidden">
-        <video
-          ref={videoRef}
-          src={isInView ? `${video.file}#t=0.1` : undefined}
-          className="w-full h-full object-cover"
-          preload={isInView ? "metadata" : "none"}
-          playsInline
-          onEnded={() => setActiveVideoId(null)}
-          onClick={togglePlay}
-        />
+      {/* 16:9 video player or external thumbnail */}
+      <div
+        className="relative aspect-video bg-zinc-950 overflow-hidden cursor-pointer group/media"
+        onClick={togglePlay}
+      >
+        {isExternal ? (
+          <>
+            {/* YouTube Thumbnail */}
+            <img
+              src={
+                video.thumbnail ||
+                (video.youtubeId
+                  ? `https://img.youtube.com/vi/${video.youtubeId}/maxresdefault.jpg`
+                  : "")
+              }
+              onError={(e) => {
+                if (video.youtubeId) {
+                  (e.target as HTMLImageElement).src = `https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`;
+                }
+              }}
+              alt={video.title}
+              className="w-full h-full object-cover group-hover/media:scale-105 transition-transform duration-500"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/30 group-hover/media:bg-black/20 transition-all duration-300" />
 
-        {/* Play / Pause overlay */}
-        {!isPlaying && (
-          <div
-            onClick={togglePlay}
-            className="absolute inset-0 flex items-center justify-center bg-black/40 cursor-pointer group/play"
-          >
-            <div className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-md border border-white/30 flex items-center justify-center shadow-2xl group-hover/play:scale-110 group-hover/play:bg-white/20 transition-all duration-300">
-              <Play className="w-8 h-8 text-white fill-white ml-1" />
+            {/* Badge Overlay */}
+            <div className="absolute top-4 left-4 z-10 pointer-events-none">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-zinc-950/85 backdrop-blur-md border border-red-500/40 text-red-400 shadow-md">
+                <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+                YouTube Podcast
+              </span>
             </div>
-          </div>
-        )}
 
-        {/* Fullscreen btn */}
-        <button
-          onClick={handleFullscreen}
-          className="absolute top-4 right-4 w-9 h-9 rounded-full bg-zinc-900/90 backdrop-blur-md border border-zinc-700 flex items-center justify-center text-zinc-300 hover:text-white hover:scale-110 transition-all z-10"
-          title="Play Fullscreen"
-        >
-          <Maximize2 className="w-4 h-4" />
-        </button>
+            {/* External link button */}
+            <a
+              href={video.externalUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="absolute top-4 right-4 w-9 h-9 rounded-full bg-zinc-900/90 backdrop-blur-md border border-zinc-700 flex items-center justify-center text-zinc-300 hover:text-white hover:scale-110 hover:border-red-500/50 transition-all z-10"
+              title="Watch on YouTube (Opens in new tab)"
+            >
+              <ArrowUpRight className="w-4 h-4" />
+            </a>
+
+            {/* Play Button Overlay */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div className="w-20 h-20 rounded-full bg-red-600/90 backdrop-blur-md border border-red-400/40 flex items-center justify-center shadow-2xl group-hover/media:scale-110 group-hover/media:bg-red-600 transition-all duration-300">
+                <Play className="w-8 h-8 text-white fill-white ml-1" />
+              </div>
+            </div>
+          </>
+        ) : (
+          <>
+            <video
+              ref={videoRef}
+              src={isInView && encodedFile ? `${encodedFile}#t=0.1` : undefined}
+              className="w-full h-full object-cover"
+              preload={isInView ? "metadata" : "none"}
+              playsInline
+              onEnded={() => setActiveVideoId(null)}
+              onClick={togglePlay}
+            />
+
+            {/* Yanisa Badge Overlay */}
+            {isYanisa && (
+              <div className="absolute top-4 left-4 z-10 pointer-events-none">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-zinc-950/85 backdrop-blur-md border border-sky-400/40 text-sky-300 shadow-md">
+                  <span className="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse" />
+                  Yanisa Media
+                </span>
+              </div>
+            )}
+
+            {/* Play / Pause overlay */}
+            {!isPlaying && (
+              <div
+                onClick={togglePlay}
+                className="absolute inset-0 flex items-center justify-center bg-black/40 cursor-pointer group/play"
+              >
+                <div className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-md border border-white/30 flex items-center justify-center shadow-2xl group-hover/play:scale-110 group-hover/play:bg-white/20 transition-all duration-300">
+                  <Play className="w-8 h-8 text-white fill-white ml-1" />
+                </div>
+              </div>
+            )}
+
+            {/* Fullscreen btn */}
+            <button
+              onClick={handleFullscreen}
+              className="absolute top-4 right-4 w-9 h-9 rounded-full bg-zinc-900/90 backdrop-blur-md border border-zinc-700 flex items-center justify-center text-zinc-300 hover:text-white hover:scale-110 transition-all z-10"
+              title="Play Fullscreen"
+            >
+              <Maximize2 className="w-4 h-4" />
+            </button>
+          </>
+        )}
       </div>
 
       {/* Info */}
       <div className="p-6">
-        <h3 className="text-xl font-bold text-white mb-2 leading-snug">{video.title}</h3>
+        <div className="flex items-center justify-between gap-2 mb-2">
+          <span className="text-xs font-semibold text-zinc-400 uppercase tracking-wider">
+            {video.tag || (isExternal ? "YouTube Podcast" : "Featured Video")}
+          </span>
+          {isYanisa && (
+            <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-sky-400 bg-sky-950/60 border border-sky-500/30 px-2.5 py-0.5 rounded-full">
+              ✦ Yanisa Project
+            </span>
+          )}
+          {isExternal && video.externalUrl && (
+            <a
+              href={video.externalUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-[11px] font-semibold text-red-400 hover:text-red-300 bg-red-950/60 border border-red-500/30 px-2.5 py-0.5 rounded-full transition-colors"
+            >
+              Watch on YouTube <ArrowUpRight className="w-3 h-3" />
+            </a>
+          )}
+        </div>
+        <h3 className="text-xl font-bold text-white mb-2 leading-snug">
+          {isExternal && video.externalUrl ? (
+            <a
+              href={video.externalUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-sky-400 transition-colors inline-flex items-center gap-1.5"
+            >
+              {video.title}
+            </a>
+          ) : (
+            video.title
+          )}
+        </h3>
         <p className="text-zinc-400 text-sm leading-relaxed">{video.description}</p>
       </div>
     </motion.div>
   );
 }
 
-// ─── Yanisa Reel Card (vertical 9:16) ────────────────────────────────────────
+// ─── Reel Card (vertical 9:16) ───────────────────────────────────────────────
 
 function ReelCard({
   reel,
@@ -777,8 +999,19 @@ function ReelCard({
   activeVideoId,
   setActiveVideoId,
   onOpenModal,
+  className = "",
 }: {
-  reel: typeof YANISA_REELS[0];
+  className?: string;
+  reel: {
+    id: string;
+    file: string;
+    title: string;
+    description?: string;
+    tag?: string;
+    client?: string;
+    year?: string;
+    isReel?: boolean;
+  };
   idx: number;
   activeVideoId: string | null;
   setActiveVideoId: (id: string | null) => void;
@@ -788,6 +1021,7 @@ function ReelCard({
   const videoRef = useRef<HTMLVideoElement>(null);
   const isPlaying = activeVideoId === reel.id;
   const [isInView, setIsInView] = useState(false);
+  const isYanisa = isYanisaProject(reel);
 
   useEffect(() => {
     const el = containerRef.current;
@@ -837,7 +1071,7 @@ function ReelCard({
     onOpenModal({
       file: reel.file,
       title: reel.title,
-      tag: reel.tag,
+      tag: reel.tag || (isYanisa ? "Yanisa" : "Reel"),
       isReel: true,
     });
   };
@@ -849,19 +1083,29 @@ function ReelCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: (idx % 4) * 0.08 }}
-      className="glass-card rounded-3xl overflow-hidden border border-zinc-800 hover:border-zinc-600 transition-all duration-500 group flex flex-col"
+      className={`glass-card rounded-3xl overflow-hidden border border-zinc-800 hover:border-zinc-600 transition-all duration-500 group flex flex-col ${className}`}
     >
       {/* 9:16 vertical reel container */}
       <div className="relative bg-zinc-950 overflow-hidden" style={{ aspectRatio: "9/16" }}>
         <video
           ref={videoRef}
-          src={isInView ? `${reel.file}#t=0.1` : undefined}
+          src={isInView ? `${encodeURI(reel.file)}#t=0.1` : undefined}
           className="w-full h-full object-cover"
           preload={isInView ? "metadata" : "none"}
           playsInline
           onEnded={() => setActiveVideoId(null)}
           onClick={togglePlay}
         />
+
+        {/* Yanisa Badge Overlay */}
+        {isYanisa && (
+          <div className="absolute top-3 left-3 z-10 pointer-events-none">
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-semibold bg-zinc-950/85 backdrop-blur-md border border-sky-400/50 text-sky-300 shadow-md">
+              <span className="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse" />
+              Yanisa
+            </span>
+          </div>
+        )}
 
         {/* Play overlay */}
         {!isPlaying && (
@@ -887,6 +1131,16 @@ function ReelCard({
 
       {/* Info */}
       <div className="p-4 flex-1">
+        <div className="flex items-center justify-between gap-1.5 mb-1.5">
+          <span className="text-[10px] font-semibold text-zinc-400 uppercase tracking-wider">
+            {reel.tag || "Short Form"}
+          </span>
+          {isYanisa && (
+            <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-sky-400 bg-sky-950/60 border border-sky-500/30 px-2 py-0.5 rounded-full">
+              Yanisa
+            </span>
+          )}
+        </div>
         <h3 className="text-sm font-bold text-white mb-1 leading-snug">{reel.title}</h3>
         <p className="text-zinc-500 text-xs leading-relaxed">{reel.description}</p>
       </div>
@@ -919,7 +1173,7 @@ function FullscreenVideoModal({
 
   if (!videoData || !mounted) return null;
 
-  const isMediaVideo = videoData.file.endsWith(".mov") || videoData.file.endsWith(".mp4");
+  const isMediaVideo = /\.(mov|mp4|webm|ogg)(\?.*)?$/i.test(videoData.file) || videoData.file.startsWith("/") || Boolean(videoData.isReel);
 
   return createPortal(
     <AnimatePresence>
@@ -951,7 +1205,7 @@ function FullscreenVideoModal({
           <div className="relative overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950 flex items-center justify-center shadow-2xl max-h-[82vh]">
             {isMediaVideo ? (
               <video
-                src={videoData.file}
+                src={encodeURI(videoData.file)}
                 controls
                 autoPlay
                 playsInline
@@ -976,6 +1230,118 @@ function FullscreenVideoModal({
       </motion.div>
     </AnimatePresence>,
     document.body
+  );
+}
+
+
+// ─── Horizontal Slider Component ─────────────────────────────────────────────
+
+function HorizontalSlider({
+  title,
+  subtitle,
+  badge,
+  children,
+  className = "",
+}: {
+  title?: string;
+  subtitle?: string;
+  badge?: string;
+  children: React.ReactNode;
+  className?: string;
+}) {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const checkScroll = () => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const { scrollLeft, scrollWidth, clientWidth } = el;
+    setCanScrollLeft(scrollLeft > 15);
+    setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 15);
+  };
+
+  useEffect(() => {
+    checkScroll();
+    const el = scrollRef.current;
+    if (!el) return;
+    el.addEventListener("scroll", checkScroll, { passive: true });
+    window.addEventListener("resize", checkScroll);
+    return () => {
+      el.removeEventListener("scroll", checkScroll);
+      window.removeEventListener("resize", checkScroll);
+    };
+  }, [children]);
+
+  const scroll = (direction: "left" | "right") => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const scrollAmount = el.clientWidth * 0.75;
+    el.scrollBy({
+      left: direction === "left" ? -scrollAmount : scrollAmount,
+      behavior: "smooth",
+    });
+  };
+
+  return (
+    <div className={`relative ${className}`}>
+      {/* Header with Title and Left/Right Arrows */}
+      {(title || badge) && (
+        <div className="flex items-center justify-between gap-4 mb-6">
+          <div className="flex items-center gap-3">
+            <div className="w-1 h-7 rounded-full bg-gradient-to-b from-sky-400 to-cyan-500" />
+            <div>
+              <div className="flex items-center gap-2.5">
+                {title && <h3 className="text-xl sm:text-2xl font-bold text-white">{title}</h3>}
+                {badge && (
+                  <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-300">
+                    {badge}
+                  </span>
+                )}
+              </div>
+              {subtitle && <p className="text-xs sm:text-sm text-zinc-400 mt-0.5">{subtitle}</p>}
+            </div>
+          </div>
+
+          {/* Navigation Controls */}
+          <div className="flex items-center gap-2 shrink-0">
+            <button
+              onClick={() => scroll("left")}
+              disabled={!canScrollLeft}
+              aria-label="Scroll left"
+              className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 border ${
+                canScrollLeft
+                  ? "bg-zinc-800/90 border-zinc-700 text-white hover:bg-zinc-700 hover:border-zinc-500 hover:scale-105 active:scale-95 cursor-pointer shadow-lg"
+                  : "bg-zinc-900/40 border-zinc-800/60 text-zinc-600 cursor-not-allowed opacity-40"
+              }`}
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button
+              onClick={() => scroll("right")}
+              disabled={!canScrollRight}
+              aria-label="Scroll right"
+              className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 border ${
+                canScrollRight
+                  ? "bg-zinc-800/90 border-zinc-700 text-white hover:bg-zinc-700 hover:border-zinc-500 hover:scale-105 active:scale-95 cursor-pointer shadow-lg"
+                  : "bg-zinc-900/40 border-zinc-800/60 text-zinc-600 cursor-not-allowed opacity-40"
+              }`}
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Slider Track */}
+      <div
+        ref={scrollRef}
+        className="flex gap-6 overflow-x-auto scrollbar-none snap-x snap-mandatory scroll-smooth pb-6 pt-1 px-1 [&::-webkit-scrollbar]:hidden"
+        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+      >
+        {children}
+      </div>
+    </div>
   );
 }
 
@@ -1055,47 +1421,70 @@ export default function ProjectsPage() {
 
       {/* ── General Projects Grid ───────────────────────────────────── */}
       <section className="max-w-7xl mx-auto px-6 mb-28">
-        <AnimatePresence mode="popLayout">
+        <AnimatePresence mode="wait">
           {activeCategory === "all" ? (
-            <motion.div key="all" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="space-y-16">
+            <motion.div key="all" initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} className="space-y-16">
               {CATEGORIES.filter((cat) => cat.id !== "all").map((cat, catIdx) => {
-                return (
-                  <div key={cat.id} className={catIdx === 0 ? "pt-0" : "pt-6"}>
-                    {/* Section Header */}
-                    <div className="flex items-center gap-3 mb-6">
-                      <div className="w-1 h-7 rounded-full bg-gradient-to-b from-sky-400 to-cyan-500" />
-                      <h3 className="text-2xl font-bold text-white">{cat.label}</h3>
-                    </div>
+                const items = PROJECTS.filter((p) => p.category === cat.id);
+                if (items.length === 0) return null;
 
-                    {/* Section Grid */}
-                    {cat.id === "reels" ? (
-                      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6">
-                        {PROJECTS.filter((p) => p.category === "reels").map((project, idx) => (
-                          <ReelCard
-                            key={project.id}
-                            reel={project as any}
-                            idx={idx}
-                            activeVideoId={activeVideoId}
-                            setActiveVideoId={setActiveVideoId}
-                            onOpenModal={(data) => setModalVideoData(data)}
-                          />
-                        ))}
-                      </div>
-                    ) : cat.id === "mobile" ? (
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-                        {PROJECTS.filter((p) => p.category === "mobile").map((project, idx) => (
-                          <MobileAppCard key={project.id} project={project as any} idx={idx} />
-                        ))}
-                      </div>
-                    ) : cat.id === "website" || cat.id === "webapp" ? (
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
-                        {PROJECTS.filter((p) => p.category === cat.id).map((project, idx) => (
-                          <WebsiteCard key={project.id} project={project as any} idx={idx} />
-                        ))}
-                      </div>
-                    ) : cat.id === "longvideo" || cat.id === "aivideo" ? (
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-                        {PROJECTS.filter((p) => p.category === cat.id).map((project, idx) => (
+                if (cat.id === "reels") {
+                  return (
+                    <HorizontalSlider
+                      key={cat.id}
+                      title={cat.label}
+                      badge={`${items.length} Reels`}
+                      subtitle="Swipe horizontally or use arrows to explore founder stories and reels"
+                    >
+                      {items.map((project, idx) => (
+                        <ReelCard
+                          key={project.id}
+                          reel={project as any}
+                          idx={idx}
+                          activeVideoId={activeVideoId}
+                          setActiveVideoId={setActiveVideoId}
+                          onOpenModal={(data) => setModalVideoData(data)}
+                          className="w-[260px] sm:w-[280px] md:w-[300px] shrink-0 snap-start"
+                        />
+                      ))}
+                    </HorizontalSlider>
+                  );
+                }
+
+                if (cat.id === "longvideo") {
+                  return (
+                    <HorizontalSlider
+                      key={cat.id}
+                      title={cat.label}
+                      badge={`${items.length} Videos`}
+                      subtitle="Full episode podcast edits, brand films & documentaries"
+                    >
+                      {items.map((project, idx) => (
+                        <HorizontalVideoCard
+                          key={project.id}
+                          video={project as any}
+                          idx={idx}
+                          activeVideoId={activeVideoId}
+                          setActiveVideoId={setActiveVideoId}
+                          onOpenModal={(data) => setModalVideoData(data)}
+                          className="w-[340px] sm:w-[420px] md:w-[480px] shrink-0 snap-start"
+                        />
+                      ))}
+                    </HorizontalSlider>
+                  );
+                }
+
+                if (cat.id === "aivideo") {
+                  const aiFilms = items.filter((p) => !(p as any).isReel);
+                  const aiReels = items.filter((p) => (p as any).isReel);
+                  return (
+                    <div key={cat.id} className="space-y-12">
+                      <HorizontalSlider
+                        title="AI Films"
+                        badge={`${aiFilms.length} Films`}
+                        subtitle="Generative video & synthetic avatar brand campaigns"
+                      >
+                        {aiFilms.map((project, idx) => (
                           <HorizontalVideoCard
                             key={project.id}
                             video={project as any}
@@ -1103,70 +1492,194 @@ export default function ProjectsPage() {
                             activeVideoId={activeVideoId}
                             setActiveVideoId={setActiveVideoId}
                             onOpenModal={(data) => setModalVideoData(data)}
+                            className="w-[340px] sm:w-[420px] md:w-[480px] shrink-0 snap-start"
                           />
                         ))}
-                      </div>
-                    ) : (
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-                        {PROJECTS.filter((p) => p.category === cat.id).map((project, idx) => (
-                          <ProjectCard
+                      </HorizontalSlider>
+
+                      <HorizontalSlider
+                        title="AI Reels & Short-Form"
+                        badge={`${aiReels.length} Reels`}
+                        subtitle="Vertical generative AI video edits & beat-synced reels"
+                      >
+                        {aiReels.map((project, idx) => (
+                          <ReelCard
                             key={project.id}
-                            project={project}
+                            reel={project as any}
                             idx={idx}
+                            activeVideoId={activeVideoId}
+                            setActiveVideoId={setActiveVideoId}
                             onOpenModal={(data) => setModalVideoData(data)}
+                            className="w-[260px] sm:w-[280px] md:w-[300px] shrink-0 snap-start"
                           />
                         ))}
-                      </div>
-                    )}
-                  </div>
-                );
+                      </HorizontalSlider>
+                    </div>
+                  );
+                }
+
+                if (cat.id === "mobile") {
+                  return (
+                    <HorizontalSlider
+                      key={cat.id}
+                      title={cat.label}
+                      badge={`${items.length} Apps`}
+                      subtitle="Native mobile application UI & interactive screen prototypes"
+                    >
+                      {items.map((project, idx) => (
+                        <MobileAppCard
+                          key={project.id}
+                          project={project as any}
+                          idx={idx}
+                          className="w-[260px] sm:w-[280px] md:w-[300px] shrink-0 snap-start"
+                        />
+                      ))}
+                    </HorizontalSlider>
+                  );
+                }
+
+                if (cat.id === "website" || cat.id === "webapp") {
+                  return (
+                    <HorizontalSlider
+                      key={cat.id}
+                      title={cat.label}
+                      badge={`${items.length} Projects`}
+                      subtitle="Modern web platforms, interactive dashboards & SaaS applications"
+                    >
+                      {items.map((project, idx) => (
+                        <WebsiteCard
+                          key={project.id}
+                          project={project as any}
+                          idx={idx}
+                          className="w-[360px] sm:w-[460px] md:w-[520px] shrink-0 snap-start"
+                        />
+                      ))}
+                    </HorizontalSlider>
+                  );
+                }
+
+                return null;
               })}
             </motion.div>
-          ) : (
+          ) : activeCategory === "reels" ? (
+            <motion.div key="reels" initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}>
+              <HorizontalSlider
+                title="Founder Stories Showcase"
+                badge={`${filtered.length} Reels`}
+                subtitle="Swipe horizontally or use arrows to explore all founder stories and reels"
+              >
+                {filtered.map((project, idx) => (
+                  <ReelCard
+                    key={project.id}
+                    reel={project as any}
+                    idx={idx}
+                    activeVideoId={activeVideoId}
+                    setActiveVideoId={setActiveVideoId}
+                    onOpenModal={(data) => setModalVideoData(data)}
+                    className="w-[260px] sm:w-[280px] md:w-[300px] shrink-0 snap-start"
+                  />
+                ))}
+              </HorizontalSlider>
+            </motion.div>
+          ) : activeCategory === "longvideo" ? (
+            <motion.div key="longvideo" initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}>
+              <HorizontalSlider
+                title="Podcast Work & Documentaries"
+                badge={`${filtered.length} Videos`}
+                subtitle="Swipe horizontally or use arrows to browse all podcast episodes and brand films"
+              >
+                {filtered.map((project, idx) => (
+                  <HorizontalVideoCard
+                    key={project.id}
+                    video={project as any}
+                    idx={idx}
+                    activeVideoId={activeVideoId}
+                    setActiveVideoId={setActiveVideoId}
+                    onOpenModal={(data) => setModalVideoData(data)}
+                    className="w-[340px] sm:w-[420px] md:w-[480px] shrink-0 snap-start"
+                  />
+                ))}
+              </HorizontalSlider>
+            </motion.div>
+          ) : activeCategory === "aivideo" ? (
             <motion.div
-              key={activeCategory}
-              className={`grid gap-6 ${
-                activeCategory === "reels"
-                  ? "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
-                  : activeCategory === "mobile"
-                  ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
-                  : activeCategory === "website" || activeCategory === "webapp"
-                  ? "grid-cols-1 sm:grid-cols-2"
-                  : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
-              }`}
+              key="aivideo"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              className="space-y-14"
             >
-              {filtered.map((project, idx) =>
-                    project.category === "reels" ? (
-                      <ReelCard
-                        key={project.id}
-                        reel={project as any}
-                        idx={idx}
-                        activeVideoId={activeVideoId}
-                        setActiveVideoId={setActiveVideoId}
-                        onOpenModal={(data) => setModalVideoData(data)}
-                      />
-                    ) : project.category === "mobile" ? (
-                      <MobileAppCard key={project.id} project={project as any} idx={idx} />
-                    ) : project.category === "website" || project.category === "webapp" ? (
-                      <WebsiteCard key={project.id} project={project as any} idx={idx} />
-                    ) : (project as any).file ? (
-                      <HorizontalVideoCard
-                        key={project.id}
-                        video={project as any}
-                        idx={idx}
-                        activeVideoId={activeVideoId}
-                        setActiveVideoId={setActiveVideoId}
-                        onOpenModal={(data) => setModalVideoData(data)}
-                      />
-                    ) : (
-                      <ProjectCard
-                        key={project.id}
-                        project={project}
-                        idx={idx}
-                        onOpenModal={(data) => setModalVideoData(data)}
-                      />
-                    )
-                  )}
+              {/* AI Films Horizontal Slider */}
+              <HorizontalSlider
+                title="AI Films"
+                badge={`${filtered.filter((p) => !(p as any).isReel).length} Films`}
+                subtitle="High-concept generative video & synthetic avatar campaigns"
+              >
+                {filtered.filter((p) => !(p as any).isReel).map((project, idx) => (
+                  <HorizontalVideoCard
+                    key={project.id}
+                    video={project as any}
+                    idx={idx}
+                    activeVideoId={activeVideoId}
+                    setActiveVideoId={setActiveVideoId}
+                    onOpenModal={(data) => setModalVideoData(data)}
+                    className="w-[340px] sm:w-[420px] md:w-[480px] shrink-0 snap-start"
+                  />
+                ))}
+              </HorizontalSlider>
+
+              {/* AI Reels & Short-Form Horizontal Slider */}
+              <HorizontalSlider
+                title="AI Reels & Short-Form"
+                badge={`${filtered.filter((p) => (p as any).isReel).length} Reels`}
+                subtitle="Vertical generative AI video generation & beat-sync edits"
+              >
+                {filtered.filter((p) => (p as any).isReel).map((project, idx) => (
+                  <ReelCard
+                    key={project.id}
+                    reel={project as any}
+                    idx={idx}
+                    activeVideoId={activeVideoId}
+                    setActiveVideoId={setActiveVideoId}
+                    onOpenModal={(data) => setModalVideoData(data)}
+                    className="w-[260px] sm:w-[280px] md:w-[300px] shrink-0 snap-start"
+                  />
+                ))}
+              </HorizontalSlider>
+            </motion.div>
+          ) : activeCategory === "mobile" ? (
+            <motion.div key="mobile" initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}>
+              <HorizontalSlider
+                title="Mobile App Experiences"
+                badge={`${filtered.length} Apps`}
+                subtitle="Swipe horizontally or use arrows to explore interactive native mobile designs"
+              >
+                {filtered.map((project, idx) => (
+                  <MobileAppCard
+                    key={project.id}
+                    project={project as any}
+                    idx={idx}
+                    className="w-[260px] sm:w-[280px] md:w-[300px] shrink-0 snap-start"
+                  />
+                ))}
+              </HorizontalSlider>
+            </motion.div>
+          ) : (
+            <motion.div key={activeCategory} initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}>
+              <HorizontalSlider
+                title={activeCategory === "website" ? "Websites & Brand Platforms" : "Web Applications & SaaS"}
+                badge={`${filtered.length} Projects`}
+                subtitle="Swipe horizontally or use arrows to explore interactive web products"
+              >
+                {filtered.map((project, idx) => (
+                  <WebsiteCard
+                    key={project.id}
+                    project={project as any}
+                    idx={idx}
+                    className="w-[360px] sm:w-[460px] md:w-[520px] shrink-0 snap-start"
+                  />
+                ))}
+              </HorizontalSlider>
             </motion.div>
           )}
         </AnimatePresence>
@@ -1177,135 +1690,6 @@ export default function ProjectsPage() {
         )}
       </section>
 
-      {/* ════════════════════════════════════════════════════════════ */}
-      {/* ── YANISA COMPANY SPOTLIGHT ─────────────────────────────── */}
-      {/* ════════════════════════════════════════════════════════════ */}
-
-      <section className="py-24 border-t border-zinc-800/80">
-        <div className="max-w-7xl mx-auto px-6">
-
-          {/* Yanisa Header */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
-            <div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-900 border border-zinc-700 text-xs font-semibold uppercase tracking-wider text-zinc-300 mb-4"
-              >
-                Company Spotlight
-              </motion.div>
-              <motion.h2
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="text-3xl md:text-5xl font-sans font-normal leading-tight text-white"
-              >
-                All Work We Did for{" "}
-                <span className="font-serif italic bg-gradient-to-r from-zinc-300 via-sky-300 to-cyan-400 bg-clip-text text-transparent">
-                  Yanisa
-                </span>
-              </motion.h2>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-                className="text-zinc-400 text-base leading-relaxed mt-4 max-w-xl"
-              >
-                A full content partnership — 3 cinematic horizontal videos and 12 viral reels, all produced and edited by BigToast.
-              </motion.p>
-            </div>
-
-            {/* Professional Enterprise Partner Badge */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="shrink-0"
-            >
-              <div className="glass-card-charcoal border border-zinc-700/80 rounded-2xl px-6 py-4 flex items-center gap-4 shadow-xl">
-                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-sky-400 via-cyan-400 to-sky-600 flex items-center justify-center font-extrabold text-zinc-950 text-xl shadow-md">
-                  Y
-                </div>
-                <div>
-                  <span className="text-white font-bold text-base block leading-tight">Yanisa Media</span>
-                  <span className="text-xs text-sky-400 font-semibold tracking-wide">Featured Enterprise Partnership</span>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* ── Section 1: Horizontal Videos ─────────────────────── */}
-          <div className="mb-20">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="flex items-center gap-3 mb-8"
-            >
-              <div className="w-1 h-8 rounded-full bg-gradient-to-b from-sky-400 to-cyan-500" />
-              <h3 className="text-2xl font-bold text-white">Horizontal Videos</h3>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
-              {YANISA_HORIZONTAL.map((video, idx) => (
-                <HorizontalVideoCard
-                  key={video.id}
-                  video={video}
-                  idx={idx}
-                  activeVideoId={activeVideoId}
-                  setActiveVideoId={setActiveVideoId}
-                  onOpenModal={(data) => setModalVideoData(data)}
-                />
-              ))}
-            </div>
-          </div>
-
-          {/* ── Section 2: Reels ──────────────────────────────────── */}
-          <div>
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="flex items-center gap-3 mb-8"
-            >
-              <div className="w-1 h-8 rounded-full bg-gradient-to-b from-sky-400 to-cyan-500" />
-              <h3 className="text-2xl font-bold text-white">Reels & Short-Form</h3>
-            </motion.div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-5">
-              {YANISA_REELS.map((reel, idx) => (
-                <ReelCard
-                  key={reel.id}
-                  reel={reel}
-                  idx={idx}
-                  activeVideoId={activeVideoId}
-                  setActiveVideoId={setActiveVideoId}
-                  onOpenModal={(data) => setModalVideoData(data)}
-                />
-              ))}
-            </div>
-          </div>
-
-          {/* Partnership CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-            className="mt-14 glass-card-charcoal rounded-3xl p-8 border border-zinc-700/60 flex flex-col md:flex-row items-center justify-between gap-6"
-          >
-            <div>
-              <p className="text-white font-bold text-xl mb-1">Want to build distribution and visibility through content?</p>
-              <p className="text-zinc-400 text-sm">We handle your entire content ecosystem — reels, films, websites, and apps — under one creative team.</p>
-            </div>
-            <PrimaryButton text="Start a Partnership" href="/contact-us" showArrow={true} />
-          </motion.div>
-
-        </div>
-      </section>
 
       {/* Fullscreen Video Modal Lightbox */}
       <FullscreenVideoModal
