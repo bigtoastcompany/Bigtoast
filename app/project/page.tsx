@@ -473,9 +473,11 @@ function ProjectCard({
 function MobileAppCard({
   project,
   idx,
+  className = "",
 }: {
   project: typeof PROJECTS[0] & { screens?: string[] };
   idx: number;
+  className?: string;
 }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const screens = (project as any).screens ?? [project.image];
@@ -496,7 +498,7 @@ function MobileAppCard({
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.96 }}
       transition={{ duration: 0.45, delay: idx * 0.08 }}
-      className="flex flex-col items-center group"
+      className={`flex flex-col items-center group ${className}`}
     >
       {/* ── Phone mockup (no wrapper container) ── */}
       <div className="relative flex items-center justify-center">
@@ -596,9 +598,11 @@ function MobileAppCard({
 function WebsiteCard({
   project,
   idx,
+  className = "",
 }: {
   project: typeof PROJECTS[0] & { screens?: string[] };
   idx: number;
+  className?: string;
 }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const screens = (project as any).screens ?? [project.image];
@@ -621,7 +625,7 @@ function WebsiteCard({
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.96 }}
       transition={{ duration: 0.45, delay: idx * 0.08 }}
-      className="flex flex-col items-center group"
+      className={`flex flex-col items-center group ${className}`}
     >
       {/* ── Browser shell ── */}
       <div className="relative w-full px-6">
