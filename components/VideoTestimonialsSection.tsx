@@ -1,5 +1,14 @@
 "use client";
 
+function getSafeThumbName(file: string): string {
+  const base = file.split("/").pop()?.replace(/\.[^/.]+$/, "") || "";
+  return base
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, "_")
+    .replace(/_+/g, "_");
+}
+
+
 import { useState, useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
@@ -242,6 +251,7 @@ function FullscreenReelModal({
                 autoPlay
                 playsInline
                 preload="auto"
+                poster={testimonial.videoUrl ? `/images/thumbs/${getSafeThumbName(testimonial.videoUrl)}.jpg` : undefined}
                 className="w-full h-full object-cover bg-black"
               >
                 <source
@@ -405,8 +415,9 @@ function VideoReelCard({
         <video
           ref={videoRef}
           src={isInView && item.videoUrl ? `${item.videoUrl}#t=0.1` : undefined}
+          poster={item.videoUrl ? `/images/thumbs/${getSafeThumbName(item.videoUrl)}.jpg` : undefined}
           className="w-full h-full object-cover"
-          preload={isInView ? "metadata" : "none"}
+          preload="none"
           playsInline
           onEnded={() => setActiveVideoId(null)}
         />

@@ -33,44 +33,44 @@ const CATEGORIES = [
 ];
 
 const PROJECTS = [
-  { id: "re-10", category: "reels", title: "Best Date", client: "Short Form", year: "2026", file: "/best date.mp4", tag: "Lifestyle Reel", description: "Vibrant lifestyle reel with smooth camera pans and trending audio." },
-  { id: "re-snitch", category: "reels", title: "Snitch — Fast-Paced D2C Drop", client: "Snitch", year: "2026", file: "/snitch.mp4", tag: "Fashion Reel", description: "High-retention menswear campaign reel for Snitch featuring rapid-fire cuts, streetwear energy, and punchy transitions." },
-  { id: "re-17", category: "reels", isReel: true, title: "Yanisa — Beatsync Reel", client: "Yanisa Media", year: "2026", file: "/beatsync.mp4", tag: "Beat Sync Reel", description: "Precision beat-synced reel with frame-perfect cuts timed to music drops." },
-  { id: "re-12", category: "reels", title: "Fox 1 Fin", client: "Short Form", year: "2026", file: "/fox 1 fin.mp4", tag: "Cinematic Reel", description: "Cinematic vertical edit with dynamic lighting and atmospheric grade." },
-  { id: "re-divya-01", category: "reels", title: "Divya — Perspectives on Growth", client: "Divya", year: "2026", file: "/divya 1.mp4", tag: "Creator Story", description: "Engaging personal brand short video highlighting mindset, focus, and modern creator lessons." },
-  { id: "re-mokobara", category: "reels", title: "Mokobara — Going Places", client: "Mokobara", year: "2026", file: "/mokobara.mp4", tag: "D2C Brand Film", description: "Premium cinematic commercial reel for Mokobara travel gear with seamless whip-pans and aspirational energy." },
-  { id: "re-karishma-01", category: "reels", title: "Karishma — Defining Moments", client: "Karishma", year: "2026", file: "/karishma 1.mp4", tag: "Lifestyle Reel", description: "Vibrant lifestyle reel with punchy transitions, trending sound design, and clean typography." },
-  { id: "re-arezou", category: "reels", title: "Arezou — Pure Botanical Luxury", client: "Arezou", year: "2026", file: "/Arezou.mp4", tag: "Beauty Campaign", description: "Sensory beauty & skincare film with delicate lighting, macro textures, and calming sound atmosphere." },
-  { id: "re-shrishti-01", category: "reels", title: "Shrishti — Crafting Your Edge", client: "Shrishti", year: "2026", file: "/Shrishti 1.mp4", tag: "Founder Story", description: "Thought-provoking short format discussion on founder resilience, market differentiation, and authentic value." },
-  { id: "re-faceoil", category: "reels", title: "Best Face Oil — Product Showcase", client: "D2C Brand", year: "2026", file: "/Best face oil.mp4", tag: "Product Reel", description: "High-impact beauty & skincare product reel with macro detail shots and aesthetic color grade." },
-  { id: "re-01", category: "reels", title: "Why People Feel They Are Not Successful", client: "Short Form", year: "2026", file: "/why people feel they are not successful.mp4", tag: "Motivation Reel", description: "Deep dive short-form reel on mindset, growth, and overcoming career plateau." },
-  { id: "re-superyou", category: "reels", title: "Superyou — Elevate Everyday", client: "Superyou", year: "2026", file: "/superyou.mp4", tag: "Brand Campaign", description: "Cinematic commercial reel celebrating health, wellbeing, and vibrant lifestyle choices." },
-  { id: "re-divya-02", category: "reels", title: "Divya — Embracing the Journey", client: "Divya", year: "2026", file: "/divya 2.mp4", tag: "Creator Story", description: "Dynamic short reel featuring candid life reflections, sharp pacing, and relatable messaging." },
-  { id: "re-metrogini", category: "reels", title: "Metrogini — Urban Pulse", client: "Metrogini", year: "2026", file: "/Metrogini.mp4", tag: "Commercial Reel", description: "High-octane urban commercial cut with kinetic typography, beat synchronization, and slick sound design." },
-  { id: "re-karishma-02", category: "reels", title: "Karishma — Daily Creative Flow", client: "Karishma", year: "2026", file: "/karishma 2.mp4", tag: "Lifestyle Reel", description: "Snappy daily routine and lifestyle video formatted for maximum watch time and social shares." },
-  { id: "re-18", category: "reels", isReel: true, title: "Yanisa — Dubai Tower Showcase", client: "Yanisa Media", year: "2026", file: "/DUBAI TOWER.I.mp4", tag: "Brand Reel", description: "Architectural vertical showcase featuring Dubai Tower visuals synced to soundtrack." },
-  { id: "re-shrishti-02", category: "reels", title: "Shrishti — Creative Consistency", client: "Shrishti", year: "2026", file: "/shrishti 2.mp4", tag: "Founder Story", description: "Fast-moving insights reel breaking down daily creative habits and sustainable output." },
-  { id: "re-chapter-02", category: "reels", title: "Chapter 2 — The Next Horizon", client: "Creator Brand", year: "2026", file: "/chapter 2.mp4", tag: "Narrative Reel", description: "Compelling narrative short form video exploring life chapters, perspective shifts, and personal reinvention." },
-  { id: "re-02", category: "reels", title: "Talking to Strangers", client: "Short Form", year: "2026", file: "/Talking to strangers (1).mp4", tag: "Social Reel", description: "Engaging streetwear / interview style short form video cut." },
-  { id: "re-divya-03", category: "reels", title: "Divya — Finding Your Focus", client: "Divya", year: "2026", file: "/divya 3.mp4", tag: "Creator Story", description: "High-retention reel exploring priority management, career clarity, and authentic voice." },
-  { id: "re-stories", category: "reels", title: "Stories That Resonate", client: "Big Toast Studio", year: "2026", file: "/Stories.mov", tag: "Brand Narrative", description: "Visual manifesto reel exploring the emotional power of human storytelling in modern digital media." },
-  { id: "re-logo", category: "reels", title: "Big Toast — Logo Identity & Motion", client: "Brand Identity", year: "2026", file: "/logo.mov", tag: "Motion Design", description: "Animated visual brand ident showcasing fluid motion, glass textures, and sound design." },
-  { id: "re-06", category: "reels", title: "Brihas Quotient", client: "Short Form", year: "2026", file: "/brihas-qoutient-wc.mp4", tag: "Promo Reel", description: "Dynamic brand feature reel with beat sync cuts and custom graphics." },
-  { id: "re-20", category: "reels", isReel: true, title: "Yanisa — GAAS Social Reel", client: "Yanisa Media", year: "2026", file: "/gaas.mp4", tag: "Social Reel", description: "High-energy social reel with bold typography, color pop effects, and snappy edits." },
-  { id: "re-03", category: "reels", title: "Rat Race", client: "Short Form", year: "2026", file: "/rat race.mp4", tag: "Mindset Reel", description: "Fast-paced commentary reel exploring modern lifestyle & career hustle." },
-  { id: "re-11", category: "reels", title: "Dads", client: "Short Form", year: "2026", file: "/dads.mp4", tag: "Family Reel", description: "Relatable humor and family storytelling short form video format." },
-  { id: "re-15", category: "reels", title: "Connect With Yourself", client: "Short Form", year: "2026", file: "/connect-with-yourself.mp4", tag: "Mindset Reel", description: "Reflective short-form reel on self-connection and personal clarity." },
-  { id: "re-16", category: "reels", title: "Stuck", client: "Short Form", year: "2026", file: "/Stuck.mp4", tag: "Motivation Reel", description: "Dynamic short video on overcoming creative and mental blocks." },
-  { id: "re-13", category: "reels", title: "Reel 4 BR", client: "Short Form", year: "2026", file: "/Reel 4 BR.mp4", tag: "Creative Reel", description: "Creative visual sequence with seamless whip-pan transitions." },
-  { id: "re-08", category: "reels", title: "Brihas Promo 1", client: "Short Form", year: "2026", file: "/brihas-promo 1.mp4", tag: "Brand Reel", description: "Polished promotional reel highlighting product features and brand aesthetic." },
-  { id: "re-04", category: "reels", title: "Intelligent Decision", client: "Short Form", year: "2026", file: "/Intelligent Decision.mp4", tag: "Business Reel", description: "High-impact business insights reel with crisp typography and motion graphics." },
-  { id: "re-21", category: "reels", isReel: true, title: "Yanisa — Lata Mangeshkar Tribute", client: "Yanisa Media", year: "2026", file: "/lata mangeshkar new.mp4", tag: "Tribute Reel", description: "Emotional tribute reel with soft color grading, archival-style edits, and subtle overlays." },
-  { id: "re-07", category: "reels", title: "Rapid Fire", client: "Short Form", year: "2026", file: "/rapid-fire-.mp4", tag: "Q&A Reel", description: "High-energy Q&A rapid fire format reel built for social media engagement." },
-  { id: "re-19", category: "reels", isReel: true, title: "Yanisa — Event Promo Reel", client: "Yanisa Media", year: "2026", file: "/EVENT PROMO.mp4", tag: "Event Reel", description: "Vertical event highlight reel with high-energy cuts and launch announcements." },
-  { id: "re-14", category: "reels", title: "Reel 8 BR", client: "Short Form", year: "2026", file: "/Reel 8 BR.mp4", tag: "Creative Reel", description: "High-octane montage reel with frame-by-frame sound effects." },
-  { id: "re-09", category: "reels", title: "Brihas Promo 2", client: "Short Form", year: "2026", file: "/brihas-promo-2.mp4", tag: "Brand Reel", description: "Follow-up brand reel cut with rhythm sync and punchy sound design." },
-  { id: "re-22", category: "reels", isReel: true, title: "Yanisa — Overtime Reel", client: "Yanisa Media", year: "2026", file: "/OVERTIME_.mp4", tag: "Motivation Reel", description: "Late-night hustle themed reel with moody grading and motivational text overlays." },
-  { id: "re-05", category: "reels", title: "End of Life", client: "Short Form", year: "2026", file: "/end of life.mp4", tag: "Storytelling Reel", description: "Cinematic short story reel with atmospheric sound design and color grade." },
+  { id: "re-10", category: "reels", title: "Best Date", client: "Short Form", year: "2026", file: "/best date.mp4", thumbnail: "/images/thumbs/best_date.jpg", tag: "Lifestyle Reel", description: "Vibrant lifestyle reel with smooth camera pans and trending audio." },
+  { id: "re-snitch", category: "reels", title: "Snitch — Fast-Paced D2C Drop", client: "Snitch", year: "2026", file: "/snitch.mp4", thumbnail: "/images/thumbs/snitch.jpg", tag: "Fashion Reel", description: "High-retention menswear campaign reel for Snitch featuring rapid-fire cuts, streetwear energy, and punchy transitions." },
+  { id: "re-17", category: "reels", isReel: true, title: "Yanisa — Beatsync Reel", client: "Yanisa Media", year: "2026", file: "/beatsync.mp4", thumbnail: "/images/thumbs/beatsync.jpg", tag: "Beat Sync Reel", description: "Precision beat-synced reel with frame-perfect cuts timed to music drops." },
+  { id: "re-12", category: "reels", title: "Fox 1 Fin", client: "Short Form", year: "2026", file: "/fox 1 fin.mp4", thumbnail: "/images/thumbs/fox_1_fin.jpg", tag: "Cinematic Reel", description: "Cinematic vertical edit with dynamic lighting and atmospheric grade." },
+  { id: "re-divya-01", category: "reels", title: "Divya — Perspectives on Growth", client: "Divya", year: "2026", file: "/divya 1.mp4", thumbnail: "/images/thumbs/divya_1.jpg", tag: "Creator Story", description: "Engaging personal brand short video highlighting mindset, focus, and modern creator lessons." },
+  { id: "re-mokobara", category: "reels", title: "Mokobara — Going Places", client: "Mokobara", year: "2026", file: "/mokobara.mp4", thumbnail: "/images/thumbs/mokobara.jpg", tag: "D2C Brand Film", description: "Premium cinematic commercial reel for Mokobara travel gear with seamless whip-pans and aspirational energy." },
+  { id: "re-karishma-01", category: "reels", title: "Karishma — Defining Moments", client: "Karishma", year: "2026", file: "/karishma 1.mp4", thumbnail: "/images/thumbs/karishma_1.jpg", tag: "Lifestyle Reel", description: "Vibrant lifestyle reel with punchy transitions, trending sound design, and clean typography." },
+  { id: "re-arezou", category: "reels", title: "Arezou — Pure Botanical Luxury", client: "Arezou", year: "2026", file: "/Arezou.mp4", thumbnail: "/images/thumbs/arezou.jpg", tag: "Beauty Campaign", description: "Sensory beauty & skincare film with delicate lighting, macro textures, and calming sound atmosphere." },
+  { id: "re-shrishti-01", category: "reels", title: "Shrishti — Crafting Your Edge", client: "Shrishti", year: "2026", file: "/Shrishti 1.mp4", thumbnail: "/images/thumbs/shrishti_1.jpg", tag: "Founder Story", description: "Thought-provoking short format discussion on founder resilience, market differentiation, and authentic value." },
+  { id: "re-faceoil", category: "reels", title: "Best Face Oil — Product Showcase", client: "D2C Brand", year: "2026", file: "/Best face oil.mp4", thumbnail: "/images/thumbs/best_face_oil.jpg", tag: "Product Reel", description: "High-impact beauty & skincare product reel with macro detail shots and aesthetic color grade." },
+  { id: "re-01", category: "reels", title: "Why People Feel They Are Not Successful", client: "Short Form", year: "2026", file: "/why people feel they are not successful.mp4", thumbnail: "/images/thumbs/why_people_feel_they_are_not_successful.jpg", tag: "Motivation Reel", description: "Deep dive short-form reel on mindset, growth, and overcoming career plateau." },
+  { id: "re-superyou", category: "reels", title: "Superyou — Elevate Everyday", client: "Superyou", year: "2026", file: "/superyou.mp4", thumbnail: "/images/thumbs/superyou.jpg", tag: "Brand Campaign", description: "Cinematic commercial reel celebrating health, wellbeing, and vibrant lifestyle choices." },
+  { id: "re-divya-02", category: "reels", title: "Divya — Embracing the Journey", client: "Divya", year: "2026", file: "/divya 2.mp4", thumbnail: "/images/thumbs/divya_2.jpg", tag: "Creator Story", description: "Dynamic short reel featuring candid life reflections, sharp pacing, and relatable messaging." },
+  { id: "re-metrogini", category: "reels", title: "Metrogini — Urban Pulse", client: "Metrogini", year: "2026", file: "/Metrogini.mp4", thumbnail: "/images/thumbs/metrogini.jpg", tag: "Commercial Reel", description: "High-octane urban commercial cut with kinetic typography, beat synchronization, and slick sound design." },
+  { id: "re-karishma-02", category: "reels", title: "Karishma — Daily Creative Flow", client: "Karishma", year: "2026", file: "/karishma 2.mp4", thumbnail: "/images/thumbs/karishma_2.jpg", tag: "Lifestyle Reel", description: "Snappy daily routine and lifestyle video formatted for maximum watch time and social shares." },
+  { id: "re-18", category: "reels", isReel: true, title: "Yanisa — Dubai Tower Showcase", client: "Yanisa Media", year: "2026", file: "/DUBAI TOWER.I.mp4", thumbnail: "/images/thumbs/dubai_tower_i.jpg", tag: "Brand Reel", description: "Architectural vertical showcase featuring Dubai Tower visuals synced to soundtrack." },
+  { id: "re-shrishti-02", category: "reels", title: "Shrishti — Creative Consistency", client: "Shrishti", year: "2026", file: "/shrishti 2.mp4", thumbnail: "/images/thumbs/shrishti_2.jpg", tag: "Founder Story", description: "Fast-moving insights reel breaking down daily creative habits and sustainable output." },
+  { id: "re-chapter-02", category: "reels", title: "Chapter 2 — The Next Horizon", client: "Creator Brand", year: "2026", file: "/chapter 2.mp4", thumbnail: "/images/thumbs/chapter_2.jpg", tag: "Narrative Reel", description: "Compelling narrative short form video exploring life chapters, perspective shifts, and personal reinvention." },
+  { id: "re-02", category: "reels", title: "Talking to Strangers", client: "Short Form", year: "2026", file: "/Talking to strangers (1).mp4", thumbnail: "/images/thumbs/talking_to_strangers_1_.jpg", tag: "Social Reel", description: "Engaging streetwear / interview style short form video cut." },
+  { id: "re-divya-03", category: "reels", title: "Divya — Finding Your Focus", client: "Divya", year: "2026", file: "/divya 3.mp4", thumbnail: "/images/thumbs/divya_3.jpg", tag: "Creator Story", description: "High-retention reel exploring priority management, career clarity, and authentic voice." },
+  { id: "re-stories", category: "reels", title: "Stories That Resonate", client: "Big Toast Studio", year: "2026", file: "/Stories.mp4", thumbnail: "/images/thumbs/stories.jpg", tag: "Brand Narrative", description: "Visual manifesto reel exploring the emotional power of human storytelling in modern digital media." },
+  { id: "re-logo", category: "reels", title: "Big Toast — Logo Identity & Motion", client: "Brand Identity", year: "2026", file: "/logo.mp4", thumbnail: "/images/thumbs/logo.jpg", tag: "Motion Design", description: "Animated visual brand ident showcasing fluid motion, glass textures, and sound design." },
+  { id: "re-06", category: "reels", title: "Brihas Quotient", client: "Short Form", year: "2026", file: "/brihas-qoutient-wc.mp4", thumbnail: "/images/thumbs/brihas_qoutient_wc.jpg", tag: "Promo Reel", description: "Dynamic brand feature reel with beat sync cuts and custom graphics." },
+  { id: "re-20", category: "reels", isReel: true, title: "Yanisa — GAAS Social Reel", client: "Yanisa Media", year: "2026", file: "/gaas.mp4", thumbnail: "/images/thumbs/gaas.jpg", tag: "Social Reel", description: "High-energy social reel with bold typography, color pop effects, and snappy edits." },
+  { id: "re-03", category: "reels", title: "Rat Race", client: "Short Form", year: "2026", file: "/rat race.mp4", thumbnail: "/images/thumbs/rat_race.jpg", tag: "Mindset Reel", description: "Fast-paced commentary reel exploring modern lifestyle & career hustle." },
+  { id: "re-11", category: "reels", title: "Dads", client: "Short Form", year: "2026", file: "/dads.mp4", thumbnail: "/images/thumbs/dads.jpg", tag: "Family Reel", description: "Relatable humor and family storytelling short form video format." },
+  { id: "re-15", category: "reels", title: "Connect With Yourself", client: "Short Form", year: "2026", file: "/connect-with-yourself.mp4", thumbnail: "/images/thumbs/connect_with_yourself.jpg", tag: "Mindset Reel", description: "Reflective short-form reel on self-connection and personal clarity." },
+  { id: "re-16", category: "reels", title: "Stuck", client: "Short Form", year: "2026", file: "/Stuck.mp4", thumbnail: "/images/thumbs/stuck.jpg", tag: "Motivation Reel", description: "Dynamic short video on overcoming creative and mental blocks." },
+  { id: "re-13", category: "reels", title: "Reel 4 BR", client: "Short Form", year: "2026", file: "/Reel 4 BR.mp4", thumbnail: "/images/thumbs/reel_4_br.jpg", tag: "Creative Reel", description: "Creative visual sequence with seamless whip-pan transitions." },
+  { id: "re-08", category: "reels", title: "Brihas Promo 1", client: "Short Form", year: "2026", file: "/brihas-promo 1.mp4", thumbnail: "/images/thumbs/brihas_promo_1.jpg", tag: "Brand Reel", description: "Polished promotional reel highlighting product features and brand aesthetic." },
+  { id: "re-04", category: "reels", title: "Intelligent Decision", client: "Short Form", year: "2026", file: "/Intelligent Decision.mp4", thumbnail: "/images/thumbs/intelligent_decision.jpg", tag: "Business Reel", description: "High-impact business insights reel with crisp typography and motion graphics." },
+  { id: "re-21", category: "reels", isReel: true, title: "Yanisa — Lata Mangeshkar Tribute", client: "Yanisa Media", year: "2026", file: "/lata mangeshkar new.mp4", thumbnail: "/images/thumbs/lata_mangeshkar_new.jpg", tag: "Tribute Reel", description: "Emotional tribute reel with soft color grading, archival-style edits, and subtle overlays." },
+  { id: "re-07", category: "reels", title: "Rapid Fire", client: "Short Form", year: "2026", file: "/rapid-fire-.mp4", thumbnail: "/images/thumbs/rapid_fire_.jpg", tag: "Q&A Reel", description: "High-energy Q&A rapid fire format reel built for social media engagement." },
+  { id: "re-19", category: "reels", isReel: true, title: "Yanisa — Event Promo Reel", client: "Yanisa Media", year: "2026", file: "/EVENT PROMO.mp4", thumbnail: "/images/thumbs/event_promo.jpg", tag: "Event Reel", description: "Vertical event highlight reel with high-energy cuts and launch announcements." },
+  { id: "re-14", category: "reels", title: "Reel 8 BR", client: "Short Form", year: "2026", file: "/Reel 8 BR.mp4", thumbnail: "/images/thumbs/reel_8_br.jpg", tag: "Creative Reel", description: "High-octane montage reel with frame-by-frame sound effects." },
+  { id: "re-09", category: "reels", title: "Brihas Promo 2", client: "Short Form", year: "2026", file: "/brihas-promo-2.mp4", thumbnail: "/images/thumbs/brihas_promo_2.jpg", tag: "Brand Reel", description: "Follow-up brand reel cut with rhythm sync and punchy sound design." },
+  { id: "re-22", category: "reels", isReel: true, title: "Yanisa — Overtime Reel", client: "Yanisa Media", year: "2026", file: "/OVERTIME_.mp4", thumbnail: "/images/thumbs/overtime_.jpg", tag: "Motivation Reel", description: "Late-night hustle themed reel with moody grading and motivational text overlays." },
+  { id: "re-05", category: "reels", title: "End of Life", client: "Short Form", year: "2026", file: "/end of life.mp4", thumbnail: "/images/thumbs/end_of_life.jpg", tag: "Storytelling Reel", description: "Cinematic short story reel with atmospheric sound design and color grade." },
   {
     id: "lv-01",
     category: "longvideo",
@@ -115,7 +115,7 @@ const PROJECTS = [
     youtubeId: "Al-eus6jPGc",
     description: "An insightful discussion with Anju Kish breaking down puberty, emotional changes, and teenage growth.",
   },
-  { id: "lv-02", category: "longvideo", title: "Yanisa — Event & Keynote Reel", client: "Yanisa Media", year: "2025", duration: "12:40", tag: "Brand Documentary", file: "/Copy of event promo final.mp4", description: "High-energy event documentary and keynote recording with lower-thirds and color grade." },
+  { id: "lv-02", category: "longvideo", title: "Yanisa — Event & Keynote Reel", client: "Yanisa Media", year: "2025", duration: "12:40", tag: "Brand Documentary", file: "/Copy of event promo final.mp4", thumbnail: "/images/thumbs/copy_of_event_promo_final.jpg", description: "High-energy event documentary and keynote recording with lower-thirds and color grade." },
   {
     id: "lv-yt-02",
     category: "longvideo",
@@ -179,7 +179,7 @@ const PROJECTS = [
     year: "2026",
     duration: "1:59",
     tag: "Podcast Trailer",
-    file: "/trailer ONE.mov",
+    file: "/trailer ONE.mp4", thumbnail: "/images/thumbs/trailer_one.jpg",
     description: "Cinematic podcast teaser trailer featuring in-depth dialogue and multi-cam studio production.",
   },
   {
@@ -227,19 +227,19 @@ const PROJECTS = [
     thumbnail: "/images/thumb_ai_film_rishta.jpg",
     description: "Emotion-driven generative AI commercial depicting Indian family celebration, cinematic lighting, and photorealistic character generation.",
   },
-  { id: "ai-01", category: "aivideo", title: "Yanisa — AI Avatar Ad Campaign", client: "Yanisa Media", year: "2026", duration: "0:30", tag: "AI Avatar", file: "/yanisa AI ad final.mp4", description: "Synthetic AI voiceover integration, AI avatar presentation, and dynamic product callouts." },
-  { id: "ai-02", category: "aivideo", title: "Yanisa — AI Generative Content Film", client: "Yanisa Media", year: "2026", duration: "0:45", tag: "Generative AI Film", file: "/AI content film.mp4", description: "AI text-to-video scene generation, visual background extensions, and futuristic overlays." },
-  { id: "ai-snneh-01", category: "aivideo", isReel: true, title: "Snneh — AI Workflow & Synthesis (Pt. 1)", client: "Snneh AI", year: "2026", duration: "1:23", file: "/snneh 1.mp4", tag: "AI Creator Reel", description: "Next-gen AI content creation, digital voiceover integration, and dynamic visual narrative." },
-  { id: "ai-reel-05", category: "aivideo", isReel: true, title: "Yanisa — AI Agents Reel", client: "Yanisa Media", year: "2026", file: "/AI AGENTS.mp4", tag: "AI Content Reel", description: "AI-themed short-form content reel with futuristic motion graphics and voiceover." },
-  { id: "ai-snneh-02", category: "aivideo", isReel: true, title: "Snneh — Digital Persona & Strategy (Pt. 2)", client: "Snneh AI", year: "2026", duration: "0:52", file: "/snneh 2.mp4", tag: "AI Avatar Reel", description: "AI-assisted storytelling with generative background extensions, kinetic subtitles, and fluid pacing." },
-  { id: "ai-reel-06", category: "aivideo", isReel: true, title: "Yanisa — Beatsync Reel", client: "Yanisa Media", year: "2026", file: "/beatsync.mp4", tag: "AI Beat Sync", description: "Precision beat-synced reel with frame-perfect cuts timed to music drops." },
-  { id: "ai-snneh-03", category: "aivideo", isReel: true, title: "Snneh — Narrative Intelligence (Pt. 3)", client: "Snneh AI", year: "2026", duration: "0:50", file: "/snneh 3.mp4", tag: "Generative AI Reel", description: "High-retention AI content reel exploring synthetic creative direction and modern social hooks." },
-  { id: "ai-reel-07", category: "aivideo", isReel: true, title: "Yanisa — Dubai Tower Showcase", client: "Yanisa Media", year: "2026", file: "/DUBAI TOWER.I.mp4", tag: "AI Architectural Reel", description: "Architectural vertical showcase featuring Dubai Tower visuals synced to soundtrack." },
-  { id: "ai-snneh-04", category: "aivideo", isReel: true, title: "Snneh — Creative Evolution (Pt. 4)", client: "Snneh AI", year: "2026", duration: "1:39", file: "/snneh 4.mp4", tag: "AI Production Reel", description: "Cinematic vertical AI film blending generative visual concepts, motion design, and audio mastering." },
-  { id: "ai-reel-01", category: "aivideo", isReel: true, title: "Yanisa — Set of 7 (Vol. 1)", client: "Yanisa Media", year: "2026", file: "/1set of 7 (1).mp4", tag: "AI Product Reel", description: "First reel in the Yanisa 7-series — fast-paced AI product cuts with trending audio." },
-  { id: "ai-reel-02", category: "aivideo", isReel: true, title: "Yanisa — Topper Reel", client: "Yanisa Media", year: "2026", file: "/2.5 topper.mp4", tag: "AI Beat Sync", description: "Quick-hit topper reel with beat-synced transitions and bold text overlays." },
-  { id: "ai-reel-03", category: "aivideo", isReel: true, title: "Yanisa — Invisible Clip", client: "Yanisa Media", year: "2026", file: "/2.invisible clip.mp4", tag: "AI Transition Reel", description: "Seamless invisible-cut reel showcasing smooth outfit and product transitions." },
-  { id: "ai-reel-04", category: "aivideo", isReel: true, title: "Yanisa — Wig Showcase", client: "Yanisa Media", year: "2026", file: "/4.wig.mp4", tag: "AI Product Showcase", description: "Dynamic product reel featuring wig collection with glam color grading." },
+  { id: "ai-01", category: "aivideo", title: "Yanisa — AI Avatar Ad Campaign", client: "Yanisa Media", year: "2026", duration: "0:30", tag: "AI Avatar", file: "/yanisa AI ad final.mp4", thumbnail: "/images/thumbs/yanisa_ai_ad_final.jpg", description: "Synthetic AI voiceover integration, AI avatar presentation, and dynamic product callouts." },
+  { id: "ai-02", category: "aivideo", title: "Yanisa — AI Generative Content Film", client: "Yanisa Media", year: "2026", duration: "0:45", tag: "Generative AI Film", file: "/AI content film.mp4", thumbnail: "/images/thumbs/ai_content_film.jpg", description: "AI text-to-video scene generation, visual background extensions, and futuristic overlays." },
+  { id: "ai-snneh-01", category: "aivideo", isReel: true, title: "Snneh — AI Workflow & Synthesis (Pt. 1)", client: "Snneh AI", year: "2026", duration: "1:23", file: "/snneh 1.mp4", thumbnail: "/images/thumbs/snneh_1.jpg", tag: "AI Creator Reel", description: "Next-gen AI content creation, digital voiceover integration, and dynamic visual narrative." },
+  { id: "ai-reel-05", category: "aivideo", isReel: true, title: "Yanisa — AI Agents Reel", client: "Yanisa Media", year: "2026", file: "/AI AGENTS.mp4", thumbnail: "/images/thumbs/ai_agents.jpg", tag: "AI Content Reel", description: "AI-themed short-form content reel with futuristic motion graphics and voiceover." },
+  { id: "ai-snneh-02", category: "aivideo", isReel: true, title: "Snneh — Digital Persona & Strategy (Pt. 2)", client: "Snneh AI", year: "2026", duration: "0:52", file: "/snneh 2.mp4", thumbnail: "/images/thumbs/snneh_2.jpg", tag: "AI Avatar Reel", description: "AI-assisted storytelling with generative background extensions, kinetic subtitles, and fluid pacing." },
+  { id: "ai-reel-06", category: "aivideo", isReel: true, title: "Yanisa — Beatsync Reel", client: "Yanisa Media", year: "2026", file: "/beatsync.mp4", thumbnail: "/images/thumbs/beatsync.jpg", tag: "AI Beat Sync", description: "Precision beat-synced reel with frame-perfect cuts timed to music drops." },
+  { id: "ai-snneh-03", category: "aivideo", isReel: true, title: "Snneh — Narrative Intelligence (Pt. 3)", client: "Snneh AI", year: "2026", duration: "0:50", file: "/snneh 3.mp4", thumbnail: "/images/thumbs/snneh_3.jpg", tag: "Generative AI Reel", description: "High-retention AI content reel exploring synthetic creative direction and modern social hooks." },
+  { id: "ai-reel-07", category: "aivideo", isReel: true, title: "Yanisa — Dubai Tower Showcase", client: "Yanisa Media", year: "2026", file: "/DUBAI TOWER.I.mp4", thumbnail: "/images/thumbs/dubai_tower_i.jpg", tag: "AI Architectural Reel", description: "Architectural vertical showcase featuring Dubai Tower visuals synced to soundtrack." },
+  { id: "ai-snneh-04", category: "aivideo", isReel: true, title: "Snneh — Creative Evolution (Pt. 4)", client: "Snneh AI", year: "2026", duration: "1:39", file: "/snneh 4.mp4", thumbnail: "/images/thumbs/snneh_4.jpg", tag: "AI Production Reel", description: "Cinematic vertical AI film blending generative visual concepts, motion design, and audio mastering." },
+  { id: "ai-reel-01", category: "aivideo", isReel: true, title: "Yanisa — Set of 7 (Vol. 1)", client: "Yanisa Media", year: "2026", file: "/1set of 7 (1).mp4", thumbnail: "/images/thumbs/1set_of_7_1_.jpg", tag: "AI Product Reel", description: "First reel in the Yanisa 7-series — fast-paced AI product cuts with trending audio." },
+  { id: "ai-reel-02", category: "aivideo", isReel: true, title: "Yanisa — Topper Reel", client: "Yanisa Media", year: "2026", file: "/2.5 topper.mp4", thumbnail: "/images/thumbs/2_5_topper.jpg", tag: "AI Beat Sync", description: "Quick-hit topper reel with beat-synced transitions and bold text overlays." },
+  { id: "ai-reel-03", category: "aivideo", isReel: true, title: "Yanisa — Invisible Clip", client: "Yanisa Media", year: "2026", file: "/2.invisible clip.mp4", thumbnail: "/images/thumbs/2_invisible_clip.jpg", tag: "AI Transition Reel", description: "Seamless invisible-cut reel showcasing smooth outfit and product transitions." },
+  { id: "ai-reel-04", category: "aivideo", isReel: true, title: "Yanisa — Wig Showcase", client: "Yanisa Media", year: "2026", file: "/4.wig.mp4", thumbnail: "/images/thumbs/4_wig.jpg", tag: "AI Product Showcase", description: "Dynamic product reel featuring wig collection with glam color grading." },
   {
     id: "web-01",
     category: "website",
@@ -424,7 +424,7 @@ function ProjectCard({
 }: {
   project: typeof PROJECTS[0];
   idx: number;
-  onOpenModal: (data: { file: string; title: string; tag: string; isReel?: boolean }) => void;
+  onOpenModal: (data: { file: string; title: string; tag: string; isReel?: boolean; thumbnail?: string }) => void;
 }) {
   const imgSrc = project.image ?? (project as any).file ?? "";
   const handleFullscreen = (e: React.MouseEvent) => {
@@ -1003,6 +1003,15 @@ function WebsiteCard({
   );
 }
 
+
+function getSafeThumbName(file: string): string {
+  const base = file.split("/").pop()?.replace(/\.[^/.]+$/, "") || "";
+  return base
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, "_")
+    .replace(/_+/g, "_");
+}
+
 // ─── Horizontal Video Card ───────────────────────────────────────────────────
 
 function HorizontalVideoCard({
@@ -1031,7 +1040,7 @@ function HorizontalVideoCard({
   idx: number;
   activeVideoId: string | null;
   setActiveVideoId: (id: string | null) => void;
-  onOpenModal: (data: { file: string; title: string; tag: string; isReel?: boolean }) => void;
+  onOpenModal: (data: { file: string; title: string; tag: string; isReel?: boolean; thumbnail?: string }) => void;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -1100,10 +1109,12 @@ function HorizontalVideoCard({
         title: video.title,
         tag: video.tag || (isYanisa ? "Yanisa Media" : "Video"),
         isReel: false,
+        thumbnail: safeThumb,
       });
     }
   };
 
+  const safeThumb = video.thumbnail || (video.file ? `/images/thumbs/${getSafeThumbName(video.file)}.jpg` : undefined);
   const encodedFile = video.file ? encodeURI(video.file) : undefined;
 
   return (
@@ -1179,9 +1190,9 @@ function HorizontalVideoCard({
             <video
               ref={videoRef}
               src={isInView && encodedFile ? `${encodedFile}#t=0.1` : undefined}
-              poster={video.thumbnail}
+              poster={safeThumb}
               className="w-full h-full object-cover"
-              preload={isInView ? "metadata" : "none"}
+              preload="none"
               playsInline
               onEnded={() => setActiveVideoId(null)}
               onClick={togglePlay}
@@ -1283,17 +1294,19 @@ function ReelCard({
     client?: string;
     year?: string;
     isReel?: boolean;
+    thumbnail?: string;
   };
   idx: number;
   activeVideoId: string | null;
   setActiveVideoId: (id: string | null) => void;
-  onOpenModal: (data: { file: string; title: string; tag: string; isReel?: boolean }) => void;
+  onOpenModal: (data: { file: string; title: string; tag: string; isReel?: boolean; thumbnail?: string }) => void;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const isPlaying = activeVideoId === reel.id;
   const [isInView, setIsInView] = useState(false);
   const isYanisa = isYanisaProject(reel);
+  const safeThumb = reel.thumbnail || (reel.file ? `/images/thumbs/${getSafeThumbName(reel.file)}.jpg` : undefined);
 
   useEffect(() => {
     const el = containerRef.current;
@@ -1345,6 +1358,7 @@ function ReelCard({
       title: reel.title,
       tag: reel.tag || (isYanisa ? "Yanisa" : "Reel"),
       isReel: true,
+      thumbnail: safeThumb,
     });
   };
 
@@ -1362,8 +1376,9 @@ function ReelCard({
         <video
           ref={videoRef}
           src={isInView ? `${encodeURI(reel.file)}#t=0.1` : undefined}
+          poster={safeThumb}
           className="w-full h-full object-cover"
-          preload={isInView ? "metadata" : "none"}
+          preload="none"
           playsInline
           onEnded={() => setActiveVideoId(null)}
           onClick={togglePlay}
@@ -1426,7 +1441,7 @@ function FullscreenVideoModal({
   videoData,
   onClose,
 }: {
-  videoData: { file: string; title: string; tag: string; isReel?: boolean } | null;
+  videoData: { file: string; title: string; tag: string; isReel?: boolean; thumbnail?: string } | null;
   onClose: () => void;
 }) {
   const [mounted, setMounted] = useState(false);
@@ -1625,6 +1640,7 @@ export default function ProjectsPage() {
     title: string;
     tag: string;
     isReel?: boolean;
+    thumbnail?: string;
   } | null>(null);
 
   const filtered =
