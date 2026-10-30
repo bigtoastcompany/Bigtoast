@@ -89,6 +89,8 @@ export default function BlogSection({ limit, offset = 0, hideHeader = false }: B
                         src={post.image}
                         alt={post.title}
                         fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 380px"
+                        loading="lazy"
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute top-2 left-2 bg-zinc-900/90 backdrop-blur-md border border-zinc-700 px-2 py-0.5 rounded-full text-[10px] font-medium text-zinc-300">

@@ -1,196 +1,587 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 const BRANDS = [
   {
-    name: "Epicurus",
+    name: "Yanisa",
     logo: (
-      <svg width="180" height="48" viewBox="0 0 180 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-auto h-12 md:h-14 text-zinc-300 group-hover:text-white transition-colors">
-        <rect x="2" y="8" width="32" height="32" rx="8" stroke="currentColor" strokeWidth="3" fill="none" />
-        <path d="M11 19H23M11 24H20M11 29H23" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-        <text x="46" y="31" fill="currentColor" fontSize="22" fontWeight="700" fontFamily="sans-serif" letterSpacing="1.5">EPICURUS</text>
-      </svg>
+      <div className="flex items-center justify-center w-full h-full px-3">
+        <img
+          draggable={false}
+          src="/images/brands/yanisa.png"
+          alt="Yanisa"
+          className="max-h-10 md:max-h-12 w-auto max-w-[90%] object-contain filter drop-shadow-sm group-hover:scale-105 transition-transform"
+        />
+      </div>
     ),
   },
   {
-    name: "Euraf",
+    name: "FOX Real Estate",
     logo: (
-      <svg width="155" height="48" viewBox="0 0 155 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-auto h-12 md:h-14 text-zinc-300 group-hover:text-white transition-colors">
-        <circle cx="18" cy="24" r="14" stroke="currentColor" strokeWidth="3" fill="none" />
-        <circle cx="26" cy="24" r="8" stroke="currentColor" strokeWidth="2.5" fill="none" />
-        <text x="48" y="31" fill="currentColor" fontSize="22" fontWeight="700" fontFamily="sans-serif" letterSpacing="1.5">EURAF</text>
-      </svg>
+      <div className="flex items-center justify-center w-full h-full px-3">
+        <img
+          draggable={false}
+          src="/images/brands/foxrealestate.png"
+          alt="FOX Real Estate"
+          className="max-h-10 md:max-h-12 w-auto max-w-[85%] object-contain filter drop-shadow-sm group-hover:scale-105 transition-transform"
+        />
+      </div>
     ),
   },
   {
-    name: "Foraf",
+    name: "The Last Laugh",
     logo: (
-      <svg width="155" height="48" viewBox="0 0 155 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-auto h-12 md:h-14 text-zinc-300 group-hover:text-white transition-colors">
-        <path d="M6 36L20 8L34 36H6Z" stroke="currentColor" strokeWidth="3" fill="none" />
-        <path d="M14 27H26" stroke="currentColor" strokeWidth="2.5" />
-        <text x="46" y="31" fill="currentColor" fontSize="22" fontWeight="700" fontFamily="sans-serif" letterSpacing="1.5">FORAF</text>
-      </svg>
+      <div className="flex items-center justify-center w-full h-full px-3">
+        <img
+          draggable={false}
+          src="/images/brands/thelastlaugh.png"
+          alt="The Last Laugh"
+          className="max-h-16 md:max-h-20 w-auto max-w-[85%] object-contain filter drop-shadow-md group-hover:scale-105 transition-transform rounded-xl"
+        />
+      </div>
     ),
   },
   {
-    name: "Vortex",
+    name: "PetChef",
     logo: (
-      <svg width="165" height="48" viewBox="0 0 165 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-auto h-12 md:h-14 text-zinc-300 group-hover:text-white transition-colors">
-        <path d="M4 10L20 38L36 10" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M13 10L20 23L27 10" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-        <text x="46" y="31" fill="currentColor" fontSize="22" fontWeight="700" fontFamily="sans-serif" letterSpacing="1.5">VORTEX</text>
-      </svg>
+      <div className="flex items-center justify-center w-full h-full px-3">
+        <img
+          draggable={false}
+          src="/images/brands/petchef.png"
+          alt="PetChef"
+          className="max-h-16 md:max-h-20 w-auto max-w-[90%] object-contain filter drop-shadow-md group-hover:scale-105 transition-transform"
+        />
+      </div>
     ),
   },
   {
-    name: "Nexus",
+    name: "Arezou",
     logo: (
-      <svg width="155" height="48" viewBox="0 0 155 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-auto h-12 md:h-14 text-zinc-300 group-hover:text-white transition-colors">
-        <path d="M6 36V12L30 36V12" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
-        <text x="44" y="31" fill="currentColor" fontSize="22" fontWeight="700" fontFamily="sans-serif" letterSpacing="1.5">NEXUS</text>
-      </svg>
+      <div className="flex items-center justify-center w-full h-full px-3">
+        <div className="flex items-center justify-center bg-white/95 px-3.5 py-2 rounded-xl shadow-md group-hover:scale-105 transition-transform">
+          <img
+            draggable={false}
+            src="/images/brands/arezou.png"
+            alt="Arezou"
+            className="max-h-8 md:max-h-9 w-auto max-w-[150px] object-contain"
+          />
+        </div>
+      </div>
     ),
   },
   {
-    name: "Luminary",
+    name: "FIT CO",
     logo: (
-      <svg width="185" height="48" viewBox="0 0 185 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-auto h-12 md:h-14 text-zinc-300 group-hover:text-white transition-colors">
-        <path d="M20 8C20 16 28 24 36 24C28 24 20 32 20 40C20 32 12 24 4 24C12 24 20 16 20 8Z" fill="currentColor" />
-        <text x="46" y="31" fill="currentColor" fontSize="21" fontWeight="700" fontFamily="sans-serif" letterSpacing="1.5">LUMINARY</text>
-      </svg>
+      <div className="flex items-center justify-center w-full h-full px-3">
+        <img
+          draggable={false}
+          src="/images/brands/fitco.png"
+          alt="FIT CO"
+          className="max-h-16 md:max-h-20 w-auto max-w-[85%] object-contain filter drop-shadow-md group-hover:scale-105 transition-transform rounded-xl"
+        />
+      </div>
     ),
   },
   {
-    name: "Aether",
+    name: "Retention Max",
     logo: (
-      <svg width="165" height="48" viewBox="0 0 165 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-auto h-12 md:h-14 text-zinc-300 group-hover:text-white transition-colors">
-        <path d="M20 8L34 24L20 40L6 24L20 8Z" stroke="currentColor" strokeWidth="3" fill="none" />
-        <circle cx="20" cy="24" r="4" fill="currentColor" />
-        <text x="46" y="31" fill="currentColor" fontSize="22" fontWeight="700" fontFamily="sans-serif" letterSpacing="1.5">AETHER</text>
-      </svg>
+      <div className="flex items-center justify-center w-full h-full px-3">
+        <img
+          draggable={false}
+          src="/images/brands/retentionmax.png"
+          alt="Retention Max"
+          className="max-h-16 md:max-h-20 w-auto max-w-[85%] object-contain filter drop-shadow-md group-hover:scale-105 transition-transform rounded-xl"
+        />
+      </div>
     ),
   },
   {
-    name: "Pulse",
+    name: "Good Gobar Show",
     logo: (
-      <svg width="145" height="48" viewBox="0 0 145 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-auto h-12 md:h-14 text-zinc-300 group-hover:text-white transition-colors">
-        <path d="M4 24H12L18 12L24 36L30 18L36 30H42" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
-        <text x="50" y="31" fill="currentColor" fontSize="22" fontWeight="700" fontFamily="sans-serif" letterSpacing="1.5">PULSE</text>
-      </svg>
+      <div className="flex items-center justify-center w-full h-full px-3">
+        <img
+          draggable={false}
+          src="/images/brands/goodgobar.png"
+          alt="The Good Gobar Show"
+          className="max-h-16 md:max-h-20 w-auto max-w-[85%] object-contain filter drop-shadow-md group-hover:scale-105 transition-transform rounded-full"
+        />
+      </div>
     ),
   },
   {
-    name: "Hyperion",
+    name: "Brand Gold",
     logo: (
-      <svg width="185" height="48" viewBox="0 0 185 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-auto h-12 md:h-14 text-zinc-300 group-hover:text-white transition-colors">
-        <path d="M6 14L20 6L34 14V30L20 38L6 30V14Z" stroke="currentColor" strokeWidth="3" fill="none" />
-        <path d="M20 6V38M6 14L34 30M34 14L6 30" stroke="currentColor" strokeWidth="2" opacity="0.6" />
-        <text x="46" y="31" fill="currentColor" fontSize="21" fontWeight="700" fontFamily="sans-serif" letterSpacing="1.5">HYPERION</text>
-      </svg>
+      <div className="flex items-center justify-center w-full h-full px-3">
+        <img
+          draggable={false}
+          src="/images/brands/brand_gold.png"
+          alt="Brand"
+          className="max-h-16 md:max-h-20 w-auto max-w-[85%] object-contain filter drop-shadow-md group-hover:scale-105 transition-transform rounded-2xl"
+        />
+      </div>
+    ),
+  },
+  {
+    name: "1DS",
+    logo: (
+      <div className="flex items-center justify-center w-full h-full px-3">
+        <img
+          draggable={false}
+          src="/images/brands/1ds.png"
+          alt="1DS"
+          className="max-h-16 md:max-h-20 w-auto max-w-[85%] object-contain filter drop-shadow-md group-hover:scale-105 transition-transform rounded-full"
+        />
+      </div>
     ),
   },
 ];
 
 const TOOLS = [
   {
-    name: "Next.js",
+    name: "Premiere Pro",
     logo: (
-      <svg width="155" height="48" viewBox="0 0 155 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-auto h-12 md:h-14 text-zinc-300 group-hover:text-white transition-colors">
-        <circle cx="20" cy="24" r="14" stroke="currentColor" strokeWidth="3" fill="none" />
-        <path d="M14 16V32M14 16L26 32M26 16V32" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-        <text x="46" y="31" fill="currentColor" fontSize="21" fontWeight="700" fontFamily="sans-serif" letterSpacing="1.5">NEXT.JS</text>
-      </svg>
+      <div className="flex items-center gap-3.5 md:gap-4 select-none">
+        <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl overflow-hidden shrink-0 shadow-md border border-white/10 group-hover:border-white/30 transition-all group-hover:scale-105">
+          <img draggable={false} src="/images/tools/premiere.jpg"
+            alt="Premiere Pro"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <span className="text-base md:text-lg lg:text-xl font-bold tracking-wider font-sans text-zinc-200 whitespace-nowrap group-hover:text-white transition-colors">
+          PREMIERE PRO
+        </span>
+      </div>
     ),
   },
   {
-    name: "React",
+    name: "After Effects",
     logo: (
-      <svg width="145" height="48" viewBox="0 0 145 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-auto h-12 md:h-14 text-zinc-300 group-hover:text-white transition-colors">
-        <ellipse cx="20" cy="24" rx="14" ry="6" stroke="currentColor" strokeWidth="2.5" fill="none" transform="rotate(30 20 24)" />
-        <ellipse cx="20" cy="24" rx="14" ry="6" stroke="currentColor" strokeWidth="2.5" fill="none" transform="rotate(90 20 24)" />
-        <ellipse cx="20" cy="24" rx="14" ry="6" stroke="currentColor" strokeWidth="2.5" fill="none" transform="rotate(150 20 24)" />
-        <circle cx="20" cy="24" r="3" fill="currentColor" />
-        <text x="46" y="31" fill="currentColor" fontSize="22" fontWeight="700" fontFamily="sans-serif" letterSpacing="1.5">REACT</text>
-      </svg>
+      <div className="flex items-center gap-3.5 md:gap-4 select-none">
+        <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl overflow-hidden shrink-0 shadow-md border border-white/10 group-hover:border-white/30 transition-all group-hover:scale-105">
+          <img draggable={false} src="/images/tools/aftereffects.jpg"
+            alt="After Effects"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <span className="text-base md:text-lg lg:text-xl font-bold tracking-wider font-sans text-zinc-200 whitespace-nowrap group-hover:text-white transition-colors">
+          AFTER EFFECTS
+        </span>
+      </div>
     ),
   },
   {
-    name: "Tailwind",
+    name: "Final Cut Pro",
     logo: (
-      <svg width="165" height="48" viewBox="0 0 165 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-auto h-12 md:h-14 text-zinc-300 group-hover:text-white transition-colors">
-        <path d="M6 22C9 14 15 14 18 18C21 22 25 24 30 20C27 28 21 28 18 24C15 20 11 18 6 22Z" fill="currentColor" />
-        <text x="44" y="31" fill="currentColor" fontSize="21" fontWeight="700" fontFamily="sans-serif" letterSpacing="1.5">TAILWIND</text>
-      </svg>
+      <div className="flex items-center gap-3.5 md:gap-4 select-none">
+        <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl overflow-hidden shrink-0 shadow-md border border-white/10 group-hover:border-white/30 transition-all group-hover:scale-105 bg-white p-1">
+          <img draggable={false} src="/images/tools/finalcutpro.jpg"
+            alt="Final Cut Pro"
+            className="w-full h-full object-contain"
+          />
+        </div>
+        <span className="text-base md:text-lg lg:text-xl font-bold tracking-wider font-sans text-zinc-200 whitespace-nowrap group-hover:text-white transition-colors">
+          FINAL CUT PRO
+        </span>
+      </div>
     ),
   },
   {
-    name: "TypeScript",
+    name: "CapCut",
     logo: (
-      <svg width="185" height="48" viewBox="0 0 185 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-auto h-12 md:h-14 text-zinc-300 group-hover:text-white transition-colors">
-        <rect x="4" y="8" width="32" height="32" rx="6" stroke="currentColor" strokeWidth="3" fill="none" />
-        <text x="11" y="30" fill="currentColor" fontSize="16" fontWeight="800" fontFamily="sans-serif">TS</text>
-        <text x="46" y="31" fill="currentColor" fontSize="20" fontWeight="700" fontFamily="sans-serif" letterSpacing="1.5">TYPESCRIPT</text>
-      </svg>
+      <div className="flex items-center gap-3.5 md:gap-4 select-none">
+        <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl overflow-hidden shrink-0 shadow-md border border-white/10 group-hover:border-white/30 transition-all group-hover:scale-105 bg-white p-1.5">
+          <img draggable={false} src="/images/tools/capcut.png"
+            alt="CapCut"
+            className="w-full h-full object-contain"
+          />
+        </div>
+        <span className="text-base md:text-lg lg:text-xl font-bold tracking-wider font-sans text-zinc-200 whitespace-nowrap group-hover:text-white transition-colors">
+          CAPCUT
+        </span>
+      </div>
     ),
   },
   {
-    name: "OpenAI",
+    name: "Filmora",
     logo: (
-      <svg width="155" height="48" viewBox="0 0 155 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-auto h-12 md:h-14 text-zinc-300 group-hover:text-white transition-colors">
-        <circle cx="20" cy="24" r="12" stroke="currentColor" strokeWidth="3" strokeDasharray="4 2" fill="none" />
-        <circle cx="20" cy="24" r="5" fill="currentColor" />
-        <text x="46" y="31" fill="currentColor" fontSize="21" fontWeight="700" fontFamily="sans-serif" letterSpacing="1.5">OPENAI</text>
-      </svg>
+      <div className="flex items-center gap-3.5 md:gap-4 select-none">
+        <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl overflow-hidden shrink-0 shadow-md border border-white/10 group-hover:border-white/30 transition-all group-hover:scale-105">
+          <img draggable={false} src="/images/tools/filmora.jpg"
+            alt="Filmora"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <span className="text-base md:text-lg lg:text-xl font-bold tracking-wider font-sans text-zinc-200 whitespace-nowrap group-hover:text-white transition-colors">
+          FILMORA
+        </span>
+      </div>
     ),
   },
   {
-    name: "Figma",
+    name: "Audacity",
     logo: (
-      <svg width="145" height="48" viewBox="0 0 145 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-auto h-12 md:h-14 text-zinc-300 group-hover:text-white transition-colors">
-        <circle cx="12" cy="14" r="6" fill="currentColor" />
-        <circle cx="24" cy="14" r="6" fill="currentColor" opacity="0.7" />
-        <circle cx="12" cy="24" r="6" fill="currentColor" opacity="0.8" />
-        <circle cx="24" cy="24" r="6" fill="currentColor" />
-        <circle cx="12" cy="34" r="6" fill="currentColor" opacity="0.6" />
-        <text x="44" y="31" fill="currentColor" fontSize="22" fontWeight="700" fontFamily="sans-serif" letterSpacing="1.5">FIGMA</text>
-      </svg>
+      <div className="flex items-center gap-3.5 md:gap-4 select-none">
+        <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl overflow-hidden shrink-0 shadow-md border border-white/10 group-hover:border-white/30 transition-all group-hover:scale-105 bg-white p-1">
+          <img draggable={false} src="/images/tools/audacity.jpg"
+            alt="Audacity"
+            className="w-full h-full object-contain"
+          />
+        </div>
+        <span className="text-base md:text-lg lg:text-xl font-bold tracking-wider font-sans text-zinc-200 whitespace-nowrap group-hover:text-white transition-colors">
+          AUDACITY
+        </span>
+      </div>
     ),
   },
   {
-    name: "Webflow",
+    name: "Audition",
     logo: (
-      <svg width="165" height="48" viewBox="0 0 165 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-auto h-12 md:h-14 text-zinc-300 group-hover:text-white transition-colors">
-        <path d="M6 34L14 14L22 34L30 14L34 34" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
-        <text x="46" y="31" fill="currentColor" fontSize="21" fontWeight="700" fontFamily="sans-serif" letterSpacing="1.5">WEBFLOW</text>
-      </svg>
+      <div className="flex items-center gap-3.5 md:gap-4 select-none">
+        <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl overflow-hidden shrink-0 shadow-md border border-white/10 group-hover:border-white/30 transition-all group-hover:scale-105">
+          <img draggable={false} src="/images/tools/audition.png"
+            alt="Audition"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <span className="text-base md:text-lg lg:text-xl font-bold tracking-wider font-sans text-zinc-200 whitespace-nowrap group-hover:text-white transition-colors">
+          AUDITION
+        </span>
+      </div>
     ),
   },
   {
-    name: "Framer",
+    name: "ChatGPT",
     logo: (
-      <svg width="155" height="48" viewBox="0 0 155 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-auto h-12 md:h-14 text-zinc-300 group-hover:text-white transition-colors">
-        <path d="M6 8H30L18 20H30L6 36V20H18L6 8Z" stroke="currentColor" strokeWidth="2.5" fill="none" />
-        <text x="44" y="31" fill="currentColor" fontSize="22" fontWeight="700" fontFamily="sans-serif" letterSpacing="1.5">FRAMER</text>
-      </svg>
+      <div className="flex items-center gap-3.5 md:gap-4 select-none">
+        <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl overflow-hidden shrink-0 shadow-md border border-white/10 group-hover:border-white/30 transition-all group-hover:scale-105 bg-white p-1.5">
+          <img draggable={false} src="/images/tools/chatgpt.jpg"
+            alt="ChatGPT"
+            className="w-full h-full object-contain"
+          />
+        </div>
+        <span className="text-base md:text-lg lg:text-xl font-bold tracking-wider font-sans text-zinc-200 whitespace-nowrap group-hover:text-white transition-colors">
+          CHATGPT
+        </span>
+      </div>
     ),
   },
   {
-    name: "Vercel",
+    name: "Claude",
     logo: (
-      <svg width="145" height="48" viewBox="0 0 145 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-auto h-12 md:h-14 text-zinc-300 group-hover:text-white transition-colors">
-        <path d="M20 10L34 34H6L20 10Z" fill="currentColor" />
-        <text x="46" y="31" fill="currentColor" fontSize="21" fontWeight="700" fontFamily="sans-serif" letterSpacing="1.5">VERCEL</text>
-      </svg>
+      <div className="flex items-center gap-3.5 md:gap-4 select-none">
+        <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl overflow-hidden shrink-0 shadow-md border border-white/10 group-hover:border-white/30 transition-all group-hover:scale-105 bg-white p-1.5">
+          <img draggable={false} src="/images/tools/claude.jpg"
+            alt="Claude"
+            className="w-full h-full object-contain"
+          />
+        </div>
+        <span className="text-base md:text-lg lg:text-xl font-bold tracking-wider font-sans text-zinc-200 whitespace-nowrap group-hover:text-white transition-colors">
+          CLAUDE
+        </span>
+      </div>
+    ),
+  },
+  {
+    name: "DaVinci Resolve",
+    logo: (
+      <div className="flex items-center gap-3.5 md:gap-4 select-none">
+        <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl overflow-hidden shrink-0 shadow-md border border-white/10 group-hover:border-white/30 transition-all group-hover:scale-105">
+          <img draggable={false} src="/images/tools/davinciresolve.jpg" alt="DaVinci Resolve" className="w-full h-full object-cover" />
+        </div>
+        <span className="text-base md:text-lg lg:text-xl font-bold tracking-wider font-sans text-zinc-200 whitespace-nowrap group-hover:text-white transition-colors">
+          DAVINCI RESOLVE
+        </span>
+      </div>
+    ),
+  },
+  {
+    name: "Vegas Pro",
+    logo: (
+      <div className="flex items-center gap-3.5 md:gap-4 select-none">
+        <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl overflow-hidden shrink-0 shadow-md border border-white/10 group-hover:border-white/30 transition-all group-hover:scale-105">
+          <img draggable={false} src="/images/tools/vegaspro.jpg" alt="Vegas Pro" className="w-full h-full object-cover" />
+        </div>
+        <span className="text-base md:text-lg lg:text-xl font-bold tracking-wider font-sans text-zinc-200 whitespace-nowrap group-hover:text-white transition-colors">
+          VEGAS PRO
+        </span>
+      </div>
+    ),
+  },
+  {
+    name: "Avid Media Composer",
+    logo: (
+      <div className="flex items-center gap-3.5 md:gap-4 select-none">
+        <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl overflow-hidden shrink-0 shadow-md border border-white/10 group-hover:border-white/30 transition-all group-hover:scale-105 bg-white p-1">
+          <img draggable={false} src="/images/tools/avidmc.jpg" alt="Avid Media Composer" className="w-full h-full object-contain" />
+        </div>
+        <span className="text-base md:text-lg lg:text-xl font-bold tracking-wider font-sans text-zinc-200 whitespace-nowrap group-hover:text-white transition-colors">
+          AVID MC
+        </span>
+      </div>
+    ),
+  },
+  {
+    name: "Adobe Photoshop",
+    logo: (
+      <div className="flex items-center gap-3.5 md:gap-4 select-none">
+        <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl overflow-hidden shrink-0 shadow-md border border-white/10 group-hover:border-white/30 transition-all group-hover:scale-105 ">
+          <img draggable={false} src="/images/tools/photoshop.png" alt="Adobe Photoshop" className="w-full h-full object-cover" />
+        </div>
+        <span className="text-base md:text-lg lg:text-xl font-bold tracking-wider font-sans text-zinc-200 whitespace-nowrap group-hover:text-white transition-colors">
+          PHOTOSHOP
+        </span>
+      </div>
+    ),
+  },
+  {
+    name: "Canva",
+    logo: (
+      <div className="flex items-center gap-3.5 md:gap-4 select-none">
+        <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl overflow-hidden shrink-0 shadow-md border border-white/10 group-hover:border-white/30 transition-all group-hover:scale-105 ">
+          <img draggable={false} src="/images/tools/canva.jpg" alt="Canva" className="w-full h-full object-cover" />
+        </div>
+        <span className="text-base md:text-lg lg:text-xl font-bold tracking-wider font-sans text-zinc-200 whitespace-nowrap group-hover:text-white transition-colors">
+          CANVA
+        </span>
+      </div>
+    ),
+  },
+  {
+    name: "Blender",
+    logo: (
+      <div className="flex items-center gap-3.5 md:gap-4 select-none">
+        <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl overflow-hidden shrink-0 shadow-md border border-white/10 group-hover:border-white/30 transition-all group-hover:scale-105 bg-white p-1">
+          <img draggable={false} src="/images/tools/blender.jpg" alt="Blender" className="w-full h-full object-contain" />
+        </div>
+        <span className="text-base md:text-lg lg:text-xl font-bold tracking-wider font-sans text-zinc-200 whitespace-nowrap group-hover:text-white transition-colors">
+          BLENDER
+        </span>
+      </div>
+    ),
+  },
+  {
+    name: "OBS Studio",
+    logo: (
+      <div className="flex items-center gap-3.5 md:gap-4 select-none">
+        <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl overflow-hidden shrink-0 shadow-md border border-white/10 group-hover:border-white/30 transition-all group-hover:scale-105 bg-white p-1">
+          <img draggable={false} src="/images/tools/obs.jpg" alt="OBS Studio" className="w-full h-full object-contain" />
+        </div>
+        <span className="text-base md:text-lg lg:text-xl font-bold tracking-wider font-sans text-zinc-200 whitespace-nowrap group-hover:text-white transition-colors">
+          OBS STUDIO
+        </span>
+      </div>
     ),
   },
 ];
 
-export default function ClientMarquee() {
-  // Triple arrays for seamless infinite marquee loops
-  const marqueeBrands = [...BRANDS, ...BRANDS, ...BRANDS];
-  const marqueeTools = [...TOOLS, ...TOOLS, ...TOOLS];
 
+interface InteractiveMarqueeProps<T> {
+  items: T[];
+  direction?: "left" | "right";
+  speed?: number;
+  renderItem: (item: T, key: string) => React.ReactNode;
+}
+
+function InteractiveMarquee<T>({
+  items,
+  direction = "left",
+  speed = 1.1,
+  renderItem,
+}: InteractiveMarqueeProps<T>) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const setRef = useRef<HTMLDivElement>(null);
+
+  const widthRef = useRef(0);
+  const xRef = useRef(0);
+  const isDraggingRef = useRef(false);
+  const isHoveredRef = useRef(false);
+  const startXRef = useRef(0);
+  const startPosRef = useRef(0);
+  const hasMovedRef = useRef(false);
+  const [isGrabbing, setIsGrabbing] = useState(false);
+
+  useEffect(() => {
+    const updateWidth = () => {
+      if (setRef.current) {
+        const w = setRef.current.offsetWidth;
+        if (w > 0) {
+          widthRef.current = w;
+          if (xRef.current === 0) {
+            xRef.current = direction === "left" ? -w : -2 * w;
+            if (trackRef.current) {
+              trackRef.current.style.transform = `translate3d(${xRef.current}px, 0, 0)`;
+            }
+          }
+        }
+      }
+    };
+
+    updateWidth();
+
+    let ro: ResizeObserver | null = null;
+    if (setRef.current && typeof ResizeObserver !== "undefined") {
+      ro = new ResizeObserver(() => updateWidth());
+      ro.observe(setRef.current);
+    }
+    window.addEventListener("resize", updateWidth);
+
+    let rafId: number;
+    let lastTime = performance.now();
+
+    const tick = (now: number) => {
+      const deltaMs = now - lastTime;
+      lastTime = now;
+      const dt = Math.min(deltaMs / 16.667, 2.5);
+
+      const W = widthRef.current;
+      if (W > 0) {
+        if (!isDraggingRef.current) {
+          // Auto-scroll when not dragging; subtle 35% speed while hovering so user has full control
+          const currentSpeed = isHoveredRef.current ? speed * 0.35 : speed;
+          if (direction === "left") {
+            xRef.current -= currentSpeed * dt;
+          } else {
+            xRef.current += currentSpeed * dt;
+          }
+        }
+
+        // Seamless wrap-around boundary check
+        while (xRef.current <= -2 * W) {
+          xRef.current += W;
+        }
+        while (xRef.current > -W) {
+          xRef.current -= W;
+        }
+
+        if (trackRef.current) {
+          trackRef.current.style.transform = `translate3d(${xRef.current}px, 0, 0)`;
+        }
+      }
+
+      rafId = requestAnimationFrame(tick);
+    };
+
+    rafId = requestAnimationFrame(tick);
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      window.removeEventListener("resize", updateWidth);
+      if (ro) ro.disconnect();
+    };
+  }, [direction, speed]);
+
+  const onPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (e.pointerType === "mouse" && e.button !== 0) return;
+    isDraggingRef.current = true;
+    setIsGrabbing(true);
+    startXRef.current = e.clientX;
+    startPosRef.current = xRef.current;
+    hasMovedRef.current = false;
+
+    try {
+      e.currentTarget.setPointerCapture(e.pointerId);
+    } catch {}
+  };
+
+  const onPointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (!isDraggingRef.current) return;
+    const dx = e.clientX - startXRef.current;
+    if (Math.abs(dx) > 3) {
+      hasMovedRef.current = true;
+    }
+
+    let newX = startPosRef.current + dx;
+    const W = widthRef.current;
+    if (W > 0) {
+      while (newX <= -2 * W) {
+        newX += W;
+        startPosRef.current += W;
+      }
+      while (newX > -W) {
+        newX -= W;
+        startPosRef.current -= W;
+      }
+    }
+    xRef.current = newX;
+    if (trackRef.current) {
+      trackRef.current.style.transform = `translate3d(${newX}px, 0, 0)`;
+    }
+  };
+
+  const onPointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (!isDraggingRef.current) return;
+    isDraggingRef.current = false;
+    setIsGrabbing(false);
+    try {
+      e.currentTarget.releasePointerCapture(e.pointerId);
+    } catch {}
+  };
+
+  const onWheel = (e: React.WheelEvent<HTMLDivElement>) => {
+    const delta = e.deltaX || (e.shiftKey ? e.deltaY : 0);
+    if (Math.abs(delta) > 1) {
+      let newX = xRef.current - delta;
+      const W = widthRef.current;
+      if (W > 0) {
+        while (newX <= -2 * W) newX += W;
+        while (newX > -W) newX -= W;
+      }
+      xRef.current = newX;
+      if (trackRef.current) {
+        trackRef.current.style.transform = `translate3d(${newX}px, 0, 0)`;
+      }
+    }
+  };
+
+  const onClickCapture = (e: React.MouseEvent) => {
+    if (hasMovedRef.current) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  };
+
+  return (
+    <div
+      ref={containerRef}
+      data-lenis-prevent
+      onPointerDown={onPointerDown}
+      onPointerMove={onPointerMove}
+      onPointerUp={onPointerUp}
+      onPointerCancel={onPointerUp}
+      onPointerEnter={() => {
+        isHoveredRef.current = true;
+      }}
+      onPointerLeave={() => {
+        isHoveredRef.current = false;
+      }}
+      onWheel={onWheel}
+      onClickCapture={onClickCapture}
+      className={`flex overflow-hidden select-none touch-pan-y ${
+        isGrabbing ? "cursor-grabbing" : "cursor-grab"
+      }`}
+    >
+      <div
+        ref={trackRef}
+        className="flex shrink-0 items-center will-change-transform"
+      >
+        {[0, 1, 2, 3].map((setIndex) => (
+          <div
+            key={setIndex}
+            ref={setIndex === 0 ? setRef : undefined}
+            className="flex gap-6 shrink-0 items-center pr-6"
+          >
+            {items.map((item, idx) => renderItem(item, `${setIndex}-${idx}`))}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default function ClientMarquee() {
   return (
     <section className="py-28 relative border-t border-b border-zinc-800/80 overflow-hidden bg-transparent flex flex-col gap-28 md:gap-36">
       {/* Side Ambient Gradient Fade Masks */}
@@ -207,36 +598,27 @@ export default function ClientMarquee() {
             transition={{ duration: 0.6 }}
             className="text-2xl md:text-4xl font-sans font-normal tracking-tight text-white/90"
           >
-            Trusted By More Than 500{" "}
+            Trusted By{" "}
             <span className="font-serif italic bg-gradient-to-r from-zinc-300 via-sky-300 to-cyan-400 bg-clip-text text-transparent">
               Companies.
             </span>
           </motion.h2>
         </div>
 
-        {/* Left-Sliding Marquee */}
-        <div className="flex overflow-hidden select-none">
-          <motion.div
-            animate={{ x: ["0%", "-33.333%"] }}
-            transition={{
-              x: {
-                duration: 25,
-                repeat: Infinity,
-                ease: "linear",
-              },
-            }}
-            className="flex gap-6 shrink-0 items-center pr-6"
-          >
-            {marqueeBrands.map((brand, idx) => (
-              <div
-                key={`${brand.name}-${idx}`}
-                className="w-56 md:w-64 h-28 md:h-32 shrink-0 glass-card rounded-2xl flex items-center justify-center group cursor-pointer hover:-translate-y-1.5 transition-all duration-300 border border-zinc-800/90 hover:border-zinc-500/80 hover:shadow-[0_8px_30px_rgba(255,255,255,0.08)] p-5"
-              >
-                {brand.logo}
-              </div>
-            ))}
-          </motion.div>
-        </div>
+        {/* Interactive Draggable Left-Sliding Marquee */}
+        <InteractiveMarquee
+          items={BRANDS}
+          direction="left"
+          speed={1.0}
+          renderItem={(brand, key) => (
+            <div
+              key={key}
+              className="w-56 md:w-64 h-28 md:h-32 shrink-0 glass-card rounded-2xl flex items-center justify-center group cursor-pointer hover:-translate-y-1.5 transition-all duration-300 border border-zinc-800/90 hover:border-zinc-500/80 hover:shadow-[0_8px_30px_rgba(255,255,255,0.08)] p-5"
+            >
+              {brand.logo}
+            </div>
+          )}
+        />
       </div>
 
       {/* ROW 2: OUR PROFICIENCY IN TOOLS & TECH (SLIDE RIGHT) */}
@@ -256,29 +638,20 @@ export default function ClientMarquee() {
           </motion.h2>
         </div>
 
-        {/* Right-Sliding Marquee */}
-        <div className="flex overflow-hidden select-none">
-          <motion.div
-            animate={{ x: ["-33.333%", "0%"] }}
-            transition={{
-              x: {
-                duration: 25,
-                repeat: Infinity,
-                ease: "linear",
-              },
-            }}
-            className="flex gap-6 shrink-0 items-center pr-6"
-          >
-            {marqueeTools.map((tool, idx) => (
-              <div
-                key={`${tool.name}-${idx}`}
-                className="w-56 md:w-64 h-28 md:h-32 shrink-0 glass-card rounded-2xl flex items-center justify-center group cursor-pointer hover:-translate-y-1.5 transition-all duration-300 border border-zinc-800/90 hover:border-zinc-500/80 hover:shadow-[0_8px_30px_rgba(255,255,255,0.08)] p-5"
-              >
-                {tool.logo}
-              </div>
-            ))}
-          </motion.div>
-        </div>
+        {/* Interactive Draggable Right-Sliding Marquee */}
+        <InteractiveMarquee
+          items={TOOLS}
+          direction="right"
+          speed={1.1}
+          renderItem={(tool, key) => (
+            <div
+              key={key}
+              className="w-60 md:w-72 h-28 md:h-32 shrink-0 glass-card rounded-2xl flex items-center justify-center group cursor-pointer hover:-translate-y-1.5 transition-all duration-300 border border-zinc-800/90 hover:border-zinc-500/80 hover:shadow-[0_8px_30px_rgba(255,255,255,0.08)] px-5 py-4"
+            >
+              {tool.logo}
+            </div>
+          )}
+        />
       </div>
     </section>
   );

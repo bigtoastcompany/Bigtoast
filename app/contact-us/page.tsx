@@ -41,6 +41,24 @@ const SERVICE_OPTIONS = [
     tag: "Production",
   },
   {
+    value: "Custom Website Development",
+    title: "Websites & Brand Platforms",
+    subtitle: "High-performance responsive Next.js websites, portfolios & stores",
+    tag: "Websites",
+  },
+  {
+    value: "Web Application & SaaS Development",
+    title: "Web Apps & SaaS Platforms",
+    subtitle: "Interactive dashboards, cloud web apps & custom architectures",
+    tag: "Web Apps",
+  },
+  {
+    value: "Mobile App Development",
+    title: "Mobile Apps (iOS & Android)",
+    subtitle: "Native cross-platform mobile apps with fluid UX and gestures",
+    tag: "Mobile",
+  },
+  {
     value: "Custom Bespoke Production Package",
     title: "Custom Bespoke Production Package",
     subtitle: "Tailored multi-format sprint & dedicated creative team",
@@ -212,7 +230,7 @@ export default function ContactPage() {
   });
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText("hello@bigtoast.studio");
+    navigator.clipboard.writeText("bigtoastcompany@gmail.com");
     setCopiedEmail(true);
     setTimeout(() => setCopiedEmail(false), 2000);
   };
@@ -282,7 +300,7 @@ export default function ContactPage() {
                 Direct Email
               </span>
               <h3 className="text-base lg:text-lg font-bold text-white mb-1.5 break-all group-hover:text-sky-300 transition-colors">
-                hello@bigtoast.studio
+                bigtoastcompany@gmail.com
               </h3>
               <p className="text-zinc-400 text-xs leading-relaxed mb-3">
                 Send your brief, deck, or questions. Monitored continuously by our team.
@@ -290,7 +308,7 @@ export default function ContactPage() {
             </div>
             <div className="pt-3 border-t border-zinc-800/80 flex items-center justify-between">
               <a
-                href="mailto:hello@bigtoast.studio"
+                href="mailto:bigtoastcompany@gmail.com"
                 className="text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors"
               >
                 Send Email &rarr;
@@ -320,20 +338,20 @@ export default function ContactPage() {
                 Studio Line
               </span>
               <h3 className="text-base lg:text-lg font-bold text-white mb-1.5 group-hover:text-emerald-300 transition-colors">
-                +1 (800) 450-9281
+                +91 78277 25025
               </h3>
               <p className="text-zinc-400 text-xs leading-relaxed mb-3">
-                Available Mon – Fri, 9:00 AM – 6:00 PM PST for urgent production requests.
+                Available Mon – Sat, 10:00 AM – 8:00 PM IST for urgent production requests.
               </p>
             </div>
             <div className="pt-3 border-t border-zinc-800/80 flex items-center justify-between">
               <a
-                href="tel:+18004509281"
+                href="tel:+917827725025"
                 className="text-xs font-semibold text-emerald-400 hover:text-emerald-300 transition-colors"
               >
                 Call Now &rarr;
               </a>
-              <span className="text-[10px] text-zinc-500 font-mono">PST Zone</span>
+              <span className="text-[10px] text-zinc-500 font-mono">IST Zone</span>
             </div>
           </motion.div>
 
@@ -352,10 +370,10 @@ export default function ContactPage() {
                 Studio Headquarters
               </span>
               <h3 className="text-base lg:text-lg font-bold text-white mb-1.5 group-hover:text-purple-300 transition-colors">
-                San Francisco, CA
+                Mumbai
               </h3>
               <p className="text-zinc-400 text-xs leading-relaxed mb-3">
-                755 Innovation Blvd, Suite 400. In-person creative syncs &amp; sound stages.
+                Mumbai, Maharashtra, India. In-person creative syncs &amp; sound stages.
               </p>
             </div>
             <div className="pt-3 border-t border-zinc-800/80 flex items-center justify-between">

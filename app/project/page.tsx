@@ -33,7 +33,10 @@ const CATEGORIES = [
 ];
 
 const PROJECTS = [
+  { id: "re-10", category: "reels", title: "Best Date", client: "Short Form", year: "2026", file: "/best date.mp4", tag: "Lifestyle Reel", description: "Vibrant lifestyle reel with smooth camera pans and trending audio." },
   { id: "re-snitch", category: "reels", title: "Snitch — Fast-Paced D2C Drop", client: "Snitch", year: "2026", file: "/snitch.mp4", tag: "Fashion Reel", description: "High-retention menswear campaign reel for Snitch featuring rapid-fire cuts, streetwear energy, and punchy transitions." },
+  { id: "re-17", category: "reels", isReel: true, title: "Yanisa — Beatsync Reel", client: "Yanisa Media", year: "2026", file: "/beatsync.mp4", tag: "Beat Sync Reel", description: "Precision beat-synced reel with frame-perfect cuts timed to music drops." },
+  { id: "re-12", category: "reels", title: "Fox 1 Fin", client: "Short Form", year: "2026", file: "/fox 1 fin.mp4", tag: "Cinematic Reel", description: "Cinematic vertical edit with dynamic lighting and atmospheric grade." },
   { id: "re-divya-01", category: "reels", title: "Divya — Perspectives on Growth", client: "Divya", year: "2026", file: "/divya 1.mp4", tag: "Creator Story", description: "Engaging personal brand short video highlighting mindset, focus, and modern creator lessons." },
   { id: "re-mokobara", category: "reels", title: "Mokobara — Going Places", client: "Mokobara", year: "2026", file: "/mokobara.mp4", tag: "D2C Brand Film", description: "Premium cinematic commercial reel for Mokobara travel gear with seamless whip-pans and aspirational energy." },
   { id: "re-karishma-01", category: "reels", title: "Karishma — Defining Moments", client: "Karishma", year: "2026", file: "/karishma 1.mp4", tag: "Lifestyle Reel", description: "Vibrant lifestyle reel with punchy transitions, trending sound design, and clean typography." },
@@ -51,38 +54,33 @@ const PROJECTS = [
   { id: "re-02", category: "reels", title: "Talking to Strangers", client: "Short Form", year: "2026", file: "/Talking to strangers (1).mp4", tag: "Social Reel", description: "Engaging streetwear / interview style short form video cut." },
   { id: "re-divya-03", category: "reels", title: "Divya — Finding Your Focus", client: "Divya", year: "2026", file: "/divya 3.mp4", tag: "Creator Story", description: "High-retention reel exploring priority management, career clarity, and authentic voice." },
   { id: "re-stories", category: "reels", title: "Stories That Resonate", client: "Big Toast Studio", year: "2026", file: "/Stories.mov", tag: "Brand Narrative", description: "Visual manifesto reel exploring the emotional power of human storytelling in modern digital media." },
-  { id: "re-10", category: "reels", title: "Best Date", client: "Short Form", year: "2026", file: "/best date.mp4", tag: "Lifestyle Reel", description: "Vibrant lifestyle reel with smooth camera pans and trending audio." },
   { id: "re-logo", category: "reels", title: "Big Toast — Logo Identity & Motion", client: "Brand Identity", year: "2026", file: "/logo.mov", tag: "Motion Design", description: "Animated visual brand ident showcasing fluid motion, glass textures, and sound design." },
   { id: "re-06", category: "reels", title: "Brihas Quotient", client: "Short Form", year: "2026", file: "/brihas-qoutient-wc.mp4", tag: "Promo Reel", description: "Dynamic brand feature reel with beat sync cuts and custom graphics." },
-  { id: "re-12", category: "reels", title: "Fox 1 Fin", client: "Short Form", year: "2026", file: "/fox 1 fin.mp4", tag: "Cinematic Reel", description: "Cinematic vertical edit with dynamic lighting and atmospheric grade." },
   { id: "re-20", category: "reels", isReel: true, title: "Yanisa — GAAS Social Reel", client: "Yanisa Media", year: "2026", file: "/gaas.mp4", tag: "Social Reel", description: "High-energy social reel with bold typography, color pop effects, and snappy edits." },
   { id: "re-03", category: "reels", title: "Rat Race", client: "Short Form", year: "2026", file: "/rat race.mp4", tag: "Mindset Reel", description: "Fast-paced commentary reel exploring modern lifestyle & career hustle." },
-  { id: "re-17", category: "reels", isReel: true, title: "Yanisa — Beatsync Reel", client: "Yanisa Media", year: "2026", file: "/beatsync.mp4", tag: "Beat Sync Reel", description: "Precision beat-synced reel with frame-perfect cuts timed to music drops." },
   { id: "re-11", category: "reels", title: "Dads", client: "Short Form", year: "2026", file: "/dads.mp4", tag: "Family Reel", description: "Relatable humor and family storytelling short form video format." },
+  { id: "re-15", category: "reels", title: "Connect With Yourself", client: "Short Form", year: "2026", file: "/connect-with-yourself.mp4", tag: "Mindset Reel", description: "Reflective short-form reel on self-connection and personal clarity." },
   { id: "re-16", category: "reels", title: "Stuck", client: "Short Form", year: "2026", file: "/Stuck.mp4", tag: "Motivation Reel", description: "Dynamic short video on overcoming creative and mental blocks." },
   { id: "re-13", category: "reels", title: "Reel 4 BR", client: "Short Form", year: "2026", file: "/Reel 4 BR.mp4", tag: "Creative Reel", description: "Creative visual sequence with seamless whip-pan transitions." },
+  { id: "re-08", category: "reels", title: "Brihas Promo 1", client: "Short Form", year: "2026", file: "/brihas-promo 1.mp4", tag: "Brand Reel", description: "Polished promotional reel highlighting product features and brand aesthetic." },
   { id: "re-04", category: "reels", title: "Intelligent Decision", client: "Short Form", year: "2026", file: "/Intelligent Decision.mp4", tag: "Business Reel", description: "High-impact business insights reel with crisp typography and motion graphics." },
   { id: "re-21", category: "reels", isReel: true, title: "Yanisa — Lata Mangeshkar Tribute", client: "Yanisa Media", year: "2026", file: "/lata mangeshkar new.mp4", tag: "Tribute Reel", description: "Emotional tribute reel with soft color grading, archival-style edits, and subtle overlays." },
-  { id: "re-15", category: "reels", title: "Connect With Yourself", client: "Short Form", year: "2026", file: "/connect-with-yourself.mp4", tag: "Mindset Reel", description: "Reflective short-form reel on self-connection and personal clarity." },
-  { id: "re-08", category: "reels", title: "Brihas Promo 1", client: "Short Form", year: "2026", file: "/brihas-promo 1.mp4", tag: "Brand Reel", description: "Polished promotional reel highlighting product features and brand aesthetic." },
-  { id: "re-19", category: "reels", isReel: true, title: "Yanisa — Event Promo Reel", client: "Yanisa Media", year: "2026", file: "/EVENT PROMO.mp4", tag: "Event Reel", description: "Vertical event highlight reel with high-energy cuts and launch announcements." },
   { id: "re-07", category: "reels", title: "Rapid Fire", client: "Short Form", year: "2026", file: "/rapid-fire-.mp4", tag: "Q&A Reel", description: "High-energy Q&A rapid fire format reel built for social media engagement." },
+  { id: "re-19", category: "reels", isReel: true, title: "Yanisa — Event Promo Reel", client: "Yanisa Media", year: "2026", file: "/EVENT PROMO.mp4", tag: "Event Reel", description: "Vertical event highlight reel with high-energy cuts and launch announcements." },
+  { id: "re-14", category: "reels", title: "Reel 8 BR", client: "Short Form", year: "2026", file: "/Reel 8 BR.mp4", tag: "Creative Reel", description: "High-octane montage reel with frame-by-frame sound effects." },
   { id: "re-09", category: "reels", title: "Brihas Promo 2", client: "Short Form", year: "2026", file: "/brihas-promo-2.mp4", tag: "Brand Reel", description: "Follow-up brand reel cut with rhythm sync and punchy sound design." },
   { id: "re-22", category: "reels", isReel: true, title: "Yanisa — Overtime Reel", client: "Yanisa Media", year: "2026", file: "/OVERTIME_.mp4", tag: "Motivation Reel", description: "Late-night hustle themed reel with moody grading and motivational text overlays." },
-  { id: "re-14", category: "reels", title: "Reel 8 BR", client: "Short Form", year: "2026", file: "/Reel 8 BR.mp4", tag: "Creative Reel", description: "High-octane montage reel with frame-by-frame sound effects." },
   { id: "re-05", category: "reels", title: "End of Life", client: "Short Form", year: "2026", file: "/end of life.mp4", tag: "Storytelling Reel", description: "Cinematic short story reel with atmospheric sound design and color grade." },
-  { id: "lv-01", category: "longvideo", title: "Yanisa — Podcast & Brand Film", client: "Yanisa Media", year: "2026", duration: "48:00", tag: "Podcast Video", file: "/Copy of TRAILER 1 tiptop.mp4", description: "Full episode podcast edit & brand film with multi-cam switching and custom sound design." },
-  { id: "lv-02", category: "longvideo", title: "Yanisa — Event & Keynote Reel", client: "Yanisa Media", year: "2025", duration: "12:40", tag: "Brand Documentary", file: "/Copy of event promo final.mp4", description: "High-energy event documentary and keynote recording with lower-thirds and color grade." },
   {
-    id: "lv-03",
+    id: "lv-01",
     category: "longvideo",
-    title: "Yanisa — Podcast Trailer ONE",
+    title: "Yanisa — Podcast & Brand Film",
     client: "Yanisa Media",
     year: "2026",
-    duration: "1:59",
-    tag: "Podcast Trailer",
-    file: "/trailer ONE.mov",
-    description: "Cinematic podcast teaser trailer featuring in-depth dialogue and multi-cam studio production.",
+    tag: "Podcast Video",
+    externalUrl: "https://youtu.be/mLIyXUAIp7o?si=gHVL38ZmhCabAykd",
+    youtubeId: "mLIyXUAIp7o",
+    description: "Full episode podcast edit & brand film with multi-cam switching and custom sound design.",
   },
   {
     id: "lv-yt-01",
@@ -96,15 +94,15 @@ const PROJECTS = [
     description: "Deep dive relationship and intimacy conversation featuring candid relationship insights and expert guidance.",
   },
   {
-    id: "lv-yt-02",
+    id: "lv-yt-07",
     category: "longvideo",
-    title: "How Kishore Kumar Proved Every Music Director Wrong",
-    client: "The Good Gobar Show",
+    title: "A Psychologist's Take on Modern Dating & Relationship Expectations",
+    client: "Desirable Podcast",
     year: "2026",
     tag: "Podcast Episode",
-    externalUrl: "https://youtu.be/a6x-h0YBbRg?si=xupP9aEDbxq7APE9",
-    youtubeId: "a6x-h0YBbRg",
-    description: "Untold struggles, triumphs, and the legendary journey of Kishore Kumar with storyteller Gaurav Sharma.",
+    externalUrl: "https://youtu.be/KCwuChZvsFM?si=d6W7S6q1c01SjdYj",
+    youtubeId: "KCwuChZvsFM",
+    description: "Clinical psychologist Dr. Orion Taraban delves into modern dating dynamics, relationship psychology, and emotional expectations.",
   },
   {
     id: "lv-yt-03",
@@ -117,49 +115,17 @@ const PROJECTS = [
     youtubeId: "Al-eus6jPGc",
     description: "An insightful discussion with Anju Kish breaking down puberty, emotional changes, and teenage growth.",
   },
+  { id: "lv-02", category: "longvideo", title: "Yanisa — Event & Keynote Reel", client: "Yanisa Media", year: "2025", duration: "12:40", tag: "Brand Documentary", file: "/Copy of event promo final.mp4", description: "High-energy event documentary and keynote recording with lower-thirds and color grade." },
   {
-    id: "lv-yt-04",
+    id: "lv-yt-02",
     category: "longvideo",
-    title: "Why India Kept Losing World Cups? Anjum Chopra Unfiltered",
+    title: "How Kishore Kumar Proved Every Music Director Wrong",
     client: "The Good Gobar Show",
     year: "2026",
     tag: "Podcast Episode",
-    externalUrl: "https://youtu.be/djm31XZCVn8?si=U9x1M-jYq_9DCiv9",
-    youtubeId: "djm31XZCVn8",
-    description: "Former Indian women's cricket captain Anjum Chopra shares raw, unfiltered insights into cricket and elite performance.",
-  },
-  {
-    id: "lv-yt-05",
-    category: "longvideo",
-    title: "Will AI Replace Sales Jobs? Truth No One Tells",
-    client: "The Good Gobar Show",
-    year: "2026",
-    tag: "Podcast Episode",
-    externalUrl: "https://youtu.be/OF8jW_B2XD8?si=tXyn-wZ4gusc7sEM",
-    youtubeId: "OF8jW_B2XD8",
-    description: "The reality of Artificial Intelligence disrupting sales careers, modern revenue generation, and future-proof skills.",
-  },
-  {
-    id: "lv-yt-06",
-    category: "longvideo",
-    title: "How Coworking Spaces ACTUALLY Make Money",
-    client: "The Good Gobar Show",
-    year: "2026",
-    tag: "Podcast Episode",
-    externalUrl: "https://youtu.be/ToXu4kS6Wnk?si=ArjKvSTcTe1lbqCc",
-    youtubeId: "ToXu4kS6Wnk",
-    description: "Uncovering the business models, unit economics, and hidden revenue streams powering modern coworking spaces.",
-  },
-  {
-    id: "lv-yt-07",
-    category: "longvideo",
-    title: "A Psychologist's Take on Modern Dating & Relationship Expectations",
-    client: "Desirable Podcast",
-    year: "2026",
-    tag: "Podcast Episode",
-    externalUrl: "https://youtu.be/KCwuChZvsFM?si=d6W7S6q1c01SjdYj",
-    youtubeId: "KCwuChZvsFM",
-    description: "Clinical psychologist Dr. Orion Taraban delves into modern dating dynamics, relationship psychology, and emotional expectations.",
+    externalUrl: "https://youtu.be/a6x-h0YBbRg?si=xupP9aEDbxq7APE9",
+    youtubeId: "a6x-h0YBbRg",
+    description: "Untold struggles, triumphs, and the legendary journey of Kishore Kumar with storyteller Gaurav Sharma.",
   },
   {
     id: "lv-yt-08",
@@ -173,6 +139,17 @@ const PROJECTS = [
     description: "Aerosol and climate researcher Dr. Sachin D. Ghude breaks down the science behind winter smog, stubble burning, and long-term air solutions.",
   },
   {
+    id: "lv-yt-04",
+    category: "longvideo",
+    title: "Why India Kept Losing World Cups? Anjum Chopra Unfiltered",
+    client: "The Good Gobar Show",
+    year: "2026",
+    tag: "Podcast Episode",
+    externalUrl: "https://youtu.be/djm31XZCVn8?si=U9x1M-jYq_9DCiv9",
+    youtubeId: "djm31XZCVn8",
+    description: "Former Indian women's cricket captain Anjum Chopra shares raw, unfiltered insights into cricket and elite performance.",
+  },
+  {
     id: "lv-yt-09",
     category: "longvideo",
     title: "Before You Get Married, Watch This — Modern Indian Marriage",
@@ -182,6 +159,39 @@ const PROJECTS = [
     externalUrl: "https://youtu.be/2xpSTxk1Yqg?si=DVnv7lVPhZiWJdKu",
     youtubeId: "2xpSTxk1Yqg",
     description: "Host Shobha Rana and psychologist Dr. Madhumati Singh discuss modern relationships, emotional maturity, and navigating marital expectations.",
+  },
+  {
+    id: "lv-yt-05",
+    category: "longvideo",
+    title: "Will AI Replace Sales Jobs? Truth No One Tells",
+    client: "The Good Gobar Show",
+    year: "2026",
+    tag: "Podcast Episode",
+    externalUrl: "https://youtu.be/OF8jW_B2XD8?si=tXyn-wZ4gusc7sEM",
+    youtubeId: "OF8jW_B2XD8",
+    description: "The reality of Artificial Intelligence disrupting sales careers, modern revenue generation, and future-proof skills.",
+  },
+  {
+    id: "lv-03",
+    category: "longvideo",
+    title: "Yanisa — Podcast Trailer ONE",
+    client: "Yanisa Media",
+    year: "2026",
+    duration: "1:59",
+    tag: "Podcast Trailer",
+    file: "/trailer ONE.mov",
+    description: "Cinematic podcast teaser trailer featuring in-depth dialogue and multi-cam studio production.",
+  },
+  {
+    id: "lv-yt-06",
+    category: "longvideo",
+    title: "How Coworking Spaces ACTUALLY Make Money",
+    client: "The Good Gobar Show",
+    year: "2026",
+    tag: "Podcast Episode",
+    externalUrl: "https://youtu.be/ToXu4kS6Wnk?si=ArjKvSTcTe1lbqCc",
+    youtubeId: "ToXu4kS6Wnk",
+    description: "Uncovering the business models, unit economics, and hidden revenue streams powering modern coworking spaces.",
   },
   {
     id: "lv-yt-10",
@@ -205,6 +215,18 @@ const PROJECTS = [
     youtubeId: "z0TzZ0209Zo",
     description: "Dr. Karishma Ahuja shares emotional transformation techniques, mindfulness principles, and subconscious affirmation practices.",
   },
+  {
+    id: "ai-03",
+    category: "aivideo",
+    title: "Rishta — AI Narrative Brand Film",
+    client: "AI Brand Commercial",
+    year: "2026",
+    duration: "2:09",
+    tag: "Generative AI Film",
+    file: "/ai film video.mp4",
+    thumbnail: "/images/thumb_ai_film_rishta.jpg",
+    description: "Emotion-driven generative AI commercial depicting Indian family celebration, cinematic lighting, and photorealistic character generation.",
+  },
   { id: "ai-01", category: "aivideo", title: "Yanisa — AI Avatar Ad Campaign", client: "Yanisa Media", year: "2026", duration: "0:30", tag: "AI Avatar", file: "/yanisa AI ad final.mp4", description: "Synthetic AI voiceover integration, AI avatar presentation, and dynamic product callouts." },
   { id: "ai-02", category: "aivideo", title: "Yanisa — AI Generative Content Film", client: "Yanisa Media", year: "2026", duration: "0:45", tag: "Generative AI Film", file: "/AI content film.mp4", description: "AI text-to-video scene generation, visual background extensions, and futuristic overlays." },
   { id: "ai-snneh-01", category: "aivideo", isReel: true, title: "Snneh — AI Workflow & Synthesis (Pt. 1)", client: "Snneh AI", year: "2026", duration: "1:23", file: "/snneh 1.mp4", tag: "AI Creator Reel", description: "Next-gen AI content creation, digital voiceover integration, and dynamic visual narrative." },
@@ -221,88 +243,151 @@ const PROJECTS = [
   {
     id: "web-01",
     category: "website",
-    title: "FitFuel Brand Website",
-    client: "FitFuel Brand",
+    title: "Mahol",
+    client: "Mahol",
     year: "2026",
-    tag: "Next.js Website",
-    image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1200&auto=format&fit=crop",
+    tag: "Luxury Perfume E-Commerce & Brand",
+    image: "/images/projects/mahol-1.jpg",
     screens: [
-      "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1200&auto=format&fit=crop",
-      "/images/project_founder_stories.jpg",
-      "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?q=80&w=1200&auto=format&fit=crop",
+      "/images/projects/mahol-1.jpg",
+      "/images/projects/mahol-2.jpg",
+      "/images/projects/mahol-3.jpg",
+      "/images/projects/mahol-4.jpg",
     ],
   },
   {
     id: "web-02",
     category: "website",
-    title: "Harvest Kitchen Online Store",
-    client: "Harvest Kitchen",
-    year: "2025",
-    tag: "E-Commerce Site",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop",
+    title: "Deepak Travel & Tours",
+    client: "Deepak Travel",
+    year: "2026",
+    tag: "IATA Accredited Travel & Tours Platform",
+    image: "/images/projects/deepak-travel-1.jpg",
     screens: [
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?q=80&w=1200&auto=format&fit=crop",
+      "/images/projects/deepak-travel-1.jpg",
+      "/images/projects/deepak-travel-2.jpg",
+      "/images/projects/deepak-travel-3.jpg",
+      "/images/projects/deepak-travel-4.jpg",
+    ],
+  },
+  {
+    id: "web-03",
+    category: "website",
+    title: "Cloudzurf",
+    client: "Cloudzurf",
+    year: "2026",
+    tag: "Cloud Services & IT Consulting Platform",
+    image: "/images/projects/cloudzurf-1.jpg",
+    screens: [
+      "/images/projects/cloudzurf-1.jpg",
+      "/images/projects/cloudzurf-2.jpg",
+      "/images/projects/cloudzurf-3.png",
+      "/images/projects/cloudzurf-4.png",
     ],
   },
   {
     id: "wa-01",
     category: "webapp",
-    title: "Creator Analytics Dashboard",
-    client: "Elevate Media",
+    title: "DilScreen",
+    client: "DilScreen",
     year: "2026",
-    tag: "SaaS Dashboard",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
+    tag: "Digital Billboard & Screen Booking Platform",
+    image: "/images/projects/dilscreen-web-1.jpg",
     screens: [
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=1200&auto=format&fit=crop",
+      "/images/projects/dilscreen-web-1.jpg",
+      "/images/projects/dilscreen-web-2.jpg",
+      "/images/projects/dilscreen-web-3.png",
+      "/images/projects/dilscreen-web-4.jpg",
+    ],
+  },
+  {
+    id: "wa-02",
+    category: "webapp",
+    title: "DigiCard",
+    client: "DigiCard",
+    year: "2026",
+    tag: "Digital Business Card & QR SaaS Platform",
+    image: "/images/projects/digicard-web-1.jpg",
+    screens: [
+      "/images/projects/digicard-web-1.jpg",
+      "/images/projects/digicard-web-2.jpg",
+      "/images/projects/digicard-web-3.png",
+      "/images/projects/digicard-web-4.jpg",
+    ],
+  },
+  {
+    id: "wa-03",
+    category: "webapp",
+    title: "Thought2Push",
+    client: "Thought2Push",
+    year: "2026",
+    tag: "Welfare Micro-Protection Trust & Member Portal",
+    image: "/images/projects/t2push-web-1.jpg",
+    screens: [
+      "/images/projects/t2push-web-1.jpg",
+      "/images/projects/t2push-web-2.jpg",
+      "/images/projects/t2push-web-3.jpg",
+      "/images/projects/t2push-web-4.jpg",
     ],
   },
   {
     id: "mob-01",
     category: "mobile",
-    title: "PeakFit Workout App",
-    client: "PeakFit Studio",
+    title: "DilScreen",
+    client: "DilScreen",
     year: "2026",
-    tag: "iOS & Android",
-    image: "https://images.unsplash.com/photo-1512941937938-40bdc1c18283?q=80&w=1200&auto=format&fit=crop",
+    tag: "Digital Billboard & Screen Booking",
+    image: "/images/projects/dilscreen-1.png",
     screens: [
-      "https://images.unsplash.com/photo-1512941937938-40bdc1c18283?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=600&auto=format&fit=crop",
+      "/images/projects/dilscreen-1.png",
+      "/images/projects/dilscreen-2.jpg",
+      "/images/projects/dilscreen-3.jpg",
+      "/images/projects/dilscreen-4.jpg",
     ],
   },
   {
     id: "mob-02",
     category: "mobile",
-    title: "Harvest Kitchen App",
-    client: "Harvest Kitchen",
-    year: "2025",
-    tag: "iOS & Android",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop",
+    title: "DigiCard",
+    client: "DigiCard",
+    year: "2026",
+    tag: "Digital Business Card & QR Platform",
+    image: "/images/projects/digicard-1.jpg",
     screens: [
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?q=80&w=600&auto=format&fit=crop",
+      "/images/projects/digicard-1.jpg",
+      "/images/projects/digicard-2.jpg",
+      "/images/projects/digicard-3.jpg",
+      "/images/projects/digicard-4.jpg",
     ],
   },
   {
     id: "mob-03",
     category: "mobile",
-    title: "Elevate Creator App",
-    client: "Elevate Media",
+    title: "Presto Dental",
+    client: "Presto Dental",
     year: "2026",
-    tag: "iOS App",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
+    tag: "Dental Supplies & Clinical Marketplace",
+    image: "/images/projects/prestodental-1.png",
     screens: [
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?q=80&w=600&auto=format&fit=crop",
+      "/images/projects/prestodental-1.png",
+      "/images/projects/prestodental-2.jpg",
+      "/images/projects/prestodental-3.jpg",
+      "/images/projects/prestodental-4.jpg",
+    ],
+  },
+  {
+    id: "mob-04",
+    category: "mobile",
+    title: "T2push",
+    client: "T2push",
+    year: "2026",
+    tag: "Welfare Micro-Protection Trust Portal",
+    image: "/images/projects/t2push-1.png",
+    screens: [
+      "/images/projects/t2push-1.png",
+      "/images/projects/t2push-2.jpg",
+      "/images/projects/t2push-3.jpg",
+      "/images/projects/t2push-4.jpg",
     ],
   },
 ];
@@ -468,7 +553,7 @@ function ProjectCard({
   );
 }
 
-// ─── Mobile App Card (bare phone mockup, no container) ───────────────────────
+// ─── Mobile App Card (bare phone mockup with professional slide controls) ───
 
 function MobileAppCard({
   project,
@@ -480,114 +565,196 @@ function MobileAppCard({
   className?: string;
 }) {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [direction, setDirection] = useState(1);
+  const lastWheelTime = useRef(0);
   const screens = (project as any).screens ?? [project.image];
   const total = screens.length;
 
-  const prev = (e: React.MouseEvent) => {
-    e.stopPropagation();
+  const prev = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    setDirection(-1);
     setCurrentSlide((s) => (s - 1 + total) % total);
   };
-  const next = (e: React.MouseEvent) => {
-    e.stopPropagation();
+  const next = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    setDirection(1);
     setCurrentSlide((s) => (s + 1) % total);
+  };
+
+  const handleWheel = (e: React.WheelEvent) => {
+    if (total <= 1) return;
+    const now = Date.now();
+    if (now - lastWheelTime.current < 380) return;
+    // Detect mouse wheel or trackpad swipe
+    if (Math.abs(e.deltaX) > 10 || Math.abs(e.deltaY) > 18) {
+      lastWheelTime.current = now;
+      if (e.deltaX > 0 || e.deltaY > 0) {
+        next();
+      } else {
+        prev();
+      }
+    }
+  };
+
+  const slideVariants = {
+    enter: (dir: number) => ({
+      x: dir > 0 ? "100%" : "-100%",
+      opacity: 0.3,
+    }),
+    center: {
+      x: "0%",
+      opacity: 1,
+    },
+    exit: (dir: number) => ({
+      x: dir > 0 ? "-100%" : "100%",
+      opacity: 0.3,
+    }),
   };
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.96 }}
       transition={{ duration: 0.45, delay: idx * 0.08 }}
       className={`flex flex-col items-center group ${className}`}
     >
-      {/* ── Phone mockup (no wrapper container) ── */}
+      {/* ── Phone mockup frame ── */}
       <div className="relative flex items-center justify-center">
-
-        {/* Prev / Next arrows — outside phone, on sides */}
-        {total > 1 && (
-          <>
-            <button
-              onClick={prev}
-              className="absolute -left-11 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-zinc-800/80 border border-zinc-700 flex items-center justify-center text-zinc-300 hover:text-white hover:scale-110 hover:bg-zinc-700 transition-all z-20"
-            >
-              <svg viewBox="0 0 24 24" className="w-4 h-4 fill-none stroke-current stroke-2"><polyline points="15 18 9 12 15 6" /></svg>
-            </button>
-            <button
-              onClick={next}
-              className="absolute -right-11 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-zinc-800/80 border border-zinc-700 flex items-center justify-center text-zinc-300 hover:text-white hover:scale-110 hover:bg-zinc-700 transition-all z-20"
-            >
-              <svg viewBox="0 0 24 24" className="w-4 h-4 fill-none stroke-current stroke-2"><polyline points="9 18 15 12 9 6" /></svg>
-            </button>
-          </>
-        )}
-
-        {/* Phone frame */}
         <div className="relative" style={{ width: 260, height: 530 }}>
           {/* Outer shell */}
           <div
-            className="absolute inset-0 rounded-[52px] border-[4px] border-zinc-600 bg-zinc-900"
+            className="absolute inset-0 rounded-[52px] border-[4px] border-zinc-600 bg-zinc-900 group-hover:border-zinc-500 transition-colors duration-300"
             style={{
               boxShadow:
-                "0 0 0 1px #3f3f46, 0 50px 100px rgba(0,0,0,0.85), inset 0 1px 0 rgba(255,255,255,0.07)",
+                "0 0 0 1px #3f3f46, 0 35px 70px rgba(0,0,0,0.85), inset 0 1px 0 rgba(255,255,255,0.08)",
             }}
           />
-          {/* Left side buttons */}
+          {/* Left side volume buttons */}
           <div className="absolute -left-[6px] top-[114px] w-[5px] h-11 rounded-l-sm bg-zinc-600" />
           <div className="absolute -left-[6px] top-[176px] w-[5px] h-11 rounded-l-sm bg-zinc-600" />
           {/* Right power button */}
           <div className="absolute -right-[6px] top-[142px] w-[5px] h-16 rounded-r-sm bg-zinc-600" />
           {/* Dynamic Island */}
-          <div className="absolute top-[14px] left-1/2 -translate-x-1/2 w-[72px] h-[26px] rounded-full bg-black z-20" />
-          {/* Screen */}
+          <div className="absolute top-[14px] left-1/2 -translate-x-1/2 w-[72px] h-[26px] rounded-full bg-black z-30 shadow-sm pointer-events-none" />
+
+          {/* Screen with mouse drag gesture and mouse wheel scroll */}
           <div
-            className="absolute overflow-hidden rounded-[46px] bg-black"
-            style={{ top: 8, left: 7, right: 7, bottom: 8 }}
+            onWheel={handleWheel}
+            className="absolute overflow-hidden rounded-[46px] bg-zinc-950 cursor-grab active:cursor-grabbing select-none"
+            style={{ top: 8, left: 7, right: 7, bottom: 8, touchAction: "none" }}
+            title={total > 1 ? "Drag with mouse or scroll wheel to switch screenshots" : undefined}
           >
-            {screens.map((src: string, i: number) => (
-              <div
-                key={i}
-                className="absolute inset-0 transition-opacity duration-500"
-                style={{ opacity: i === currentSlide ? 1 : 0 }}
+            <AnimatePresence initial={false} custom={direction} mode="popLayout">
+              <motion.div
+                key={currentSlide}
+                custom={direction}
+                variants={slideVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                drag={total > 1 ? "x" : false}
+                dragConstraints={{ left: 0, right: 0 }}
+                dragElastic={0.35}
+                onDragEnd={(_, info) => {
+                  const swipeThreshold = 35;
+                  const swipeVelocity = 250;
+                  if (info.offset.x < -swipeThreshold || info.velocity.x < -swipeVelocity) {
+                    next();
+                  } else if (info.offset.x > swipeThreshold || info.velocity.x > swipeVelocity) {
+                    prev();
+                  }
+                }}
+                transition={{
+                  x: { type: "spring", stiffness: 320, damping: 32 },
+                  opacity: { duration: 0.18 },
+                }}
+                className="absolute inset-0 w-full h-full select-none cursor-grab active:cursor-grabbing"
               >
-                <img src={src} alt={`Screen ${i + 1}`} className="w-full h-full object-cover" />
-              </div>
-            ))}
-            {/* Screen glare */}
+                <img
+                  src={screens[currentSlide]}
+                  alt={`${project.title} Screen ${currentSlide + 1}`}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover object-top select-none pointer-events-none"
+                  draggable={false}
+                />
+              </motion.div>
+            </AnimatePresence>
+
+            {/* Screen glare reflection */}
             <div
-              className="absolute inset-0 pointer-events-none"
+              className="absolute inset-0 pointer-events-none z-10"
               style={{
                 background:
-                  "linear-gradient(135deg, rgba(255,255,255,0.07) 0%, transparent 45%)",
+                  "linear-gradient(135deg, rgba(255,255,255,0.06) 0%, transparent 45%)",
               }}
             />
+
+            {/* ── Professional Navigation Side Arrows (inside screen, subtle glassmorphic pills) ── */}
+            {total > 1 && (
+              <>
+                <button
+                  type="button"
+                  onPointerDown={(e) => e.stopPropagation()}
+                  onClick={(e) => prev(e)}
+                  aria-label="Previous screenshot"
+                  className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-zinc-950/75 hover:bg-sky-500/90 text-white/80 hover:text-white backdrop-blur-md border border-white/20 hover:border-sky-300 flex items-center justify-center transition-all duration-200 shadow-[0_4px_14px_rgba(0,0,0,0.6)] hover:scale-110 active:scale-95 z-30 group/arrow cursor-pointer"
+                >
+                  <ChevronLeft className="w-4 h-4 transition-transform group-hover/arrow:-translate-x-0.5" />
+                </button>
+                <button
+                  type="button"
+                  onPointerDown={(e) => e.stopPropagation()}
+                  onClick={(e) => next(e)}
+                  aria-label="Next screenshot"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-zinc-950/75 hover:bg-sky-500/90 text-white/80 hover:text-white backdrop-blur-md border border-white/20 hover:border-sky-300 flex items-center justify-center transition-all duration-200 shadow-[0_4px_14px_rgba(0,0,0,0.6)] hover:scale-110 active:scale-95 z-30 group/arrow cursor-pointer"
+                >
+                  <ChevronRight className="w-4 h-4 transition-transform group-hover/arrow:translate-x-0.5" />
+                </button>
+              </>
+            )}
+
+            {/* iOS Home indicator bar */}
+            <div className="absolute bottom-[14px] left-1/2 -translate-x-1/2 w-16 h-[4px] rounded-full bg-zinc-500/70 z-20 pointer-events-none" />
           </div>
-          {/* Home indicator */}
-          <div className="absolute bottom-[14px] left-1/2 -translate-x-1/2 w-16 h-[4px] rounded-full bg-zinc-500 z-20" />
         </div>
       </div>
 
-      {/* ── Pagination dots ── */}
-      {total > 1 && (
-        <div className="flex items-center justify-center gap-2 mt-5">
+      {/* ── Pagination Indicator Dots ── */}
+      {total > 1 ? (
+        <div className="flex items-center justify-center gap-1.5 mt-4">
           {screens.map((_: string, i: number) => (
             <button
               key={i}
-              onClick={() => setCurrentSlide(i)}
+              type="button"
+              onClick={() => {
+                setDirection(i > currentSlide ? 1 : -1);
+                setCurrentSlide(i);
+              }}
+              aria-label={`View screenshot ${i + 1}`}
               className={`rounded-full transition-all duration-300 ${
                 i === currentSlide
-                  ? "w-5 h-2 bg-indigo-400"
-                  : "w-2 h-2 bg-zinc-600 hover:bg-zinc-400"
+                  ? "w-6 h-1.5 bg-gradient-to-r from-sky-400 to-cyan-400 shadow-[0_0_8px_rgba(56,189,248,0.5)]"
+                  : "w-1.5 h-1.5 bg-zinc-700 hover:bg-zinc-500"
               }`}
             />
           ))}
         </div>
+      ) : (
+        <div className="h-1.5 mt-4" />
       )}
 
       {/* ── Info ── */}
-      <div className="mt-5 text-center">
-        <h3 className="text-lg font-bold text-white group-hover:text-zinc-200 transition-colors">
+      <div className="mt-3.5 text-center px-2">
+        <h3 className="text-lg font-bold text-white group-hover:text-sky-300 transition-colors">
           {project.title}
         </h3>
+        {project.tag && (
+          <span className="text-xs text-zinc-400 block mt-0.5">
+            {project.tag}
+          </span>
+        )}
       </div>
     </motion.div>
   );
@@ -604,140 +771,233 @@ function WebsiteCard({
   idx: number;
   className?: string;
 }) {
-  const [currentSlide, setCurrentSlide] = useState(0);
   const screens = (project as any).screens ?? [project.image];
   const total = screens.length;
 
-  const prev = (e: React.MouseEvent) => {
-    e.stopPropagation();
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [direction, setDirection] = useState(0);
+  const lastWheelTime = useRef(0);
+
+  const prev = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    if (total <= 1) return;
+    setDirection(-1);
     setCurrentSlide((s) => (s - 1 + total) % total);
   };
-  const next = (e: React.MouseEvent) => {
-    e.stopPropagation();
+  const next = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    if (total <= 1) return;
+    setDirection(1);
     setCurrentSlide((s) => (s + 1) % total);
+  };
+
+  const handleWheel = (e: React.WheelEvent) => {
+    if (total <= 1) return;
+    const now = Date.now();
+    if (now - lastWheelTime.current < 380) return;
+    // Detect mouse wheel or trackpad horizontal/vertical swipe
+    if (Math.abs(e.deltaX) > 10 || Math.abs(e.deltaY) > 18) {
+      lastWheelTime.current = now;
+      if (e.deltaX > 0 || e.deltaY > 0) {
+        next();
+      } else {
+        prev();
+      }
+    }
+  };
+
+  const slideVariants = {
+    enter: (dir: number) => ({
+      x: dir > 0 ? "100%" : "-100%",
+      opacity: 0.3,
+    }),
+    center: {
+      x: "0%",
+      opacity: 1,
+    },
+    exit: (dir: number) => ({
+      x: dir > 0 ? "-100%" : "100%",
+      opacity: 0.3,
+    }),
   };
 
   const fakeUrl = `${project.category === "webapp" ? "app" : "www"}.${project.client.toLowerCase().replace(/\s+/g, "")}.com`;
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.96 }}
       transition={{ duration: 0.45, delay: idx * 0.08 }}
-      className={`flex flex-col items-center group ${className}`}
+      className={`flex flex-col items-center group w-full ${className}`}
     >
       {/* ── Browser shell ── */}
-      <div className="relative w-full px-6">
-        {/* Prev / Next arrows */}
-        {total > 1 && (
-          <>
-            <button
-              onClick={prev}
-              className="absolute left-0 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-zinc-800/90 border border-zinc-700 flex items-center justify-center text-zinc-300 hover:text-white hover:scale-110 hover:bg-zinc-700 transition-all z-20"
-            >
-              <svg viewBox="0 0 24 24" className="w-4 h-4 fill-none stroke-current stroke-2"><polyline points="15 18 9 12 15 6" /></svg>
-            </button>
-            <button
-              onClick={next}
-              className="absolute right-0 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-zinc-800/90 border border-zinc-700 flex items-center justify-center text-zinc-300 hover:text-white hover:scale-110 hover:bg-zinc-700 transition-all z-20"
-            >
-              <svg viewBox="0 0 24 24" className="w-4 h-4 fill-none stroke-current stroke-2"><polyline points="9 18 15 12 9 6" /></svg>
-            </button>
-          </>
-        )}
-
+      <div className="relative w-full">
         <div
-          className="w-full rounded-2xl overflow-hidden border border-zinc-700/80"
-          style={{ boxShadow: "0 0 0 1px #27272a, 0 40px 100px rgba(0,0,0,0.75), inset 0 1px 0 rgba(255,255,255,0.05)" }}
+          className="w-full rounded-2xl overflow-hidden border border-zinc-700/80 bg-zinc-900 group-hover:border-zinc-500/80 transition-colors duration-300"
+          style={{
+            boxShadow:
+              "0 0 0 1px #27272a, 0 35px 80px rgba(0,0,0,0.75), inset 0 1px 0 rgba(255,255,255,0.06)",
+          }}
         >
-          {/* Browser chrome */}
-          <div className="bg-zinc-800 border-b border-zinc-700 px-4 py-3 flex items-center gap-3">
+          {/* Browser chrome header */}
+          <div className="bg-zinc-800/95 backdrop-blur-md border-b border-zinc-700/80 px-3.5 py-2.5 flex items-center gap-2.5">
             {/* Traffic lights */}
             <div className="flex items-center gap-1.5 shrink-0">
-              <div className="w-3 h-3 rounded-full bg-red-500/80" />
-              <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-              <div className="w-3 h-3 rounded-full bg-green-500/80" />
+              <div className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
+              <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
+              <div className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
             </div>
             {/* Nav arrows */}
-            <div className="flex items-center gap-1 shrink-0">
-              <div className="w-4 h-4 flex items-center justify-center text-zinc-500">
-                <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-none stroke-current stroke-2"><polyline points="15 18 9 12 15 6" /></svg>
+            <div className="flex items-center gap-1 shrink-0 text-zinc-500">
+              <div className="w-3.5 h-3.5 flex items-center justify-center">
+                <svg viewBox="0 0 24 24" className="w-3 h-3 fill-none stroke-current stroke-2"><polyline points="15 18 9 12 15 6" /></svg>
               </div>
-              <div className="w-4 h-4 flex items-center justify-center text-zinc-500">
-                <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-none stroke-current stroke-2"><polyline points="9 18 15 12 9 6" /></svg>
+              <div className="w-3.5 h-3.5 flex items-center justify-center">
+                <svg viewBox="0 0 24 24" className="w-3 h-3 fill-none stroke-current stroke-2"><polyline points="9 18 15 12 9 6" /></svg>
               </div>
             </div>
             {/* Address bar */}
-            <div className="flex-1 bg-zinc-900/80 border border-zinc-700/60 rounded-lg px-3 py-1.5 flex items-center gap-2">
+            <div className="flex-1 bg-zinc-950/80 border border-zinc-700/60 rounded-md px-2.5 py-1 flex items-center gap-1.5 min-w-0">
               <svg viewBox="0 0 24 24" className="w-3 h-3 fill-none stroke-zinc-500 stroke-2 shrink-0"><circle cx="12" cy="12" r="10" /><path d="M12 8v4l3 3" /></svg>
               <span className="text-[11px] text-zinc-400 truncate font-mono tracking-tight">{fakeUrl}</span>
             </div>
-            {/* Reload + share icons */}
+            {/* Reload icon */}
             <div className="flex items-center gap-1.5 shrink-0 text-zinc-500">
-              <svg viewBox="0 0 24 24" className="w-4 h-4 fill-none stroke-current stroke-2"><polyline points="23 4 23 10 17 10" /><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10" /></svg>
-              <svg viewBox="0 0 24 24" className="w-4 h-4 fill-none stroke-current stroke-2"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" /><polyline points="16 6 12 2 8 6" /><line x1="12" y1="2" x2="12" y2="15" /></svg>
+              <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-none stroke-current stroke-2"><polyline points="23 4 23 10 17 10" /><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10" /></svg>
             </div>
           </div>
 
-          {/* Viewport — 16:10 */}
-          <div className="relative" style={{ aspectRatio: "16/10", background: "#060609" }}>
-            {screens.map((src: string, i: number) => (
-              <div
-                key={i}
-                className="absolute inset-0 transition-opacity duration-500"
-                style={{ opacity: i === currentSlide ? 1 : 0 }}
+          {/* Viewport — 16:10 with mouse drag + wheel */}
+          <div
+            onWheel={handleWheel}
+            className="relative overflow-hidden w-full select-none"
+            style={{
+              aspectRatio: "16/10",
+              background: "#08080d",
+              touchAction: "none",
+            }}
+            title={total > 1 ? "Drag with mouse or scroll wheel to switch screenshots" : undefined}
+          >
+            <AnimatePresence initial={false} custom={direction} mode="popLayout">
+              <motion.div
+                key={currentSlide}
+                custom={direction}
+                variants={slideVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                drag={total > 1 ? "x" : false}
+                dragConstraints={{ left: 0, right: 0 }}
+                dragElastic={0.35}
+                onDragEnd={(_, info) => {
+                  const swipeThreshold = 35;
+                  const swipeVelocity = 250;
+                  if (info.offset.x < -swipeThreshold || info.velocity.x < -swipeVelocity) {
+                    next();
+                  } else if (info.offset.x > swipeThreshold || info.velocity.x > swipeVelocity) {
+                    prev();
+                  }
+                }}
+                transition={{
+                  x: { type: "spring", stiffness: 320, damping: 32 },
+                  opacity: { duration: 0.18 },
+                }}
+                className={`absolute inset-0 w-full h-full select-none ${total > 1 ? "cursor-grab active:cursor-grabbing" : ""}`}
               >
-                <img src={src} alt={`Screen ${i + 1}`} className="w-full h-full object-cover" />
-              </div>
-            ))}
-            {/* Glare */}
+                <img
+                  src={screens[currentSlide]}
+                  alt={`${project.title} Screen ${currentSlide + 1}`}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover object-top select-none pointer-events-none"
+                  draggable={false}
+                />
+              </motion.div>
+            </AnimatePresence>
+
+            {/* Screen glare */}
             <div
-              className="absolute inset-0 pointer-events-none"
-              style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.04) 0%, transparent 40%)" }}
+              className="absolute inset-0 pointer-events-none z-10"
+              style={{
+                background:
+                  "linear-gradient(135deg, rgba(255,255,255,0.04) 0%, transparent 40%)",
+              }}
             />
-            {/* Scrollbar */}
-            <div className="absolute right-0 top-0 bottom-0 w-2 bg-zinc-900/50">
-              <div className="mt-2 mx-auto w-1 h-12 rounded-full bg-zinc-600/60" />
-            </div>
+
+            {/* Side Navigation Chevrons inside viewport */}
+            {total > 1 && (
+              <>
+                <button
+                  type="button"
+                  onPointerDown={(e) => e.stopPropagation()}
+                  onClick={(e) => prev(e)}
+                  aria-label="Previous screenshot"
+                  className="absolute left-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-zinc-950/75 hover:bg-sky-500/90 text-white/80 hover:text-white backdrop-blur-md border border-white/20 hover:border-sky-300 flex items-center justify-center transition-all duration-200 shadow-[0_4px_14px_rgba(0,0,0,0.6)] hover:scale-110 active:scale-95 z-30 group/arrow cursor-pointer opacity-70 group-hover:opacity-100"
+                >
+                  <ChevronLeft className="w-4 h-4 transition-transform group-hover/arrow:-translate-x-0.5" />
+                </button>
+                <button
+                  type="button"
+                  onPointerDown={(e) => e.stopPropagation()}
+                  onClick={(e) => next(e)}
+                  aria-label="Next screenshot"
+                  className="absolute right-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-zinc-950/75 hover:bg-sky-500/90 text-white/80 hover:text-white backdrop-blur-md border border-white/20 hover:border-sky-300 flex items-center justify-center transition-all duration-200 shadow-[0_4px_14px_rgba(0,0,0,0.6)] hover:scale-110 active:scale-95 z-30 group/arrow cursor-pointer opacity-70 group-hover:opacity-100"
+                >
+                  <ChevronRight className="w-4 h-4 transition-transform group-hover/arrow:translate-x-0.5" />
+                </button>
+              </>
+            )}
           </div>
 
           {/* Status bar */}
-          <div className="bg-zinc-800/70 border-t border-zinc-700/50 px-4 py-1.5 flex items-center justify-between">
-            <span className="text-[10px] text-zinc-500 font-mono">{project.tag}</span>
-            <div className="flex items-center gap-3">
-              <span className="text-[10px] text-zinc-600">Screen {currentSlide + 1} of {total}</span>
-              <div className="flex gap-1">
-                <div className="w-1 h-1 rounded-full bg-green-500" />
-                <span className="text-[10px] text-zinc-600">Live</span>
+          <div className="bg-zinc-800/90 border-t border-zinc-700/50 px-3.5 py-1.5 flex items-center justify-between">
+            <span className="text-[10px] text-zinc-400 font-mono truncate">{project.tag}</span>
+            <div className="flex items-center gap-2.5 shrink-0">
+              <span className="text-[10px] text-zinc-500">Screen {currentSlide + 1} of {total}</span>
+              <div className="flex items-center gap-1">
+                <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="text-[10px] text-zinc-500">Live</span>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* ── Pagination dots ── */}
-      {total > 1 && (
-        <div className="flex items-center justify-center gap-2 mt-4">
+      {/* ── Pagination Indicator Dots ── */}
+      {total > 1 ? (
+        <div className="flex items-center justify-center gap-1.5 mt-3.5">
           {screens.map((_: string, i: number) => (
             <button
               key={i}
-              onClick={() => setCurrentSlide(i)}
+              type="button"
+              onClick={() => {
+                setDirection(i > currentSlide ? 1 : -1);
+                setCurrentSlide(i);
+              }}
+              aria-label={`View screenshot ${i + 1}`}
               className={`rounded-full transition-all duration-300 ${
                 i === currentSlide
-                  ? "w-5 h-2 bg-sky-400"
-                  : "w-2 h-2 bg-zinc-600 hover:bg-zinc-400"
+                  ? "w-6 h-1.5 bg-gradient-to-r from-sky-400 to-cyan-400 shadow-[0_0_8px_rgba(56,189,248,0.5)]"
+                  : "w-1.5 h-1.5 bg-zinc-700 hover:bg-zinc-500"
               }`}
             />
           ))}
         </div>
+      ) : (
+        <div className="h-1.5 mt-3.5" />
       )}
 
-      {/* ── Title only ── */}
-      <div className="mt-3 text-center">
-        <h3 className="text-lg font-bold text-white group-hover:text-zinc-200 transition-colors">
+      {/* ── Info Title & Tag ── */}
+      <div className="mt-3 text-center px-2">
+        <h3 className="text-lg font-bold text-white group-hover:text-sky-300 transition-colors">
           {project.title}
         </h3>
+        {project.client && (
+          <span className="text-xs text-zinc-400 block mt-0.5">
+            {project.client}
+          </span>
+        )}
       </div>
     </motion.div>
   );
@@ -820,7 +1080,7 @@ function HorizontalVideoCard({
       setActiveVideoId(null);
     } else {
       setActiveVideoId(video.id);
-      videoRef.current.play().catch(() => {});
+      videoRef.current.play().catch(() => { });
     }
   };
 
@@ -882,10 +1142,17 @@ function HorizontalVideoCard({
 
             {/* Badge Overlay */}
             <div className="absolute top-4 left-4 z-10 pointer-events-none">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-zinc-950/85 backdrop-blur-md border border-red-500/40 text-red-400 shadow-md">
-                <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-                YouTube Podcast
-              </span>
+              {isYanisa ? (
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-zinc-950/85 backdrop-blur-md border border-sky-400/40 text-sky-300 shadow-md">
+                  <span className="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse" />
+                  Yanisa Media
+                </span>
+              ) : (
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-zinc-950/85 backdrop-blur-md border border-red-500/40 text-red-400 shadow-md">
+                  <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+                  YouTube Podcast
+                </span>
+              )}
             </div>
 
             {/* External link button */}
@@ -912,6 +1179,7 @@ function HorizontalVideoCard({
             <video
               ref={videoRef}
               src={isInView && encodedFile ? `${encodedFile}#t=0.1` : undefined}
+              poster={video.thumbnail}
               className="w-full h-full object-cover"
               preload={isInView ? "metadata" : "none"}
               playsInline
@@ -1062,7 +1330,7 @@ function ReelCard({
       setActiveVideoId(null);
     } else {
       setActiveVideoId(reel.id);
-      videoRef.current.play().catch(() => {});
+      videoRef.current.play().catch(() => { });
     }
   };
 
@@ -1213,9 +1481,8 @@ function FullscreenVideoModal({
                 controls
                 autoPlay
                 playsInline
-                className={`max-h-[82vh] object-contain rounded-xl ${
-                  videoData.isReel ? "aspect-[9/16] h-[82vh] w-auto" : "w-auto h-auto max-h-[82vh] max-w-[85vw]"
-                }`}
+                className={`max-h-[82vh] object-contain rounded-xl ${videoData.isReel ? "aspect-[9/16] h-[82vh] w-auto" : "w-auto h-auto max-h-[82vh] max-w-[85vw]"
+                  }`}
               />
             ) : (
               <img
@@ -1313,11 +1580,10 @@ function HorizontalSlider({
               onClick={() => scroll("left")}
               disabled={!canScrollLeft}
               aria-label="Scroll left"
-              className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 border ${
-                canScrollLeft
+              className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 border ${canScrollLeft
                   ? "bg-zinc-800/90 border-zinc-700 text-white hover:bg-zinc-700 hover:border-zinc-500 hover:scale-105 active:scale-95 cursor-pointer shadow-lg"
                   : "bg-zinc-900/40 border-zinc-800/60 text-zinc-600 cursor-not-allowed opacity-40"
-              }`}
+                }`}
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
@@ -1325,11 +1591,10 @@ function HorizontalSlider({
               onClick={() => scroll("right")}
               disabled={!canScrollRight}
               aria-label="Scroll right"
-              className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 border ${
-                canScrollRight
+              className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 border ${canScrollRight
                   ? "bg-zinc-800/90 border-zinc-700 text-white hover:bg-zinc-700 hover:border-zinc-500 hover:scale-105 active:scale-95 cursor-pointer shadow-lg"
                   : "bg-zinc-900/40 border-zinc-800/60 text-zinc-600 cursor-not-allowed opacity-40"
-              }`}
+                }`}
             >
               <ChevronRight className="w-5 h-5" />
             </button>
@@ -1340,6 +1605,7 @@ function HorizontalSlider({
       {/* Slider Track */}
       <div
         ref={scrollRef}
+        data-lenis-prevent
         className="flex gap-6 overflow-x-auto scrollbar-none snap-x snap-mandatory scroll-smooth pb-6 pt-1 px-1 [&::-webkit-scrollbar]:hidden"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
@@ -1411,11 +1677,10 @@ export default function ProjectsPage() {
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
-              className={`px-5 py-2.5 rounded-full text-xs md:text-sm font-medium transition-all duration-300 touch-manipulation ${
-                activeCategory === cat.id
+              className={`px-5 py-2.5 rounded-full text-xs md:text-sm font-medium transition-all duration-300 touch-manipulation ${activeCategory === cat.id
                   ? "bg-zinc-800 text-white font-bold border border-zinc-500 shadow-[0_0_20px_rgba(255,255,255,0.08)]"
                   : "bg-zinc-900/80 text-zinc-400 border border-zinc-800 hover:text-white hover:bg-zinc-800"
-              }`}
+                }`}
             >
               {cat.label}
             </button>
@@ -1524,41 +1789,107 @@ export default function ProjectsPage() {
 
                 if (cat.id === "mobile") {
                   return (
-                    <HorizontalSlider
-                      key={cat.id}
-                      title={cat.label}
-                      badge={`${items.length} Apps`}
-                      subtitle="Native mobile application UI & interactive screen prototypes"
-                    >
-                      {items.map((project, idx) => (
-                        <MobileAppCard
-                          key={project.id}
-                          project={project as any}
-                          idx={idx}
-                          className="w-[260px] sm:w-[280px] md:w-[300px] shrink-0 snap-start"
-                        />
-                      ))}
-                    </HorizontalSlider>
+                    <div key={cat.id} className="relative w-full">
+                      {/* Section Header */}
+                      <div className="flex items-center justify-between gap-4 mb-8">
+                        <div className="flex items-center gap-3">
+                          <div className="w-1 h-7 rounded-full bg-gradient-to-b from-sky-400 to-cyan-500" />
+                          <div>
+                            <div className="flex items-center gap-2.5">
+                              <h3 className="text-xl sm:text-2xl font-bold text-white">{cat.label}</h3>
+                              <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-300">
+                                {`${items.length} Apps`}
+                              </span>
+                            </div>
+                            <p className="text-xs sm:text-sm text-zinc-400 mt-0.5">
+                              Native mobile application UI &amp; interactive screen prototypes
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* 4 Phones Responsive Grid (Non-scrollable, all 4 side-by-side) */}
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8 justify-items-center w-full">
+                        {items.map((project, idx) => (
+                          <MobileAppCard
+                            key={project.id}
+                            project={project as any}
+                            idx={idx}
+                            className="w-full max-w-[270px]"
+                          />
+                        ))}
+                      </div>
+                    </div>
                   );
                 }
 
-                if (cat.id === "website" || cat.id === "webapp") {
+                if (cat.id === "website") {
                   return (
-                    <HorizontalSlider
-                      key={cat.id}
-                      title={cat.label}
-                      badge={`${items.length} Projects`}
-                      subtitle="Modern web platforms, interactive dashboards & SaaS applications"
-                    >
-                      {items.map((project, idx) => (
-                        <WebsiteCard
-                          key={project.id}
-                          project={project as any}
-                          idx={idx}
-                          className="w-[360px] sm:w-[460px] md:w-[520px] shrink-0 snap-start"
-                        />
-                      ))}
-                    </HorizontalSlider>
+                    <div key={cat.id} className="w-full">
+                      <div className="flex items-center justify-between gap-4 mb-6">
+                        <div className="flex items-center gap-3">
+                          <div className="w-1 h-6 rounded-full bg-gradient-to-b from-sky-400 to-cyan-500" />
+                          <div>
+                            <div className="flex items-center gap-2">
+                              <h3 className="text-lg sm:text-xl font-bold text-white">{cat.label}</h3>
+                              <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-300">
+                                {`${items.length} Projects`}
+                              </span>
+                            </div>
+                            <p className="text-xs text-zinc-400 mt-0.5">
+                              High-performance marketing websites, e-commerce storefronts, and brand destinations
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* 3 Windows Grid */}
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8 justify-items-center w-full">
+                        {items.map((project, idx) => (
+                          <WebsiteCard
+                            key={project.id}
+                            project={project as any}
+                            idx={idx}
+                            className="w-full"
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  );
+                }
+
+                if (cat.id === "webapp") {
+                  return (
+                    <div key={cat.id} className="w-full">
+                      <div className="flex items-center justify-between gap-4 mb-6">
+                        <div className="flex items-center gap-3">
+                          <div className="w-1 h-6 rounded-full bg-gradient-to-b from-sky-400 to-cyan-500" />
+                          <div>
+                            <div className="flex items-center gap-2">
+                              <h3 className="text-lg sm:text-xl font-bold text-white">{cat.label}</h3>
+                              <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-300">
+                                {`${items.length} Projects`}
+                              </span>
+                            </div>
+                            <p className="text-xs text-zinc-400 mt-0.5">
+                              Interactive SaaS platforms, web applications, and enterprise dashboards
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* 3 Windows Grid */}
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8 justify-items-center w-full">
+                        {items.map((project, idx) => (
+                          <WebsiteCard
+                            key={project.id}
+                            project={project as any}
+                            idx={idx}
+                            className="w-full"
+                          />
+                        ))}
+                      </div>
+                    </div>
                   );
                 }
 
@@ -1652,28 +1983,104 @@ export default function ProjectsPage() {
               </HorizontalSlider>
             </motion.div>
           ) : activeCategory === "mobile" ? (
-            <motion.div key="mobile" initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}>
-              <HorizontalSlider
-                title="Mobile App Experiences"
-                badge={`${filtered.length} Apps`}
-                subtitle="Swipe horizontally or use arrows to explore interactive native mobile designs"
-              >
+            <motion.div key="mobile" initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} className="w-full">
+              <div className="flex items-center justify-between gap-4 mb-8">
+                <div className="flex items-center gap-3">
+                  <div className="w-1 h-7 rounded-full bg-gradient-to-b from-sky-400 to-cyan-500" />
+                  <div>
+                    <div className="flex items-center gap-2.5">
+                      <h3 className="text-xl sm:text-2xl font-bold text-white">Mobile App Experiences</h3>
+                      <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-300">
+                        {`${filtered.length} Apps`}
+                      </span>
+                    </div>
+                    <p className="text-xs sm:text-sm text-zinc-400 mt-0.5">
+                      Explore interactive native iOS &amp; Android mobile application designs
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* 4 Phones Responsive Grid (Non-scrollable, all 4 side-by-side) */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8 justify-items-center w-full">
                 {filtered.map((project, idx) => (
                   <MobileAppCard
                     key={project.id}
                     project={project as any}
                     idx={idx}
-                    className="w-[260px] sm:w-[280px] md:w-[300px] shrink-0 snap-start"
+                    className="w-full max-w-[270px]"
                   />
                 ))}
-              </HorizontalSlider>
+              </div>
+            </motion.div>
+          ) : activeCategory === "webapp" ? (
+            <motion.div key="webapp" initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} className="w-full">
+              <div className="flex items-center justify-between gap-4 mb-8">
+                <div className="flex items-center gap-3">
+                  <div className="w-1 h-7 rounded-full bg-gradient-to-b from-sky-400 to-cyan-500" />
+                  <div>
+                    <div className="flex items-center gap-2.5">
+                      <h3 className="text-xl sm:text-2xl font-bold text-white">Web Applications &amp; SaaS</h3>
+                      <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-300">
+                        {`${filtered.length} Projects`}
+                      </span>
+                    </div>
+                    <p className="text-xs sm:text-sm text-zinc-400 mt-0.5">
+                      Interactive SaaS platforms, web applications, and enterprise dashboards
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* 3 Windows Responsive Grid (All 3 side-by-side on desktop) */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8 justify-items-center w-full">
+                {filtered.map((project, idx) => (
+                  <WebsiteCard
+                    key={project.id}
+                    project={project as any}
+                    idx={idx}
+                    className="w-full"
+                  />
+                ))}
+              </div>
+            </motion.div>
+          ) : activeCategory === "website" ? (
+            <motion.div key="website" initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} className="w-full">
+              <div className="flex items-center justify-between gap-4 mb-8">
+                <div className="flex items-center gap-3">
+                  <div className="w-1 h-7 rounded-full bg-gradient-to-b from-sky-400 to-cyan-500" />
+                  <div>
+                    <div className="flex items-center gap-2.5">
+                      <h3 className="text-xl sm:text-2xl font-bold text-white">Websites &amp; Brand Platforms</h3>
+                      <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-300">
+                        {`${filtered.length} Projects`}
+                      </span>
+                    </div>
+                    <p className="text-xs sm:text-sm text-zinc-400 mt-0.5">
+                      High-performance marketing websites, e-commerce storefronts, and brand destinations
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* 3 Windows Responsive Grid (All 3 side-by-side on desktop) */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8 justify-items-center w-full">
+                {filtered.map((project, idx) => (
+                  <WebsiteCard
+                    key={project.id}
+                    project={project as any}
+                    idx={idx}
+                    className="w-full"
+                  />
+                ))}
+              </div>
             </motion.div>
           ) : (
             <motion.div key={activeCategory} initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}>
               <HorizontalSlider
-                title={activeCategory === "website" ? "Websites & Brand Platforms" : "Web Applications & SaaS"}
+                title="Interactive Projects"
                 badge={`${filtered.length} Projects`}
-                subtitle="Swipe horizontally or use arrows to explore interactive web products"
+                subtitle="Swipe horizontally or use arrows to explore interactive products"
               >
                 {filtered.map((project, idx) => (
                   <WebsiteCard

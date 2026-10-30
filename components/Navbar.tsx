@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import PrimaryButton from "./PrimaryButton";
 
@@ -20,14 +20,38 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
+  const [optimisticPathname, setOptimisticPathname] = useState<string | null>(null);
+
+  // Sync optimistic active state whenever real pathname updates
+  useEffect(() => {
+    setOptimisticPathname(null);
+  }, [pathname]);
+
+  // Pre-warm all navigation routes in the background so clicks load instantly
+  useEffect(() => {
+    const prefetchRoutes = () => {
+      NAV_LINKS.forEach((link) => {
+        router.prefetch(link.href);
+      });
+    };
+
+    if (typeof window !== "undefined" && "requestIdleCallback" in window) {
+      (window as any).requestIdleCallback(prefetchRoutes);
+    } else {
+      setTimeout(prefetchRoutes, 250);
+    }
+  }, [router]);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const currentPath = optimisticPathname ?? pathname;
 
   return (
     <>
@@ -47,6 +71,8 @@ export default function Navbar() {
             {/* Logo */}
             <Link
               href="/"
+              prefetch={true}
+              onPointerEnter={() => router.prefetch("/")}
               className="flex items-center gap-2.5 group touch-manipulation select-none"
             >
               <div className="relative flex items-center justify-center h-10 w-10 sm:h-12 sm:w-12 shrink-0">
@@ -59,7 +85,7 @@ export default function Navbar() {
                   priority
                 />
               </div>
-              <span className="text-xl sm:text-2xl font-serif italic font-normal tracking-normal bg-gradient-to-r from-zinc-300 via-sky-300 to-cyan-400 bg-clip-text text-transparent drop-shadow-sm">
+              <span className="text-lg sm:text-xl font-serif italic font-normal tracking-normal bg-gradient-to-r from-zinc-300 via-sky-300 to-cyan-400 bg-clip-text text-transparent drop-shadow-sm">
                 BigToastCompany
               </span>
             </Link>
@@ -69,14 +95,20 @@ export default function Navbar() {
               {NAV_LINKS.map((link) => {
                 const isActive =
                   link.href === "/"
-                    ? pathname === "/"
-                    : pathname.startsWith(link.href);
+                    ? currentPath === "/"
+                    : currentPath.startsWith(link.href);
 
                 return (
                   <Link
                     key={link.name}
                     href={link.href}
-                    className={`relative px-4 py-2 text-[14px] font-medium transition-colors duration-200 rounded-full touch-manipulation select-none cursor-pointer ${
+                    prefetch={true}
+                    onPointerEnter={() => router.prefetch(link.href)}
+                    onFocus={() => router.prefetch(link.href)}
+                    onTouchStart={() => router.prefetch(link.href)}
+                    onPointerDown={() => setOptimisticPathname(link.href)}
+                    onClick={() => setOptimisticPathname(link.href)}
+                    className={`relative px-4 py-2 text-[14px] font-medium transition-colors duration-150 rounded-full touch-manipulation select-none cursor-pointer ${
                       isActive
                         ? "text-white font-semibold"
                         : "text-zinc-300 hover:text-white"
@@ -86,7 +118,7 @@ export default function Navbar() {
                       <motion.div
                         layoutId="nav-active-pill"
                         className="absolute inset-0 rounded-full bg-zinc-700/80 border border-zinc-500 shadow-[0_0_20px_rgba(255,255,255,0.15)] pointer-events-none"
-                        transition={{ type: "spring", stiffness: 350, damping: 30 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 32 }}
                       />
                     )}
                     <span className="relative z-10 pointer-events-none">{link.name}</span>
@@ -144,14 +176,20 @@ export default function Navbar() {
               {NAV_LINKS.map((link) => {
                 const isActive =
                   link.href === "/"
-                    ? pathname === "/"
-                    : pathname.startsWith(link.href);
+                    ? currentPath === "/"
+                    : currentPath.startsWith(link.href);
 
                 return (
                   <Link
                     key={link.name}
                     href={link.href}
-                    onClick={() => setMobileMenuOpen(false)}
+                    prefetch={true}
+                    onPointerEnter={() => router.prefetch(link.href)}
+                    onTouchStart={() => router.prefetch(link.href)}
+                    onClick={() => {
+                      setOptimisticPathname(link.href);
+                      setMobileMenuOpen(false);
+                    }}
                     className={`text-2xl font-medium tracking-tight block py-1 ${
                       isActive ? "text-white font-bold" : "text-zinc-300"
                     }`}

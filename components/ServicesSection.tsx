@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Film, Mic, Sparkles, Code2, Smartphone, Globe, Bot, CheckCircle2, Clock, Layers } from "lucide-react";
+import { Film, Mic, Sparkles, Code2, Smartphone, Globe, Bot, CheckCircle2, Clock, Layers, Compass } from "lucide-react";
 import PrimaryButton from "./PrimaryButton";
 
 export const SERVICES = [
@@ -49,7 +49,7 @@ export const SERVICES = [
     number: "03",
     category: "Content Strategy",
     title: "Content Strategy & Story Development",
-    icon: Globe,
+    icon: Compass,
     description:
       "We find the strongest ideas, story angles, and content formats to help founders and brands communicate what matters to their audience.",
     deliverableHighlight: "Content Roadmap, Story Angles & Repurposing Blueprint",
@@ -67,7 +67,7 @@ export const SERVICES = [
     number: "04",
     category: "Creative Production",
     title: "Creative Direction & Content Production",
-    icon: Code2,
+    icon: Sparkles,
     description:
       "From creative concepts to final edits, we shape the visual direction, format, and storytelling behind content built for its intended audience.",
     deliverableHighlight: "End-to-End Creative Direction & Production Execution",
@@ -79,6 +79,63 @@ export const SERVICES = [
     ],
     techStack: ["Premiere Pro", "After Effects", "Figma", "Frame.io"],
   },
+  {
+    id: "website",
+    tabId: "website",
+    number: "05",
+    category: "Websites",
+    title: "Custom High-Performance Websites & Brand Platforms",
+    icon: Globe,
+    description:
+      "We design and develop fast, responsive, and visually striking websites tailored to modern brands, founders, and creators. From interactive landing pages and portfolio showcases to full-scale e-commerce storefronts built on Next.js, React, and Tailwind CSS.",
+    deliverableHighlight: "Custom Responsive Web Experience & CMS Architecture",
+    timeline: "2 - 4 Weeks",
+    features: [
+      "Next.js, React & Modern Frontend Architecture",
+      "Tailwind CSS & Framer Motion Fluid Animations",
+      "Search Engine Optimization (SEO) & Fast Load Pacing",
+      "Headless CMS, E-Commerce & Analytics Integration",
+    ],
+    techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Figma", "Vercel"],
+  },
+  {
+    id: "webapp",
+    tabId: "webapp",
+    number: "06",
+    category: "Web Apps",
+    title: "Scalable Web Applications & Interactive SaaS Platforms",
+    icon: Code2,
+    description:
+      "We engineer intuitive, full-featured web applications and SaaS platforms with smooth user experiences, realtime data dashboards, secure user authentication, robust APIs, and scalable cloud infrastructure.",
+    deliverableHighlight: "Production-Ready Full-Stack Web App & SaaS Architecture",
+    timeline: "3 - 6 Weeks",
+    features: [
+      "Full-Stack Web App & Dashboard Architecture",
+      "Authentication, Role Management & Database Integration",
+      "Interactive UI/UX & Realtime Data Visualizations",
+      "RESTful & GraphQL API Integrations",
+    ],
+    techStack: ["Next.js", "React", "Node.js", "TypeScript", "PostgreSQL", "Supabase", "Tailwind CSS"],
+  },
+  {
+    id: "mobile",
+    tabId: "mobile",
+    number: "07",
+    category: "Mobile Apps",
+    title: "Native iOS & Android Mobile Applications",
+    icon: Smartphone,
+    description:
+      "We build smooth, pixel-perfect iOS and Android mobile experiences. From creator tools and fitness trackers to community and on-demand mobile apps, engineered with fluid gesture navigation and native performance.",
+    deliverableHighlight: "Cross-Platform iOS & Android Mobile App",
+    timeline: "4 - 8 Weeks",
+    features: [
+      "Cross-Platform Native iOS & Android Development",
+      "Fluid Gestures, Haptics & Mobile-First UI/UX",
+      "Push Notifications, Offline Storage & State Sync",
+      "App Store & Google Play Store Deployment Support",
+    ],
+    techStack: ["React Native", "Flutter", "iOS / Swift", "Android", "TypeScript", "Expo", "Firebase"],
+  },
 ];
 
 const TABS = [
@@ -87,6 +144,9 @@ const TABS = [
   { id: "podcast", label: "Podcast" },
   { id: "strategy", label: "Content Strategy" },
   { id: "production", label: "Creative Production" },
+  { id: "website", label: "Websites" },
+  { id: "webapp", label: "Web Apps" },
+  { id: "mobile", label: "Mobile Apps" },
 ];
 
 interface ServicesSectionProps {
@@ -309,7 +369,7 @@ export default function ServicesSection({ singleColumn = false, hideHeader = fal
 
           {/* 1-Line Non-Scrollable Tabs Container */}
           <div className="w-full flex items-center justify-center">
-            <div className="inline-flex items-center gap-1.5 p-1.5 rounded-full bg-zinc-900/90 border border-zinc-800/80 backdrop-blur-xl shadow-lg">
+            <div className="inline-flex items-center gap-1.5 p-1.5 rounded-full bg-zinc-900/90 border border-zinc-800/80 backdrop-blur-xl shadow-lg max-w-full overflow-x-auto no-scrollbar">
               {TABS.map((tab) => (
                 <button
                   key={tab.id}

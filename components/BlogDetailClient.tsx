@@ -38,7 +38,7 @@ export default function BlogDetailClient({ post, relatedPosts }: BlogDetailClien
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -97,7 +97,7 @@ export default function BlogDetailClient({ post, relatedPosts }: BlogDetailClien
                 src={post.author.avatar}
                 alt={post.author.name}
                 fill
-                className="object-cover"
+                className="object-cover object-top"
               />
             </div>
             <div>
@@ -320,7 +320,7 @@ export default function BlogDetailClient({ post, relatedPosts }: BlogDetailClien
               src={post.author.avatar}
               alt={post.author.name}
               fill
-              className="object-cover"
+              className="object-cover object-top"
             />
           </div>
           <div className="flex flex-col gap-2 text-center sm:text-left">

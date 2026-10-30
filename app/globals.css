@@ -1,3 +1,4 @@
+@import "lenis/dist/lenis.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,11 +14,12 @@
 }
 
 html {
-  scroll-behavior: initial;
+  scroll-behavior: auto;
   background-color: var(--bg-color);
   color: var(--white-color);
   font-family: var(--font-figtree), sans-serif;
-  overflow-x: hidden;
+  overflow-x: clip;
+  text-rendering: optimizeLegibility;
 }
 
 body {
@@ -36,12 +38,17 @@ a, button, nav {
 }
 
 /* Custom Lenis Smooth Scroll CSS */
-html.lenis, html.lenis body {
+html.lenis,
+html.lenis body {
   height: auto;
 }
 
+html.lenis {
+  scroll-behavior: auto !important;
+}
+
 .lenis.lenis-smooth {
-  scroll-behavior: cubic-bezier(0.1, 1, 0.1, 1);
+  scroll-behavior: auto !important;
 }
 
 .lenis.lenis-smooth [data-lenis-prevent] {
@@ -49,11 +56,38 @@ html.lenis, html.lenis body {
 }
 
 .lenis.lenis-stopped {
-  overflow: hidden;
+  overflow: clip;
 }
 
 .lenis.lenis-smooth iframe {
   pointer-events: none;
+}
+
+/* GPU Hardware Acceleration & Smooth Rendering */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.glass-card,
+.glass-card-charcoal {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.fixed-bg-glow {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.overflow-x-auto {
+  -webkit-overflow-scrolling: touch;
+}
+
+img, video {
+  content-visibility: auto;
 }
 
 /* Enhanced Ambient Glowing Charcoal & Silver Orbs */

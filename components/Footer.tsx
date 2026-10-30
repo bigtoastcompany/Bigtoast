@@ -35,7 +35,7 @@ export default function Footer() {
                   className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-md"
                 />
               </div>
-              <span className="text-xl md:text-2xl font-serif italic font-normal tracking-normal bg-gradient-to-r from-zinc-300 via-sky-300 to-cyan-400 bg-clip-text text-transparent">
+              <span className="text-lg md:text-xl font-serif italic font-normal tracking-normal bg-gradient-to-r from-zinc-300 via-sky-300 to-cyan-400 bg-clip-text text-transparent">
                 BigToastCompany
               </span>
             </Link>
@@ -118,7 +118,7 @@ export default function Footer() {
               <Linkedin className="w-3.5 h-3.5" />
             </a>
             <a
-              href="mailto:himanshuworkshere1@gmail.com"
+              href="mailto:bigtoastcompany@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Email"
