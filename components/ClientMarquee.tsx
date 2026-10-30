@@ -546,7 +546,6 @@ function InteractiveMarquee<T>({
   return (
     <div
       ref={containerRef}
-      data-lenis-prevent
       onPointerDown={onPointerDown}
       onPointerMove={onPointerMove}
       onPointerUp={onPointerUp}

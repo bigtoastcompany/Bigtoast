@@ -583,16 +583,19 @@ function MobileAppCard({
 
   const handleWheel = (e: React.WheelEvent) => {
     if (total <= 1) return;
+    // Only respond to intentional horizontal swipe or Shift+Wheel, NEVER vertical scroll
+    const isHorizontal = Math.abs(e.deltaX) > 25 && Math.abs(e.deltaX) > Math.abs(e.deltaY) * 1.5;
+    const isShiftWheel = e.shiftKey && Math.abs(e.deltaY) > 15;
+    if (!isHorizontal && !isShiftWheel) return;
+
     const now = Date.now();
     if (now - lastWheelTime.current < 380) return;
-    // Detect mouse wheel or trackpad swipe
-    if (Math.abs(e.deltaX) > 10 || Math.abs(e.deltaY) > 18) {
-      lastWheelTime.current = now;
-      if (e.deltaX > 0 || e.deltaY > 0) {
-        next();
-      } else {
-        prev();
-      }
+    lastWheelTime.current = now;
+    const delta = isHorizontal ? e.deltaX : e.deltaY;
+    if (delta > 0) {
+      next();
+    } else {
+      prev();
     }
   };
 
@@ -793,16 +796,19 @@ function WebsiteCard({
 
   const handleWheel = (e: React.WheelEvent) => {
     if (total <= 1) return;
+    // Only respond to intentional horizontal swipe or Shift+Wheel, NEVER vertical scroll
+    const isHorizontal = Math.abs(e.deltaX) > 25 && Math.abs(e.deltaX) > Math.abs(e.deltaY) * 1.5;
+    const isShiftWheel = e.shiftKey && Math.abs(e.deltaY) > 15;
+    if (!isHorizontal && !isShiftWheel) return;
+
     const now = Date.now();
     if (now - lastWheelTime.current < 380) return;
-    // Detect mouse wheel or trackpad horizontal/vertical swipe
-    if (Math.abs(e.deltaX) > 10 || Math.abs(e.deltaY) > 18) {
-      lastWheelTime.current = now;
-      if (e.deltaX > 0 || e.deltaY > 0) {
-        next();
-      } else {
-        prev();
-      }
+    lastWheelTime.current = now;
+    const delta = isHorizontal ? e.deltaX : e.deltaY;
+    if (delta > 0) {
+      next();
+    } else {
+      prev();
     }
   };
 
@@ -1620,7 +1626,6 @@ function HorizontalSlider({
       {/* Slider Track */}
       <div
         ref={scrollRef}
-        data-lenis-prevent
         className="flex gap-6 overflow-x-auto scrollbar-none snap-x snap-mandatory scroll-smooth pb-6 pt-1 px-1 [&::-webkit-scrollbar]:hidden"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
