@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import CTABanner from "@/components/CTABanner";
 import PrimaryButton from "@/components/PrimaryButton";
+import VideoTestimonialsSection from "@/components/VideoTestimonialsSection";
 
 const VALUES = [
   {
@@ -344,6 +345,9 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+
+        {/* Video Testimonials Section (Vertical Reels) */}
+        <VideoTestimonialsSection />
 
         {/* Founder Story & Letter */}
         <section className="relative py-16 lg:py-20 bg-zinc-900/40 border-b border-zinc-800/80 w-full overflow-hidden">

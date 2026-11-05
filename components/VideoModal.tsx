@@ -100,22 +100,13 @@ export default function VideoModal({ isOpen, onClose, videoUrl }: VideoModalProp
                 preload="auto"
                 className="w-full h-full object-contain bg-black"
               >
-                {videoUrl.toLowerCase().includes("launch 4k") ? (
+                {videoUrl.toLowerCase().includes("launch") ? (
                   <>
-                    <source src="/launch%204k.mp4" type="video/mp4" />
-                    <source src="/launch%204k.mov" type="video/quicktime" />
+                    <source src="/launch 4k.mp4" type="video/mp4" />
                     <source src="/launch.mp4" type="video/mp4" />
                   </>
-                ) : videoUrl.toLowerCase().endsWith(".mov") ? (
-                  <>
-                    <source
-                      src={encodeURI(videoUrl.replace(/\.mov$/i, ".mp4"))}
-                      type="video/mp4"
-                    />
-                    <source src={formattedUrl} type="video/quicktime" />
-                  </>
                 ) : (
-                  <source src={formattedUrl} type="video/mp4" />
+                  <source src={formattedUrl.replace(/\.mov$/i, ".mp4")} type="video/mp4" />
                 )}
                 Your browser does not support the video tag.
               </video>

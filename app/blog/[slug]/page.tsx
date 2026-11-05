@@ -3,9 +3,14 @@ import { getBlogPostBySlug, BLOG_POSTS } from "@/lib/blogData";
 import BlogDetailClient from "@/components/BlogDetailClient";
 
 export function generateStaticParams() {
-  return BLOG_POSTS.map((post) => ({
-    slug: post.slug,
-  }));
+  const slugs: { slug: string }[] = [];
+  BLOG_POSTS.forEach((post) => {
+    slugs.push({ slug: post.slug });
+    post.aliases?.forEach((alias) => {
+      slugs.push({ slug: alias });
+    });
+  });
+  return slugs;
 }
 
 interface PageProps {

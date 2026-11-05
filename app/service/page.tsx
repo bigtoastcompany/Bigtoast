@@ -35,7 +35,7 @@ export default function ServicesPage() {
           transition={{ delay: 0.2 }}
           className="text-paragraph text-lg max-w-2xl leading-relaxed"
         >
-          From strategic narrative design and high-retention video editing to podcast production and AI workflows — explore how BigToast transforms digital presences.
+          From strategic narrative design and high-retention video editing to podcast production, custom websites, web apps, and mobile development — explore how BigToast transforms digital presences.
         </motion.p>
       </section>
 

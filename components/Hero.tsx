@@ -166,7 +166,7 @@ export default function Hero() {
       <VideoModal
         isOpen={showreelOpen}
         onClose={() => setShowreelOpen(false)}
-        videoUrl="/launch 4k.mov"
+        videoUrl="/launch 4k.mp4"
       />
     </>
   );
