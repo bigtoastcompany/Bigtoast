@@ -140,33 +140,37 @@ const BRANDS = [
 
 const TOOLS = [
   {
-    name: "Premiere Pro",
+    name: "InVideo",
     logo: (
       <div className="flex items-center gap-3.5 md:gap-4 select-none">
-        <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl overflow-hidden shrink-0 shadow-md border border-white/10 group-hover:border-white/30 transition-all group-hover:scale-105">
-          <img draggable={false} src="/images/tools/premiere.jpg"
-            alt="Premiere Pro"
-            className="w-full h-full object-cover"
+        <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl overflow-hidden shrink-0 shadow-md border border-white/10 group-hover:border-white/30 transition-all group-hover:scale-105 bg-[#0b0c16] flex items-center justify-center p-1.5">
+          <img
+            draggable={false}
+            src="/images/tools/invideo.png"
+            alt="InVideo"
+            className="w-full h-full object-contain"
           />
         </div>
         <span className="text-base md:text-lg lg:text-xl font-bold tracking-wider font-sans text-zinc-200 whitespace-nowrap group-hover:text-white transition-colors">
-          PREMIERE PRO
+          INVIDEO
         </span>
       </div>
     ),
   },
   {
-    name: "After Effects",
+    name: "Higgsfield",
     logo: (
       <div className="flex items-center gap-3.5 md:gap-4 select-none">
-        <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl overflow-hidden shrink-0 shadow-md border border-white/10 group-hover:border-white/30 transition-all group-hover:scale-105">
-          <img draggable={false} src="/images/tools/aftereffects.jpg"
-            alt="After Effects"
-            className="w-full h-full object-cover"
+        <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl overflow-hidden shrink-0 shadow-md border border-white/10 group-hover:border-white/30 transition-all group-hover:scale-105 bg-black flex items-center justify-center p-1">
+          <img
+            draggable={false}
+            src="/images/tools/higgsfield.png"
+            alt="Higgsfield"
+            className="w-full h-full object-contain"
           />
         </div>
         <span className="text-base md:text-lg lg:text-xl font-bold tracking-wider font-sans text-zinc-200 whitespace-nowrap group-hover:text-white transition-colors">
-          AFTER EFFECTS
+          HIGGSFIELD
         </span>
       </div>
     ),
@@ -176,7 +180,9 @@ const TOOLS = [
     logo: (
       <div className="flex items-center gap-3.5 md:gap-4 select-none">
         <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl overflow-hidden shrink-0 shadow-md border border-white/10 group-hover:border-white/30 transition-all group-hover:scale-105 bg-white p-1">
-          <img draggable={false} src="/images/tools/finalcutpro.jpg"
+          <img
+            draggable={false}
+            src="/images/tools/finalcutpro.jpg"
             alt="Final Cut Pro"
             className="w-full h-full object-contain"
           />
@@ -188,188 +194,109 @@ const TOOLS = [
     ),
   },
   {
-    name: "CapCut",
+    name: "Opus Clips",
     logo: (
       <div className="flex items-center gap-3.5 md:gap-4 select-none">
-        <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl overflow-hidden shrink-0 shadow-md border border-white/10 group-hover:border-white/30 transition-all group-hover:scale-105 bg-white p-1.5">
-          <img draggable={false} src="/images/tools/capcut.png"
-            alt="CapCut"
+        <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl overflow-hidden shrink-0 shadow-md border border-white/10 group-hover:border-white/30 transition-all group-hover:scale-105 bg-[#0e0c1f] flex items-center justify-center p-1">
+          <img
+            draggable={false}
+            src="/images/tools/opusclip.png"
+            alt="Opus Clips"
             className="w-full h-full object-contain"
           />
         </div>
         <span className="text-base md:text-lg lg:text-xl font-bold tracking-wider font-sans text-zinc-200 whitespace-nowrap group-hover:text-white transition-colors">
-          CAPCUT
+          OPUS CLIPS
         </span>
       </div>
     ),
   },
   {
-    name: "Filmora",
+    name: "HeyGen",
+    logo: (
+      <div className="flex items-center gap-3.5 md:gap-4 select-none">
+        <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl overflow-hidden shrink-0 shadow-md border border-white/10 group-hover:border-white/30 transition-all group-hover:scale-105 bg-white flex items-center justify-center p-1">
+          <img
+            draggable={false}
+            src="/images/tools/heygen.png"
+            alt="HeyGen"
+            className="w-full h-full object-contain"
+          />
+        </div>
+        <span className="text-base md:text-lg lg:text-xl font-bold tracking-wider font-sans text-zinc-200 whitespace-nowrap group-hover:text-white transition-colors">
+          HEYGEN
+        </span>
+      </div>
+    ),
+  },
+  {
+    name: "Eleven Labs",
+    logo: (
+      <div className="flex items-center gap-3.5 md:gap-4 select-none">
+        <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl overflow-hidden shrink-0 shadow-md border border-white/10 group-hover:border-white/30 transition-all group-hover:scale-105 bg-white flex items-center justify-center p-1">
+          <img
+            draggable={false}
+            src="/images/tools/elevenlabs.svg"
+            alt="Eleven Labs"
+            className="w-full h-full object-contain"
+          />
+        </div>
+        <span className="text-base md:text-lg lg:text-xl font-bold tracking-wider font-sans text-zinc-200 whitespace-nowrap group-hover:text-white transition-colors">
+          ELEVEN LABS
+        </span>
+      </div>
+    ),
+  },
+  {
+    name: "Gemini",
+    logo: (
+      <div className="flex items-center gap-3.5 md:gap-4 select-none">
+        <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl overflow-hidden shrink-0 shadow-md border border-white/10 group-hover:border-white/30 transition-all group-hover:scale-105 bg-[#0f111a] flex items-center justify-center p-2">
+          <img
+            draggable={false}
+            src="/images/tools/gemini.svg"
+            alt="Gemini"
+            className="w-full h-full object-contain"
+          />
+        </div>
+        <span className="text-base md:text-lg lg:text-xl font-bold tracking-wider font-sans text-zinc-200 whitespace-nowrap group-hover:text-white transition-colors">
+          GEMINI
+        </span>
+      </div>
+    ),
+  },
+  {
+    name: "Flow",
+    logo: (
+      <div className="flex items-center gap-3.5 md:gap-4 select-none">
+        <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl overflow-hidden shrink-0 shadow-md border border-white/10 group-hover:border-white/30 transition-all group-hover:scale-105 bg-black flex items-center justify-center p-1">
+          <img
+            draggable={false}
+            src="/images/tools/flow.png"
+            alt="Flow"
+            className="w-full h-full object-contain"
+          />
+        </div>
+        <span className="text-base md:text-lg lg:text-xl font-bold tracking-wider font-sans text-zinc-200 whitespace-nowrap group-hover:text-white transition-colors">
+          FLOW
+        </span>
+      </div>
+    ),
+  },
+  {
+    name: "Premiere Pro",
     logo: (
       <div className="flex items-center gap-3.5 md:gap-4 select-none">
         <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl overflow-hidden shrink-0 shadow-md border border-white/10 group-hover:border-white/30 transition-all group-hover:scale-105">
-          <img draggable={false} src="/images/tools/filmora.jpg"
-            alt="Filmora"
+          <img
+            draggable={false}
+            src="/images/tools/premiere.jpg"
+            alt="Premiere Pro"
             className="w-full h-full object-cover"
           />
         </div>
         <span className="text-base md:text-lg lg:text-xl font-bold tracking-wider font-sans text-zinc-200 whitespace-nowrap group-hover:text-white transition-colors">
-          FILMORA
-        </span>
-      </div>
-    ),
-  },
-  {
-    name: "Audacity",
-    logo: (
-      <div className="flex items-center gap-3.5 md:gap-4 select-none">
-        <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl overflow-hidden shrink-0 shadow-md border border-white/10 group-hover:border-white/30 transition-all group-hover:scale-105 bg-white p-1">
-          <img draggable={false} src="/images/tools/audacity.jpg"
-            alt="Audacity"
-            className="w-full h-full object-contain"
-          />
-        </div>
-        <span className="text-base md:text-lg lg:text-xl font-bold tracking-wider font-sans text-zinc-200 whitespace-nowrap group-hover:text-white transition-colors">
-          AUDACITY
-        </span>
-      </div>
-    ),
-  },
-  {
-    name: "Audition",
-    logo: (
-      <div className="flex items-center gap-3.5 md:gap-4 select-none">
-        <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl overflow-hidden shrink-0 shadow-md border border-white/10 group-hover:border-white/30 transition-all group-hover:scale-105">
-          <img draggable={false} src="/images/tools/audition.png"
-            alt="Audition"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <span className="text-base md:text-lg lg:text-xl font-bold tracking-wider font-sans text-zinc-200 whitespace-nowrap group-hover:text-white transition-colors">
-          AUDITION
-        </span>
-      </div>
-    ),
-  },
-  {
-    name: "ChatGPT",
-    logo: (
-      <div className="flex items-center gap-3.5 md:gap-4 select-none">
-        <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl overflow-hidden shrink-0 shadow-md border border-white/10 group-hover:border-white/30 transition-all group-hover:scale-105 bg-white p-1.5">
-          <img draggable={false} src="/images/tools/chatgpt.jpg"
-            alt="ChatGPT"
-            className="w-full h-full object-contain"
-          />
-        </div>
-        <span className="text-base md:text-lg lg:text-xl font-bold tracking-wider font-sans text-zinc-200 whitespace-nowrap group-hover:text-white transition-colors">
-          CHATGPT
-        </span>
-      </div>
-    ),
-  },
-  {
-    name: "Claude",
-    logo: (
-      <div className="flex items-center gap-3.5 md:gap-4 select-none">
-        <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl overflow-hidden shrink-0 shadow-md border border-white/10 group-hover:border-white/30 transition-all group-hover:scale-105 bg-white p-1.5">
-          <img draggable={false} src="/images/tools/claude.jpg"
-            alt="Claude"
-            className="w-full h-full object-contain"
-          />
-        </div>
-        <span className="text-base md:text-lg lg:text-xl font-bold tracking-wider font-sans text-zinc-200 whitespace-nowrap group-hover:text-white transition-colors">
-          CLAUDE
-        </span>
-      </div>
-    ),
-  },
-  {
-    name: "DaVinci Resolve",
-    logo: (
-      <div className="flex items-center gap-3.5 md:gap-4 select-none">
-        <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl overflow-hidden shrink-0 shadow-md border border-white/10 group-hover:border-white/30 transition-all group-hover:scale-105">
-          <img draggable={false} src="/images/tools/davinciresolve.jpg" alt="DaVinci Resolve" className="w-full h-full object-cover" />
-        </div>
-        <span className="text-base md:text-lg lg:text-xl font-bold tracking-wider font-sans text-zinc-200 whitespace-nowrap group-hover:text-white transition-colors">
-          DAVINCI RESOLVE
-        </span>
-      </div>
-    ),
-  },
-  {
-    name: "Vegas Pro",
-    logo: (
-      <div className="flex items-center gap-3.5 md:gap-4 select-none">
-        <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl overflow-hidden shrink-0 shadow-md border border-white/10 group-hover:border-white/30 transition-all group-hover:scale-105">
-          <img draggable={false} src="/images/tools/vegaspro.jpg" alt="Vegas Pro" className="w-full h-full object-cover" />
-        </div>
-        <span className="text-base md:text-lg lg:text-xl font-bold tracking-wider font-sans text-zinc-200 whitespace-nowrap group-hover:text-white transition-colors">
-          VEGAS PRO
-        </span>
-      </div>
-    ),
-  },
-  {
-    name: "Avid Media Composer",
-    logo: (
-      <div className="flex items-center gap-3.5 md:gap-4 select-none">
-        <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl overflow-hidden shrink-0 shadow-md border border-white/10 group-hover:border-white/30 transition-all group-hover:scale-105 bg-white p-1">
-          <img draggable={false} src="/images/tools/avidmc.jpg" alt="Avid Media Composer" className="w-full h-full object-contain" />
-        </div>
-        <span className="text-base md:text-lg lg:text-xl font-bold tracking-wider font-sans text-zinc-200 whitespace-nowrap group-hover:text-white transition-colors">
-          AVID MC
-        </span>
-      </div>
-    ),
-  },
-  {
-    name: "Adobe Photoshop",
-    logo: (
-      <div className="flex items-center gap-3.5 md:gap-4 select-none">
-        <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl overflow-hidden shrink-0 shadow-md border border-white/10 group-hover:border-white/30 transition-all group-hover:scale-105 ">
-          <img draggable={false} src="/images/tools/photoshop.png" alt="Adobe Photoshop" className="w-full h-full object-cover" />
-        </div>
-        <span className="text-base md:text-lg lg:text-xl font-bold tracking-wider font-sans text-zinc-200 whitespace-nowrap group-hover:text-white transition-colors">
-          PHOTOSHOP
-        </span>
-      </div>
-    ),
-  },
-  {
-    name: "Canva",
-    logo: (
-      <div className="flex items-center gap-3.5 md:gap-4 select-none">
-        <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl overflow-hidden shrink-0 shadow-md border border-white/10 group-hover:border-white/30 transition-all group-hover:scale-105 ">
-          <img draggable={false} src="/images/tools/canva.jpg" alt="Canva" className="w-full h-full object-cover" />
-        </div>
-        <span className="text-base md:text-lg lg:text-xl font-bold tracking-wider font-sans text-zinc-200 whitespace-nowrap group-hover:text-white transition-colors">
-          CANVA
-        </span>
-      </div>
-    ),
-  },
-  {
-    name: "Blender",
-    logo: (
-      <div className="flex items-center gap-3.5 md:gap-4 select-none">
-        <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl overflow-hidden shrink-0 shadow-md border border-white/10 group-hover:border-white/30 transition-all group-hover:scale-105 bg-white p-1">
-          <img draggable={false} src="/images/tools/blender.jpg" alt="Blender" className="w-full h-full object-contain" />
-        </div>
-        <span className="text-base md:text-lg lg:text-xl font-bold tracking-wider font-sans text-zinc-200 whitespace-nowrap group-hover:text-white transition-colors">
-          BLENDER
-        </span>
-      </div>
-    ),
-  },
-  {
-    name: "OBS Studio",
-    logo: (
-      <div className="flex items-center gap-3.5 md:gap-4 select-none">
-        <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl overflow-hidden shrink-0 shadow-md border border-white/10 group-hover:border-white/30 transition-all group-hover:scale-105 bg-white p-1">
-          <img draggable={false} src="/images/tools/obs.jpg" alt="OBS Studio" className="w-full h-full object-contain" />
-        </div>
-        <span className="text-base md:text-lg lg:text-xl font-bold tracking-wider font-sans text-zinc-200 whitespace-nowrap group-hover:text-white transition-colors">
-          OBS STUDIO
+          PREMIERE PRO
         </span>
       </div>
     ),

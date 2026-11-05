@@ -46,83 +46,84 @@ export interface TestimonialItem {
   image?: string;
 }
 
-// ─── Testimonials Data (2 Video Reels + 3 Image Cards with identical format) ──
+// ─── Testimonials Data (3 Video Reels + 2 Image Cards = 5 Testimonials Total) ──
 export const TESTIMONIALS_DATA: TestimonialItem[] = [
-  // ── 1. Video Reel Testimonial ──
+  // ── 1. Video Reel Testimonial: Yash Sanghavi ──
   {
-    id: "test-video-01",
+    id: "test-video-yash",
     type: "video",
-    name: "Vikramaditya",
-    role: "Host & Creator",
-    company: "The Good Gobar Show",
-    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=240&auto=format&fit=crop",
+    name: "Yash Sanghavi",
+    role: "Founder",
+    company: "Yanisa Execution",
+    avatar: "/images/avatars/yash_sanghavi.jpg",
     quote:
-      "Himanshu completely elevated our podcast reels. The pacing, sound design, and hooks skyrocketed our retention and follower growth.",
+      "Big Toast completely understands founder-led storytelling. Their pacing, retention hooks, and high-energy edits took our content performance to another level.",
     rating: 5,
-    videoUrl: "/why people feel they are not successful.mp4",
-    duration: "0:45",
-    categoryTag: "Podcast Video",
+    videoUrl: "/yash_testimonial.mp4",
+    duration: "1:35",
+    categoryTag: "Founder Story",
     verified: true,
   },
-  // ── 2. Video Reel Testimonial ──
+  // ── 2. Video Reel Testimonial: Arezou Botanicals ──
   {
-    id: "test-video-02",
+    id: "test-video-arezou",
     type: "video",
-    name: "Aman Kashyap",
-    role: "Founder & Tech Creator",
-    company: "Venture Insights",
-    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=240&auto=format&fit=crop",
+    name: "Arezou Botanicals",
+    role: "Brand Review",
+    company: "Luxury Botanicals",
+    avatar: "/images/avatars/arezou_speaker.jpg",
     quote:
-      "Finding an editor who understands founder psychology is rare. Big Toast knows how to capture authority without losing visual energy.",
+      "The aesthetic precision and storytelling for our Anti-Pigmentation Face Oil were outstanding. Big Toast captured the premium feel and real essence of our brand.",
     rating: 5,
-    videoUrl: "/Intelligent Decision.mp4",
-    duration: "0:58",
-    categoryTag: "Founder Video",
+    videoUrl: "/arezou_testimonial.mp4",
+    duration: "0:28",
+    categoryTag: "D2C Brand",
     verified: true,
   },
-  // ── 3. Image Testimonial (Identical Full-Bleed 9:16 Format) ──
+  // ── 3. Video Reel Testimonial: Client & Founder Story ──
   {
-    id: "test-img-01",
+    id: "test-video-client",
+    type: "video",
+    name: "Growth & Performance",
+    role: "Growth Director",
+    company: "Direct-to-Consumer",
+    avatar: "/images/avatars/client_founder.jpg",
+    quote:
+      "Finding an editing partner who deeply understands audience psychology and conversion narratives is rare. Big Toast delivers world-class retention and polish every single time.",
+    rating: 5,
+    videoUrl: "/testimonial_client.mp4",
+    duration: "1:43",
+    categoryTag: "Client Story",
+    verified: true,
+  },
+  // ── 4. Image Testimonial: Nayan Shah (PetChef) ──
+  {
+    id: "test-img-nayan",
     type: "image",
-    name: "Kavya Nair",
-    role: "Creative Director",
-    company: "Apex Digital",
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=240&auto=format&fit=crop",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop",
+    name: "Nayan Shah",
+    role: "Co-Founder",
+    company: "PetChef",
+    avatar: "/images/avatars/nayan_shah.jpg",
+    image: "/images/thumbs/nayan_petchef.jpg",
     quote:
-      "Every transition and audio cue felt intentional. Our short-form reach doubled within our first month working together. Big Toast delivers world-class creative production.",
+      "Working with Himanshu and Big Toast Company has been a great experience for PetChef.\n\nWhat stands out is Himanshu's ability to understand our brand, think creatively and turn our ideas into engaging content. His involvement goes beyond editing. From developing creative concepts and storytelling to visual direction and execution, he takes ownership of the entire process.\n\nWhat I appreciate most is his passion, attention to detail and the initiative he brings to every project. It's exciting to see what he's building with Big Toast Company, and I look forward to seeing it grow.\n\nI'd definitely recommend Himanshu to brands and founders looking for a creative partner who understands more than just content production.",
     rating: 5,
     categoryTag: "Client Review",
     verified: true,
   },
-  // ── 4. Image Testimonial (Identical Full-Bleed 9:16 Format) ──
+  // ── 5. Image Testimonial: Kaushik Mehta (Ruloans) ──
   {
-    id: "test-img-02",
+    id: "test-img-ruloans",
     type: "image",
-    name: "Ritu & Siddharth",
-    role: "Founders",
-    company: "Yanisa Media",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=240&auto=format&fit=crop",
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop",
+    name: "Kaushik Mehta",
+    role: "Founder & CEO",
+    company: "Ruloans",
+    avatar: "/images/avatars/kaushik_mehta.jpg",
+    image: "/images/thumbs/ruloans_testimonial.jpg",
     quote:
-      "Big Toast delivered our video campaigns with cinematic precision. Their narrative intuition saved us weeks of revisions. Truly our trusted creative partner.",
+      "Big Toast captured the heart and scale of our 25-year journey with unmatched cinematic clarity. From documenting our leadership vision to showcasing our nationwide loan distribution scale across 4,000+ cities, their commercial podcast and brand documentary truly elevated our brand authority and customer trust.",
     rating: 5,
-    categoryTag: "Brand Partner",
-    verified: true,
-  },
-  // ── 5. Image Testimonial (Identical Full-Bleed 9:16 Format) ──
-  {
-    id: "test-img-03",
-    type: "image",
-    name: "Arjun Mehta",
-    role: "Managing Director",
-    company: "Nexora Studio",
-    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=240&auto=format&fit=crop",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800&auto=format&fit=crop",
-    quote:
-      "The visual quality, audio mastering, and storytelling pacing are exceptional. They turned basic ideas into high-retention content our clients love.",
-    rating: 5,
-    categoryTag: "Agency Client",
+    categoryTag: "Brand Documentary",
     verified: true,
   },
 ];
@@ -162,13 +163,14 @@ function FullscreenReelModal({
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [testimonial, onClose]);
 
-  if (!portalNode || !testimonial || testimonial.type !== "video" || !testimonial.videoUrl) {
+  if (!portalNode || !testimonial) {
     return null;
   }
 
-  const ytId = getYouTubeId(testimonial.videoUrl);
+  const ytId = testimonial.videoUrl ? getYouTubeId(testimonial.videoUrl) : null;
   const isDirectVideo = Boolean(
-    !ytId &&
+    testimonial.videoUrl &&
+      !ytId &&
       (/\.(mp4|mov|webm|m4v)(\?.*)?$/i.test(testimonial.videoUrl) ||
         testimonial.videoUrl.startsWith("/"))
   );
@@ -197,11 +199,13 @@ function FullscreenReelModal({
           <div className="absolute top-0 left-0 right-0 z-30 p-4 flex items-center justify-between bg-gradient-to-b from-black/80 via-black/40 to-transparent pointer-events-none">
             <div className="flex items-center gap-2 pointer-events-auto">
               <span className="px-3 py-1 rounded-full bg-zinc-900/80 backdrop-blur-md border border-zinc-700 text-xs font-semibold text-sky-400">
-                {testimonial.categoryTag || "Video Testimonial"}
+                {testimonial.categoryTag || "Client Review"}
               </span>
-              <span className="text-[11px] font-mono text-zinc-300 bg-black/60 px-2 py-0.5 rounded-md">
-                {testimonial.duration || "Reel"}
-              </span>
+              {testimonial.duration && (
+                <span className="text-[11px] font-mono text-zinc-300 bg-black/60 px-2 py-0.5 rounded-md">
+                  {testimonial.duration}
+                </span>
+              )}
             </div>
 
             <div className="flex items-center gap-2 pointer-events-auto">
@@ -234,9 +238,19 @@ function FullscreenReelModal({
             </div>
           </div>
 
-          {/* Video Player */}
+          {/* Media Container: Video Player or High-Res Image */}
           <div className="relative w-full h-full bg-black flex items-center justify-center overflow-hidden">
-            {ytId ? (
+            {testimonial.type === "image" ? (
+              testimonial.image ? (
+                <Image
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              ) : null
+            ) : ytId ? (
               <iframe
                 src={`https://www.youtube.com/embed/${ytId}?autoplay=1&rel=0&modestbranding=1`}
                 title={testimonial.name}
@@ -290,10 +304,12 @@ function FullscreenReelModal({
               </span>
             </div>
 
-            {/* Quote */}
-            <p className="text-zinc-200 text-xs sm:text-sm leading-relaxed line-clamp-3">
-              "{testimonial.quote}"
-            </p>
+            {/* Quote (Full text scrollable if long) */}
+            <div className="max-h-[180px] sm:max-h-[220px] overflow-y-auto pr-1 pointer-events-auto [scrollbar-width:thin]">
+              <p className="text-zinc-200 text-xs sm:text-sm leading-relaxed whitespace-pre-line font-medium drop-shadow-md">
+                "{testimonial.quote}"
+              </p>
+            </div>
 
             {/* Client Profile */}
             <div className="flex items-center gap-2.5 pt-1 border-t border-white/10">
@@ -514,9 +530,11 @@ function VideoReelCard({
 function ImageTestimonialCard({
   item,
   idx,
+  onOpenModal,
 }: {
   item: TestimonialItem;
   idx: number;
+  onOpenModal: (t: TestimonialItem) => void;
 }) {
   return (
     <motion.div
@@ -528,8 +546,9 @@ function ImageTestimonialCard({
     >
       {/* 9:16 Full-bleed Image Container (identical format to video reel card) */}
       <div
-        className="relative bg-zinc-950 overflow-hidden"
+        className="relative bg-zinc-950 overflow-hidden cursor-pointer"
         style={{ aspectRatio: "9/16" }}
+        onClick={() => onOpenModal(item)}
       >
         {item.image && (
           <Image
@@ -548,9 +567,17 @@ function ImageTestimonialCard({
           </span>
 
           {/* Top-right subtle quote badge matching fullscreen button position */}
-          <div className="w-8 h-8 rounded-full bg-zinc-900/90 backdrop-blur-md border border-zinc-700/80 flex items-center justify-center text-sky-400 shadow-lg ml-auto">
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              onOpenModal(item);
+            }}
+            aria-label={`Read full review from ${item.name}`}
+            className="w-8 h-8 rounded-full bg-zinc-900/90 backdrop-blur-md border border-zinc-700/80 flex items-center justify-center text-sky-400 hover:text-white hover:border-sky-400 hover:scale-110 transition-all shadow-lg pointer-events-auto ml-auto cursor-pointer"
+            title="Read Full Review"
+          >
             <Quote className="w-3.5 h-3.5 fill-sky-400/30" />
-          </div>
+          </button>
         </div>
 
         {/* Bottom Reel Vignette with Client Quote & Details (identical to video card) */}
@@ -569,7 +596,7 @@ function ImageTestimonialCard({
           </div>
 
           {/* Quote snippet */}
-          <p className="text-zinc-200 text-xs leading-snug line-clamp-3 mb-2.5 font-medium drop-shadow-sm">
+          <p className="text-zinc-200 text-xs leading-snug line-clamp-4 mb-2.5 font-medium drop-shadow-sm">
             "{item.quote}"
           </p>
 
@@ -751,38 +778,15 @@ export default function VideoTestimonialsSection({
                 />
               );
             }
-            return <ImageTestimonialCard key={item.id} item={item} idx={idx} />;
+            return (
+              <ImageTestimonialCard
+                key={item.id}
+                item={item}
+                idx={idx}
+                onOpenModal={(t) => setActiveModalItem(t)}
+              />
+            );
           })}
-        </div>
-
-        {/* Trust Metric Bar Below Testimonials */}
-        <div className="mt-8 p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800/80 flex flex-wrap items-center justify-around gap-6 text-center">
-          <div>
-            <span className="text-2xl sm:text-3xl font-extrabold text-white block">
-              100%
-            </span>
-            <span className="text-xs text-zinc-400">
-              Client Retention &amp; Referral Rate
-            </span>
-          </div>
-          <div className="hidden sm:block w-px h-8 bg-zinc-800" />
-          <div>
-            <span className="text-2xl sm:text-3xl font-extrabold text-sky-400 block">
-              5.0 ★
-            </span>
-            <span className="text-xs text-zinc-400">
-              Average Client Satisfaction Rating
-            </span>
-          </div>
-          <div className="hidden sm:block w-px h-8 bg-zinc-800" />
-          <div>
-            <span className="text-2xl sm:text-3xl font-extrabold text-white block">
-              40+
-            </span>
-            <span className="text-xs text-zinc-400">
-              Produced Podcasts, Campaigns &amp; Films
-            </span>
-          </div>
         </div>
       </div>
 

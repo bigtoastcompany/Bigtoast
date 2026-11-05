@@ -17,6 +17,14 @@ interface ProjectItem {
 
 const PROJECTS: ProjectItem[] = [
   {
+    id: "ruloans-commercial-podcast",
+    title: "Ruloans — Commercial & Brand Podcast",
+    category: "PODCAST & BRAND FILM",
+    year: "2026",
+    image: "/images/thumbs/ruloans.jpg",
+    link: "/project",
+  },
+  {
     id: "good-gobar-podcast-anjum",
     title: "The Good Gobar Show — Anjum Chopra",
     category: "PODCAST EDITING & STORYTELLING",
