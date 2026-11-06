@@ -20,29 +20,57 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "BigToast - Modern Creative Design & Strategy Studio",
+  metadataBase: new URL("https://www.bigtoastcompany.com"),
+  title: "Big Toast Company | Storytelling-Led Content Studio",
   description:
-    "BigToast is a modern creative design studio focused on intentional design and strategic messaging, helping brands connect, stand out, and grow with clarity.",
+    "Storytelling-led content studio crafting high-retention videos, podcasts, and digital campaigns for ambitious brands and founders.",
   keywords: [
-    "BigToast",
-    "Creative Design Studio",
-    "Strategic Messaging",
-    "UI UX Design",
-    "Next.js Development",
-    "AI Integration",
+    "Big Toast Company",
+    "Storytelling-Led Content Studio",
+    "Video Production",
+    "Podcast Production",
+    "Content Distribution",
+    "Founder Stories",
+    "Brand Strategy",
   ],
   icons: {
-    icon: "/logo.png",
-    shortcut: "/logo.png",
-    apple: "/logo.png",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-48x48.png", sizes: "48x48", type: "image/png" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/icon.png", sizes: "512x512", type: "image/png" },
+      { url: "/logo.png", sizes: "512x512", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
   },
+  manifest: "/site.webmanifest",
   openGraph: {
-    title: "BigToast - Modern Creative Design & Strategy Studio",
+    title: "Big Toast Company | Storytelling-Led Content Studio",
     description:
-      "Intentional design & strategic messaging to help startups and enterprises scale with creativity.",
-    url: "https://bigtoast.studio",
-    siteName: "BigToast",
+      "Storytelling-led content studio crafting high-retention videos, podcasts, and digital campaigns for ambitious brands and founders.",
+    url: "https://www.bigtoastcompany.com",
+    siteName: "Big Toast Company",
+    locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "https://www.bigtoastcompany.com/logo.png",
+        width: 512,
+        height: 512,
+        alt: "Big Toast Company",
+        type: "image/png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: "Big Toast Company | Storytelling-Led Content Studio",
+    description:
+      "Storytelling-led content studio crafting high-retention videos, podcasts, and digital campaigns for ambitious brands and founders.",
+    images: ["https://www.bigtoastcompany.com/logo.png"],
   },
 };
 
@@ -53,6 +81,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${figtree.variable} ${playfair.variable}`}>
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+        <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+      </head>
       <body className="antialiased selection:bg-sky-600 selection:text-white">
         <SmoothScroll>
           {/* Ambient Lighting Background */}
