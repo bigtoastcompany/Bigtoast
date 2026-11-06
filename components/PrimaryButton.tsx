@@ -12,6 +12,8 @@ interface PrimaryButtonProps {
   className?: string;
   variant?: "primary" | "secondary" | "blind";
   icon?: ReactNode;
+  type?: "button" | "submit" | "reset";
+  disabled?: boolean;
 }
 
 export default function PrimaryButton({
@@ -22,6 +24,8 @@ export default function PrimaryButton({
   className = "",
   variant = "primary",
   icon,
+  type,
+  disabled = false,
 }: PrimaryButtonProps) {
   const content = (
     <div className="flex items-center gap-2.5 group cursor-pointer select-none">
@@ -92,7 +96,14 @@ export default function PrimaryButton({
   }
 
   return (
-    <button onClick={onClick} className="touch-manipulation inline-block">
+    <button
+      type={type || "button"}
+      onClick={onClick}
+      disabled={disabled}
+      className={`touch-manipulation inline-block ${
+        disabled ? "opacity-60 cursor-not-allowed pointer-events-none" : ""
+      }`}
+    >
       {content}
     </button>
   );

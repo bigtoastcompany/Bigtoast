@@ -220,7 +220,10 @@ function ServiceDropdown({
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [copiedEmail, setCopiedEmail] = useState(false);
+  const [honey, setHoney] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -235,9 +238,75 @@ export default function ContactPage() {
     setTimeout(() => setCopiedEmail(false), 2000);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+
+    // Anti-spam honeypot
+    if (honey) {
+      setSubmitted(true);
+      return;
+    }
+
+    if (isSubmitting) return;
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      const response = await fetch(
+        "https://formsubmit.co/ajax/bigtoastcompany@gmail.com",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            "Client Name": formData.name,
+            "Work Email": formData.email,
+            "Company / Brand": formData.company || "Not specified",
+            "Required Service": formData.service,
+            "Project Overview & Goals": formData.message,
+            _subject: `New Project Inquiry: ${formData.name} (${formData.company || "Direct"}) - Big Toast Company`,
+            _replyto: formData.email,
+            _template: "table",
+            _captcha: "false",
+          }),
+        }
+      );
+
+      const result = await response.json().catch(() => null);
+
+      if (
+        response.ok ||
+        (result && (result.success === "true" || result.success === true))
+      ) {
+        setSubmitted(true);
+      } else {
+        throw new Error(
+          result?.message || "Failed to submit inquiry. Please try again."
+        );
+      }
+    } catch (err: any) {
+      console.error("Form submission error:", err);
+      setSubmitError(
+        "Could not send automatically due to network/connectivity. You can send it directly to bigtoastcompany@gmail.com below:"
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleReset = () => {
+    setSubmitted(false);
+    setSubmitError(null);
+    setFormData({
+      name: "",
+      email: "",
+      company: "",
+      service: "Story-Driven Short-Form and Long-Form Content",
+      message: "",
+    });
+    setHoney("");
   };
 
   const scrollToForm = () => {
@@ -500,13 +569,16 @@ export default function ContactPage() {
                   <div className="w-14 h-14 rounded-full bg-sky-500/20 border border-sky-400 flex items-center justify-center text-sky-300 mb-1">
                     <CheckCircle className="w-7 h-7" />
                   </div>
-                  <h3 className="text-xl font-bold text-white">Message Received!</h3>
+                  <h3 className="text-xl font-bold text-white">Inquiry Received!</h3>
                   <p className="text-zinc-400 text-xs md:text-sm max-w-md leading-relaxed">
-                    Thank you for reaching out. A BigToast creative director will review your brief and get back to you within 24 hours.
+                    Thank you for reaching out! Your project inquiry has been dispatched to{" "}
+                    <span className="text-white font-semibold">bigtoastcompany@gmail.com</span>.
+                    A Big Toast creative director will review your brief and get back to you within 24 hours.
                   </p>
                   <button
-                    onClick={() => setSubmitted(false)}
-                    className="mt-3 px-5 py-2 rounded-full bg-white/10 text-white text-xs font-semibold hover:bg-white/20 transition-colors"
+                    type="button"
+                    onClick={handleReset}
+                    className="mt-3 px-5 py-2 rounded-full bg-white/10 text-white text-xs font-semibold hover:bg-white/20 transition-colors cursor-pointer"
                   >
                     Send Another Message
                   </button>
@@ -520,6 +592,7 @@ export default function ContactPage() {
                       </label>
                       <input
                         type="text"
+                        name="name"
                         required
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -534,6 +607,7 @@ export default function ContactPage() {
                       </label>
                       <input
                         type="email"
+                        name="email"
                         required
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -550,6 +624,7 @@ export default function ContactPage() {
                       </label>
                       <input
                         type="text"
+                        name="company"
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                         placeholder="e.g. Creator Lab / Acme"
@@ -574,6 +649,7 @@ export default function ContactPage() {
                     </label>
                     <textarea
                       rows={3}
+                      name="message"
                       required
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -582,8 +658,47 @@ export default function ContactPage() {
                     />
                   </div>
 
+                  {/* Honeypot spam field (hidden from genuine users) */}
+                  <input
+                    type="text"
+                    name="_honey"
+                    value={honey}
+                    onChange={(e) => setHoney(e.target.value)}
+                    style={{ display: "none" }}
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+
+                  {/* Fallback error notification with instant mailto link */}
+                  {submitError && (
+                    <div className="p-3.5 rounded-xl bg-red-950/40 border border-red-500/40 text-xs text-red-200 flex flex-col gap-2">
+                      <div className="flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-red-400 shrink-0" />
+                        <span>{submitError}</span>
+                      </div>
+                      <a
+                        href={`mailto:bigtoastcompany@gmail.com?subject=${encodeURIComponent(
+                          `Project Inquiry: ${formData.name || "Client"}`
+                        )}&body=${encodeURIComponent(
+                          `Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${
+                            formData.company || "N/A"
+                          }\nService: ${formData.service}\n\nProject Overview:\n${formData.message}`
+                        )}`}
+                        className="inline-flex items-center gap-1.5 text-sky-300 hover:text-sky-200 underline font-semibold mt-0.5"
+                      >
+                        <Mail className="w-3.5 h-3.5" />
+                        <span>Send directly via your Email App &rarr;</span>
+                      </a>
+                    </div>
+                  )}
+
                   <div className="pt-1">
-                    <PrimaryButton text="Submit Project Inquiry" showArrow={true} />
+                    <PrimaryButton
+                      type="submit"
+                      disabled={isSubmitting}
+                      text={isSubmitting ? "Submitting Inquiry..." : "Submit Project Inquiry"}
+                      showArrow={!isSubmitting}
+                    />
                   </div>
                 </form>
               )}
